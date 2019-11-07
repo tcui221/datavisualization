@@ -9,11 +9,15 @@
 <body>
 
     <!-- content -->
-    CS171 Final Project
-    <div id="wrapper">
+
+    <div id="wrapper" align="center">
+        <h5>House Price in Hawaii remains at the top, California is on the rise!</h5><br>
+        <button id="play">Play Me!</button> <br>
+
+        <p id="yearmonth">Year:
+            <span id="clock">year</span>
+        </p>
         <div id="US-choropleth"></div>
-        <button id="play">play</button>
-        <span id="clock">year</span>
     </div>
 
 
@@ -25,8 +29,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/d3.min.js"></script>
-
+<!--    county vis -->
     <script src="js/choropleth.js"></script>
+<!--    state vis -->
+    <script src="js/StateChoropleth.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

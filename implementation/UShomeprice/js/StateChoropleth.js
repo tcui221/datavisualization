@@ -5,7 +5,7 @@
  * @param _home             -- csv data for median home value per sq ft, source: https://www.zillow.com/research/data/
  */
 
-USchoropleth = function(_parentElement, _map, _home){
+USchoropleth_State = function(_parentElement, _map, _home){
     this.parentElement = _parentElement;
     this.USmapJson = _map;
     this.homeValue = _home;
@@ -26,13 +26,13 @@ USchoropleth = function(_parentElement, _map, _home){
  * Initialize visualization (static content, e.g. SVG area or axes)
  */
 
-USchoropleth.prototype.initVis = function() {
+USchoropleth_State.prototype.initVis = function() {
     var vis = this;
 
     vis.margin = {top: 40, right: 60, bottom: 60, left: 60};
 
     vis.width = 1000 - vis.margin.left - vis.margin.right,
-        vis.height = 800 - vis.margin.top - vis.margin.bottom;
+        vis.height = 600 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -57,18 +57,19 @@ USchoropleth.prototype.initVis = function() {
     vis.wrangleData();
 }
 
-USchoropleth.prototype.wrangleData = function() {
+USchoropleth_State.prototype.wrangleData = function() {
     var vis = this;
 
     for (var i in vis.USmapJson.features) {    // for each geometry object
         for (var j in vis.homeValue) {  // for each row in the CSV
 
-            // 'MunicipalCodeFIPS' in the csv is the same as the 'COUNTY' number in the GeoJSON
-            if(vis.USmapJson.features[i].properties.COUNTY === vis.homeValue[j].MunicipalCodeFIPS) {   // if they match
-                for(var k in vis.homeValue[j]) {   // for each column in the a row within the CSV
+            // 'RegionName' in the csv is the same as the 'NAME' in the GeoJSON
+            if (vis.USmapJson.features[i].properties.NAME == vis.homeValue[j].RegionName) {   // if they match
+                console.log(vis.USmapJson.features[i].properties.NAME);
+                for (var k in vis.homeValue[j]) {   // for each column in the a row within the CSV
 
                     // we do not want to add this attributes to the properties
-                    if(k != 'RegionID' && k != 'RegionName' && k != 'State' && k != 'Metro' && k != 'StateCodeFIPS' && k != 'MunicipalCodeFIPS' && k != 'SizeRank') {
+                    if(k != 'RegionID' && k != 'RegionName' && k != 'SizeRank') {
                         if(vis.attributeArray.indexOf(k) == -1) {
                             vis.attributeArray.push(k);  // add new column headings to our array for later
                         }
@@ -77,15 +78,16 @@ USchoropleth.prototype.wrangleData = function() {
                 }
                 break;  // stop looking through the CSV since we made our match
             }
+
         }
     }
 
     console.log(vis.USmapJson);
-    d3.select('#clock').html(vis.attributeArray[vis.currentAttribute]);  // populate the clock initially with the current year
+    d3.select('#clock').html(vis.attributeArray[vis.currentAttribute].substring(0,4));  // populate the clock initially with the current year
     vis.drawMap();  // render the map now with the newly populated data object
 }
 
-USchoropleth.prototype.drawMap = function() {
+USchoropleth_State.prototype.drawMap = function() {
     var vis = this;
 
     vis.svg.selectAll(".county")
@@ -110,7 +112,7 @@ USchoropleth.prototype.drawMap = function() {
         });
 }
 
-USchoropleth.prototype.getColor = function(value, values_list) {
+USchoropleth_State.prototype.getColor = function(value, values_list) {
     var vis = this;
     vis.color
         .domain([values_list[0],values_list[1]]) ; // input uses min and max values
@@ -118,7 +120,7 @@ USchoropleth.prototype.getColor = function(value, values_list) {
     return vis.color(value);  // return that number to the caller
 }
 
-USchoropleth.prototype.getDataRange = function() {
+USchoropleth_State.prototype.getDataRange = function() {
     // function loops through all the data values from the current data attribute
     // and returns the min and max values
     var vis = this;
@@ -138,7 +140,7 @@ USchoropleth.prototype.getDataRange = function() {
 
 }
 
-USchoropleth.prototype.sequenceMap = function() {
+USchoropleth_State.prototype.sequenceMap = function() {
     var vis = this;
 
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
@@ -157,7 +159,7 @@ USchoropleth.prototype.sequenceMap = function() {
         });
 }
 
-USchoropleth.prototype.animateMap = function() {
+USchoropleth_State.prototype.animateMap = function() {
     var vis = this;
 
     var timer;  // create timer object
@@ -171,8 +173,8 @@ USchoropleth.prototype.animateMap = function() {
                         vis.currentAttribute = 0;  // or reset it to zero
                     }
                     vis.sequenceMap();  // update the representation of the map
-                    d3.select('#clock').html(vis.attributeArray[vis.currentAttribute]);  // update the clock
-                }, 500);
+                    d3.select('#clock').html(vis.attributeArray[vis.currentAttribute].substring(0,4));  // update the clock
+                }, 100);
 
                 d3.select(this).html('stop');  // change the button label to stop
                 vis.playing = true;   // change the status of the animation
@@ -183,11 +185,6 @@ USchoropleth.prototype.animateMap = function() {
             }
         });
 }
-
-
-
-
-
 
 
 
