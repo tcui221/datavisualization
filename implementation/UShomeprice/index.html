@@ -2,23 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>D3 Project</title>
+    <title>Housing Explorer</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!-- content -->
+    <h1>Housing Explorer</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <p>Image</p>
+            </div>
+            <div class="col">
+                <p>Text: US Housing Trends</p>
+            </div>
+            <div class="col">
+                <p>Image</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="wrapper" align="center">
+                    <h5>House Price in Hawaii remains at the top, California is on the rise!</h5><br>
+                    <button id="play">Play Me!</button> <br>
 
-    <div id="wrapper" align="center">
-        <h5>House Price in Hawaii remains at the top, California is on the rise!</h5><br>
-        <button id="play">Play Me!</button> <br>
-
-        <p id="yearmonth">Year:
-            <span id="clock">year</span>
-        </p>
-        <div id="US-choropleth"></div>
+                    <p id="yearmonth">Year:
+                        <span id="clock">year</span>
+                    </p>
+                    <div id="US-choropleth"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="zoom-map"><p>Visualization: Specific map</p></div>
+            </div>
+            <div class="col">
+                <p>Text</p>
+            </div>
+            <div class="col">
+                <div id="region-anal"><p>Visualization: Analysis of Regions</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="compare-reg"><p>Visualization: Compare Regions</p></div>
+            </div>
+            <div class="col">
+                <p>Text: Best Choice</p>
+            </div>
+            <div class="col">
+                <div id="compare-buy"><p>Visualization: Compare Buying and Renting</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label id="num-beds">Number of Bedrooms</label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                </select>
+                <div id="price-beds"><p>Visualization: Price and Number of Bedrooms</p></div>
+                <p>Text: Best Value</p>
+            </div>
+            <div class="col">
+                <div id="calculator"><p>Visualization: Mortgage Calculator</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Image: Houses</p>
+            </div>
+            <div class="col">
+                <p>Links to Houses</p>
+            </div>
+            <div class="col">
+                <p>Text: Conclusion</p>
+            </div>
+        </div>
     </div>
+
 
 
     <script src="js/queue.min.js"></script>
