@@ -1,11 +1,5 @@
 
-/*
- * AgeVis - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the visualization
- * @param _data						-- the actual data
- */
-
-AgeVis = function(_parentElement, _data){
+PricesVis = function(_parentElement, _data){
     this.parentElement = _parentElement;
     this.data = _data;
     this.filteredData = this.data;
@@ -13,12 +7,7 @@ AgeVis = function(_parentElement, _data){
     this.initVis();
 };
 
-
-/*
- * Initialize visualization (static content, e.g. SVG area or axes)
- */
-
-AgeVis.prototype.initVis = function(){
+PricesVis.prototype.initVis = function(){
     var vis = this;
 
     vis.margin = { top: 20, right: 20, bottom: 200, left: 60 };
@@ -32,6 +21,20 @@ AgeVis.prototype.initVis = function(){
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+    var parseTime = d3.timeParse("%Y-%m");
+
+    var years = [];
+
+    var temp = d3.keys(vis.data[0]);
+    temp.forEach( function(value, index) {
+        // This is how i'm filtering out non-date values
+        value = parseTime(value);
+
+        if (value != undefined) { years.push(value);}
+    });
+
+    console.log(years);
 
     // Scales and axes
     vis.x = d3.scaleLinear()
@@ -78,23 +81,17 @@ AgeVis.prototype.initVis = function(){
         .attr("y", vis.height + 25)
         .text("Age");
 
-
     // (Filter, aggregate, modify data)
-    vis.wrangleData();
+    // vis.wrangleData();
 };
 
 
-
-/*
- * Data wrangling
- */
-
-AgeVis.prototype.wrangleData = function(){
+PricesVis.prototype.wrangleData = function(){
     var vis = this;
 
     // Here you want to aggregate the data by age, not by day (as it is given)!
     // Prepare empty array
-    var votesPerAge = d3.range(0,99).map(function() {
+    var averagePricePerYear = d3.range(0,99).map(function() {
         return 0;
     });
 
@@ -114,11 +111,7 @@ AgeVis.prototype.wrangleData = function(){
 };
 
 
-/*
- * The drawing function
- */
-
-AgeVis.prototype.updateVis = function(){
+PricesVis.prototype.updateVis = function(){
     var vis = this;
 
     // Update domains
@@ -140,7 +133,7 @@ AgeVis.prototype.updateVis = function(){
 };
 
 
-AgeVis.prototype.onSelectionChange = function(selectionStart, selectionEnd){
+PricesVis.prototype.onSelectionChange = function(selectionStart, selectionEnd){
     var vis = this;
 
     // Filter original unfiltered data depending on selected time period (brush)
