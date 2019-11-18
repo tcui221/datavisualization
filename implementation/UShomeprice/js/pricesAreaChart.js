@@ -38,7 +38,6 @@ PricesVis.prototype.initVis = function(){
     vis.yAxis = d3.axisLeft()
         .scale(vis.y);
 
-
     // Append a path for the area function, so that it is later behind the brush overlay
     vis.pricePath = vis.svg.append("path")
         .attr("class", "area area-prices");
@@ -78,35 +77,52 @@ PricesVis.prototype.wrangleData = function(){
 
     var parseTime = d3.timeParse("%Y-%m");
 
-    var years = [];
+    vis.wrangledData = [];
     var totalValidDates = 0;
-    var temp = d3.keys(vis.data[0]);
-    temp.forEach( function(value, index) {
-        // This is how i'm filtering out non-date values
-        value = parseTime(value);
 
-        if (value != undefined) {
-            totalValidDates++;
-            years.push(value);
+    vis.data.forEach( function(value, index) {
+
+        var tempDates = d3.keys(vis.data[index]);
+        var tempValues = d3.values(vis.data[index]);
+
+        var temp = [];
+
+        for (var i = 0; i < tempDates.length; i ++) {
+            temp.push({"date": tempDates[i], "value": tempValues[i]});
         }
+
+        // console.log("temp starting");
+        // console.log(temp);
+
+        // Filtering out non-date values
+        temp.forEach(function (item, index) {
+            item['date'] = parseTime(item['date']);
+            item['value'] = +item['value'];
+        });
+
+        temp = temp.filter(function (item, index) {
+            return (item['date'] != null);
+        });
+
+        vis.wrangledData.push(temp);
     });
 
-    // console.log(years);
+    console.log(vis.wrangledData);
     // console.log(totalValidDates);
 
-    // Here you want to aggregate the data by date, not by state
+
     // Prepare empty array
-    var averagePricePerYear = d3.range(0,totalValidDates - 1).map(function() {
+    var averagePricePerYear = d3.range(0, totalValidDates - 1).map(function() {
         return 0;
     });
 
     // Iterate over each day and fill array
-    vis.filteredData.forEach(function(d){
-        d3.range(0, totalValidDates - 1).forEach(function(i){
-            console.log(d);
-            // averagePricePerYear[i] += d[i];
-        });
-    });
+    // vis.wrangledData.forEach(function(d){
+    //     d3.range(0, totalValidDates - 1).forEach(function(i){
+    //         // console.log(d);
+    //         averagePricePerYear[i] += d[i];
+    //     });
+    // });
 
     vis.displayData = averagePricePerYear;
 
