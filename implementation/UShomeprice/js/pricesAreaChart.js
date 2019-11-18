@@ -117,14 +117,21 @@ PricesVis.prototype.wrangleData = function(){
 
     console.log(vis.displayData);
 
-    // vis.updateVis();
+    vis.updateVis();
 };
 
 
 PricesVis.prototype.updateVis = function(){
     var vis = this;
 
-    vis.y.domain(d3.extent(vis.displayData));
+    // Update domains
+    vis.x.domain(d3.extent(vis.displayData, function(d) {
+        return d['date'];
+    }));
+
+    vis.y.domain(d3.extent(vis.displayData, function(d) {
+        return d['value'];
+    }));
 
     vis.pricePath
         .datum(vis.displayData)
