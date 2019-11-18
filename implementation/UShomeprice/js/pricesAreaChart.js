@@ -29,7 +29,7 @@ PricesVis.prototype.initVis = function(){
     vis.y = d3.scaleLinear()
         .range([vis.height, 0]);
 
-    var formatTime = d3.timeFormat("%b %d");
+    var formatTime = d3.timeFormat("%Y, %m");
 
     vis.xAxis = d3.axisBottom()
         .scale(vis.x)
@@ -44,7 +44,7 @@ PricesVis.prototype.initVis = function(){
 
     // Define the D3 path generator
     vis.area = d3.area()
-        .x(function(d,index) { return vis.x(index); })
+        .x(function(d, index) { return vis.x(index); })
         .y0(vis.height)
         .y1(function(d) { return vis.y(d); });
 
@@ -64,7 +64,7 @@ PricesVis.prototype.initVis = function(){
         .attr("y", -8)
         .text("Average Prices");
     vis.svg.append("text")
-        .attr("x", vis.width - 5)
+        .attr("x", vis.width - 100)
         .attr("y", vis.height + 25)
         .text("Time");
 
@@ -76,9 +76,7 @@ PricesVis.prototype.wrangleData = function(){
     var vis = this;
 
     var parseTime = d3.timeParse("%Y-%m");
-
     vis.wrangledData = [];
-    var totalValidDates = 0;
 
     vis.data.forEach( function(value, index) {
 
@@ -90,9 +88,6 @@ PricesVis.prototype.wrangleData = function(){
         for (var i = 0; i < tempDates.length; i ++) {
             temp.push({"date": tempDates[i], "value": tempValues[i]});
         }
-
-        // console.log("temp starting");
-        // console.log(temp);
 
         // Filtering out non-date values
         temp.forEach(function (item, index) {
@@ -107,24 +102,20 @@ PricesVis.prototype.wrangleData = function(){
         vis.wrangledData.push(temp);
     });
 
-    console.log(vis.wrangledData);
-    // console.log(totalValidDates);
-
 
     // Prepare empty array
-    var averagePricePerYear = d3.range(0, totalValidDates - 1).map(function() {
-        return 0;
-    });
+    var averagePricePerYear = vis.wrangledData[0];
 
     // Iterate over each day and fill array
-    // vis.wrangledData.forEach(function(d){
-    //     d3.range(0, totalValidDates - 1).forEach(function(i){
-    //         // console.log(d);
-    //         averagePricePerYear[i] += d[i];
-    //     });
-    // });
+    vis.wrangledData.forEach(function(d){
+        d3.range(0, 281).forEach(function(i){
+            averagePricePerYear[i]['value'] += d[i]['value'];
+        });
+    });
 
     vis.displayData = averagePricePerYear;
+
+    console.log(vis.displayData);
 
     // vis.updateVis();
 };
@@ -149,9 +140,9 @@ PricesVis.prototype.onSelectionChange = function(selectionStart, selectionEnd){
     var vis = this;
 
     // Filter original unfiltered data depending on selected time period (brush)
-    vis.filteredData = vis.data.filter(function(d){
-        return d.time >= selectionStart && d.time <= selectionEnd;
-    });
+    // vis.filteredData = vis.data.filter(function(d){
+    //     return d.time >= selectionStart && d.time <= selectionEnd;
+    // });
 
     vis.wrangleData();
 };
