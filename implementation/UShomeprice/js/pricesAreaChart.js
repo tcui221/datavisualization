@@ -42,13 +42,6 @@ PricesVis.prototype.initVis = function(){
     vis.pricePath = vis.svg.append("path")
         .attr("class", "area area-prices");
 
-    // Define the D3 path generator
-    vis.area = d3.area()
-        .x(function(d, index) { return vis.x(index); })
-        .y0(vis.height)
-        .y1(function(d) { return vis.y(d); });
-
-    vis.area.curve(d3.curveCardinal);
 
     // Append axes
     vis.svg.append("g")
@@ -132,6 +125,13 @@ PricesVis.prototype.updateVis = function(){
     vis.y.domain(d3.extent(vis.displayData, function(d) {
         return d['value'];
     }));
+
+    // Define the D3 path generator
+    vis.area = d3.area()
+        .curve(d3.curveCardinal)
+        .x(function(d, index) { return vis.x(d['date']); })
+        .y0(vis.height)
+        .y1(function(d) { return vis.y(d['value']); });
 
     vis.pricePath
         .datum(vis.displayData)
