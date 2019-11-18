@@ -13,14 +13,16 @@ USchoropleth_State = function(_parentElement, _map, _home){
     this.attributeArray = [];
     this.currentAttribute = 0;
     this.playing = false;
+    this.zoomed = false;
 
     // DEBUG RAW DATA
-    console.log(this.USmapJson);
-    console.log(this.homeValue);
+    // console.log(this.USmapJson);
+    // console.log(this.homeValue);
 
     this.initVis();
     this.animateMap();
 };
+
 
 /*
  * Initialize visualization (static content, e.g. SVG area or axes)
@@ -30,6 +32,7 @@ USchoropleth_State.prototype.initVis = function() {
     var vis = this;
 
     vis.margin = {top: 40, right: 60, bottom: 60, left: 60};
+    vis.padding = 20;
 
     vis.width = 1000 - vis.margin.left - vis.margin.right,
         vis.height = 600 - vis.margin.top - vis.margin.bottom;
@@ -40,7 +43,6 @@ USchoropleth_State.prototype.initVis = function() {
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
-
 
     // Create a projection and specify it in a new geo path generator
     vis.projection = d3.geoAlbersUsa()
@@ -55,7 +57,7 @@ USchoropleth_State.prototype.initVis = function() {
         .range(colorbrewer.YlOrBr[9]);
 
     vis.wrangleData();
-}
+};
 
 USchoropleth_State.prototype.wrangleData = function() {
     var vis = this;
@@ -65,7 +67,7 @@ USchoropleth_State.prototype.wrangleData = function() {
 
             // 'RegionName' in the csv is the same as the 'NAME' in the GeoJSON
             if (vis.USmapJson.features[i].properties.NAME == vis.homeValue[j].RegionName) {   // if they match
-                console.log(vis.USmapJson.features[i].properties.NAME);
+                // console.log(vis.USmapJson.features[i].properties.NAME);
                 for (var k in vis.homeValue[j]) {   // for each column in the a row within the CSV
 
                     // we do not want to add this attributes to the properties
@@ -82,20 +84,29 @@ USchoropleth_State.prototype.wrangleData = function() {
         }
     }
 
-    console.log(vis.USmapJson);
+    // console.log(vis.USmapJson);
     d3.select('#clock').html(vis.attributeArray[vis.currentAttribute].substring(0,4));  // populate the clock initially with the current year
     vis.drawMap();  // render the map now with the newly populated data object
-}
+};
 
 USchoropleth_State.prototype.drawMap = function() {
     var vis = this;
 
-    vis.svg.selectAll(".county")
+    vis.countyPaths = vis.svg.selectAll(".county")
         .data(vis.USmapJson.features)
         .enter().append("path")
         .attr("class", "county")
         .attr("id", function(d) { return "code_" + d.properties.GEO_ID; }, true)  // give each a unique id for access later
-        .attr("d", vis.path);
+        .attr("d", vis.path)
+        .on('click', function (d) {
+            if (!vis.zoomed) {
+                vis.zoomed = true;
+                vis.stateZoom(d.properties.GEO_ID);
+            } else {
+                vis.zoomed = false;
+                vis.usZoom();
+            }
+        });
 
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
 
@@ -110,7 +121,7 @@ USchoropleth_State.prototype.drawMap = function() {
                 return "#FFFFFF";
             }
         });
-}
+};
 
 USchoropleth_State.prototype.getColor = function(value, values_list) {
     var vis = this;
@@ -118,7 +129,7 @@ USchoropleth_State.prototype.getColor = function(value, values_list) {
         .domain([values_list[0],values_list[1]]) ; // input uses min and max values
 
     return vis.color(value);  // return that number to the caller
-}
+};
 
 USchoropleth_State.prototype.getDataRange = function() {
     // function loops through all the data values from the current data attribute
@@ -138,7 +149,7 @@ USchoropleth_State.prototype.getDataRange = function() {
         });
     return [min,max];
 
-}
+};
 
 USchoropleth_State.prototype.sequenceMap = function() {
     var vis = this;
@@ -157,7 +168,7 @@ USchoropleth_State.prototype.sequenceMap = function() {
                 return "#FFFFFF";
             }
         });
-}
+};
 
 USchoropleth_State.prototype.animateMap = function() {
     var vis = this;
@@ -184,7 +195,37 @@ USchoropleth_State.prototype.animateMap = function() {
                 vis.playing = false;   // change the status again
             }
         });
-}
+};
+
+USchoropleth_State.prototype.usZoom = function() {
+    var vis = this;
+
+    console.log("inside us zoom!!");
+
+    var t = d3.transition().duration(800);
+
+    vis.projection.scale(vis.height * 2).translate([vis.width / 2, vis.height / 2]);
+
+    vis.countyPaths.transition(t)
+        .attr('d', vis.path);
+
+};
+
+USchoropleth_State.prototype.stateZoom = function(id) {
+    var vis = this;
+
+    var state = vis.USmapJson.features.find(function (d) { return d.properties.GEO_ID === id });
+
+    var t = d3.transition().duration(800);
+
+    vis.projection.fitExtent(
+        [[vis.padding, vis.padding], [vis.width - vis.padding, vis.height - vis.padding]],
+        state
+    );
+
+    vis.countyPaths.transition(t)
+        .attr('d', vis.path);
+};
 
 
 

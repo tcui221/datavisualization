@@ -21,3 +21,11 @@ h5 {
 #yearmonth {
 	color: maroon;
 }
+
+path {
+	stroke: #333;
+	stroke-width: 1;
+}
+path:hover {
+	stroke-width: 3;
+}
