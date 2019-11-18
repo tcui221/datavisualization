@@ -22,38 +22,26 @@ PricesVis.prototype.initVis = function(){
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-    var parseTime = d3.timeParse("%Y-%m");
-
-    var years = [];
-
-    var temp = d3.keys(vis.data[0]);
-    temp.forEach( function(value, index) {
-        // This is how i'm filtering out non-date values
-        value = parseTime(value);
-
-        if (value != undefined) { years.push(value);}
-    });
-
-    console.log(years);
-
     // Scales and axes
-    vis.x = d3.scaleLinear()
-        .range([0, vis.width])
-        .domain([0,99]);
+    vis.x = d3.scaleTime()
+        .range([0, vis.width]);
 
     vis.y = d3.scaleLinear()
         .range([vis.height, 0]);
 
+    var formatTime = d3.timeFormat("%b %d");
+
     vis.xAxis = d3.axisBottom()
-        .scale(vis.x);
+        .scale(vis.x)
+        .tickFormat(function(d) { return formatTime(d); });
 
     vis.yAxis = d3.axisLeft()
         .scale(vis.y);
 
 
     // Append a path for the area function, so that it is later behind the brush overlay
-    vis.agePath = vis.svg.append("path")
-        .attr("class", "area area-age");
+    vis.pricePath = vis.svg.append("path")
+        .attr("class", "area area-prices");
 
     // Define the D3 path generator
     vis.area = d3.area()
@@ -75,59 +63,67 @@ PricesVis.prototype.initVis = function(){
     vis.svg.append("text")
         .attr("x", -50)
         .attr("y", -8)
-        .text("Votes");
+        .text("Average Prices");
     vis.svg.append("text")
         .attr("x", vis.width - 5)
         .attr("y", vis.height + 25)
-        .text("Age");
+        .text("Time");
 
-    // (Filter, aggregate, modify data)
-    // vis.wrangleData();
+    vis.wrangleData();
 };
 
 
 PricesVis.prototype.wrangleData = function(){
     var vis = this;
 
-    // Here you want to aggregate the data by age, not by day (as it is given)!
+    var parseTime = d3.timeParse("%Y-%m");
+
+    var years = [];
+    var totalValidDates = 0;
+    var temp = d3.keys(vis.data[0]);
+    temp.forEach( function(value, index) {
+        // This is how i'm filtering out non-date values
+        value = parseTime(value);
+
+        if (value != undefined) {
+            totalValidDates++;
+            years.push(value);
+        }
+    });
+
+    // console.log(years);
+    // console.log(totalValidDates);
+
+    // Here you want to aggregate the data by date, not by state
     // Prepare empty array
-    var averagePricePerYear = d3.range(0,99).map(function() {
+    var averagePricePerYear = d3.range(0,totalValidDates - 1).map(function() {
         return 0;
     });
 
-    // Aggregate by category:
     // Iterate over each day and fill array
-    vis.filteredData.forEach(function(day){
-        d3.range(0,99).forEach(function(i){
-            votesPerAge[i] += day.ages[i];
+    vis.filteredData.forEach(function(d){
+        d3.range(0, totalValidDates - 1).forEach(function(i){
+            console.log(d);
+            // averagePricePerYear[i] += d[i];
         });
     });
 
-    // Set data to visualize
-    vis.displayData = votesPerAge;
+    vis.displayData = averagePricePerYear;
 
-    // Update the visualization
-    vis.updateVis();
+    // vis.updateVis();
 };
 
 
 PricesVis.prototype.updateVis = function(){
     var vis = this;
 
-    // Update domains
     vis.y.domain(d3.extent(vis.displayData));
 
-
-    // Call the area function and update the path
-    // D3 uses each data point and passes it to the area function.
-    // The area function translates the data into positions on the path in the SVG.
-    vis.agePath
+    vis.pricePath
         .datum(vis.displayData)
         .transition()
         .attr("d", vis.area);
 
-
-    // Call axis function with the new domain
     vis.svg.select(".x-axis").call(vis.xAxis);
     vis.svg.select(".y-axis").call(vis.yAxis);
 };
