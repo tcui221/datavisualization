@@ -1,6 +1,7 @@
 
 
 var USchoro;
+var pricesAreaChart;
 
 
 // queue()
@@ -17,6 +18,9 @@ queue()
     .defer(d3.csv, "data/State_Zhvi_AllHomes.csv")
     .await(function(error, USmapJson, HomeValueCsv) {
 
-        USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv)
+        USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
+
+        pricesAreaChart = new AgeVis("agevis", allData, metaData);
+        // var prioVis = new PrioVis("priovis", allData, metaData);
 
     });

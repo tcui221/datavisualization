@@ -11,7 +11,7 @@
     <!-- content -->
     <h1>Housing Prices in the US</h1>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="vis-header">
             <div class="col">
                 <p>Image</p>
             </div>
@@ -22,7 +22,7 @@
                 <p>Image</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="zoomable-map">
             <div class="col">
                 <div id="wrapper" align="center">
                     <h5>House Price in Hawaii remains at the top, California is on the rise!</h5><br>
@@ -35,14 +35,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <div id="zoom-map"><p>Visualization: Specific map</p></div>
+            <div class="col-md-4">
+                <div id="agevis"></div>
             </div>
-            <div class="col">
-                <p>Text</p>
-            </div>
-            <div class="col">
-                <div id="region-anal"><p>Visualization: Analysis of Regions</p></div>
+            <div class="col-md-8">
+                <div id="priovis"></div>
             </div>
         </div>
         <div class="row">
@@ -86,9 +83,6 @@
         </div>
     </div>
 
-
-
-
     <script src="js/queue.min.js"></script>
     <script src="js/topojson.min.js"></script>
     <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
@@ -97,10 +91,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/d3.min.js"></script>
-<!--    county vis -->
+    <!--    county vis -->
     <script src="js/choropleth.js"></script>
-<!--    state vis -->
+    <!-- Visualization objects -->
     <script src="js/StateChoropleth.js"></script>
+    <script src="js/draftvis.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ USchoropleth_State.prototype.initVis = function() {
     vis.margin = {top: 40, right: 60, bottom: 60, left: 60};
     vis.padding = 20;
 
-    vis.width = 1000 - vis.margin.left - vis.margin.right,
+    vis.width = 900 - vis.margin.left - vis.margin.right,
         vis.height = 600 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
@@ -47,7 +47,10 @@ USchoropleth_State.prototype.initVis = function() {
     // Create a projection and specify it in a new geo path generator
     vis.projection = d3.geoAlbersUsa()
         .translate([vis.width / 2, vis.height / 2])
-        .scale(1000);
+        .precision(0)
+        .scale(vis.height * 2);
+    // .scale(1000)
+    // .scale(vis.height * 2).translate([vis.width / 2, vis.height / 2]);
 
     vis.path = d3.geoPath()
         .projection(vis.projection);
@@ -197,10 +200,12 @@ USchoropleth_State.prototype.animateMap = function() {
         });
 };
 
+/*
+ * See entire US map
+ */
+
 USchoropleth_State.prototype.usZoom = function() {
     var vis = this;
-
-    console.log("inside us zoom!!");
 
     var t = d3.transition().duration(800);
 
@@ -208,8 +213,11 @@ USchoropleth_State.prototype.usZoom = function() {
 
     vis.countyPaths.transition(t)
         .attr('d', vis.path);
-
 };
+
+/*
+ * Zoom in to a state
+ */
 
 USchoropleth_State.prototype.stateZoom = function(id) {
     var vis = this;
