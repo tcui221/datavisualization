@@ -20,6 +20,6 @@ queue()
 
         USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 
-        pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+        // pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 
     });

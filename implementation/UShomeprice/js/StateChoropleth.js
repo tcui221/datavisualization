@@ -59,6 +59,19 @@ USchoropleth_State.prototype.initVis = function() {
     vis.color = d3.scaleQuantize()
         .range(colorbrewer.YlOrBr[9]);
 
+    vis.x = d3.scaleTime()
+        .range([0, vis.width]);
+        // .domain([0,281]);
+
+    vis.xAxis = d3.axisBottom()
+        .scale(vis.x);
+
+    vis.svg.append("g")
+        .attr("class", "x-axis axis")
+        .attr("transform", "translate(20, -10) ");
+
+    vis.parseTime = d3.timeParse("%Y-%m");
+
     vis.wrangleData();
 };
 
@@ -95,6 +108,26 @@ USchoropleth_State.prototype.wrangleData = function() {
 USchoropleth_State.prototype.drawMap = function() {
     var vis = this;
 
+    vis.x
+        .domain(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
+
+    console.log(vis.USmapJson.features);
+    console.log(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
+    console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute+1])));
+
+
+    vis.svg.select(".x-axis").call(vis.xAxis);
+
+    vis.timeline = vis.svg.append("image")
+        .data(vis.USmapJson.features)
+        .attr("xlink:href", "img/icon-house.png")
+        .attr("class", "icon")
+        .attr("width", 50)
+        .attr("height", 50)
+        .attr("y", -40)
+        .attr("x", vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
+
+
     vis.countyPaths = vis.svg.selectAll(".county")
         .data(vis.USmapJson.features)
         .enter().append("path")
@@ -124,6 +157,8 @@ USchoropleth_State.prototype.drawMap = function() {
                 return "#FFFFFF";
             }
         });
+
+
 };
 
 USchoropleth_State.prototype.getColor = function(value, values_list) {
@@ -157,11 +192,13 @@ USchoropleth_State.prototype.getDataRange = function() {
 USchoropleth_State.prototype.sequenceMap = function() {
     var vis = this;
 
+    // console.log(this.data);
+
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
     d3.selectAll('.county').transition()  //select all the countries and prepare for a transition to new values
-        .duration(500)  // give it a smooth time period for the transition
+        .duration(200)  // give it a smooth time period for the transition
         .attr('fill', function(d) {
-
+            console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
             var value = d.properties[vis.attributeArray[vis.currentAttribute]];
             if (value) {
                 //If value exists…
@@ -171,6 +208,11 @@ USchoropleth_State.prototype.sequenceMap = function() {
                 return "#FFFFFF";
             }
         });
+
+    d3.select('.icon').transition()
+        .duration(200)
+        // .attr('y', -20)
+        .attr('x', vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
 };
 
 USchoropleth_State.prototype.animateMap = function() {
@@ -185,10 +227,15 @@ USchoropleth_State.prototype.animateMap = function() {
                         vis.currentAttribute +=1;  // increment the current attribute counter
                     } else {
                         vis.currentAttribute = 0;  // or reset it to zero
+
+                        d3.select('.icon')
+                            .transition()
+                            .duration(0)
+                            .attr("x", 0);
                     }
                     vis.sequenceMap();  // update the representation of the map
                     d3.select('#clock').html(vis.attributeArray[vis.currentAttribute].substring(0,4));  // update the clock
-                }, 100);
+                }, 200);
 
                 d3.select(this).html('stop');  // change the button label to stop
                 vis.playing = true;   // change the status of the animation
