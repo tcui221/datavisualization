@@ -45,7 +45,7 @@ img {
 	text-align: left;
 	margin-top: 20px;
 	margin-right: 10px;
-	margin-left: 100px;
+	margin-left: 50px;
 }
 
 h5 {
@@ -65,6 +65,10 @@ path {
 }
 path:hover {
 	stroke-width: 3;
+}
+
+#pricesAreaChart {
+	margin-top: 50px;
 }
 
 .axis line,
@@ -89,5 +93,5 @@ path:hover {
 }
 
 .area.area-prices {
-	fill: #94a97a;
+	fill: #a94600;
 }
