@@ -32,7 +32,7 @@ img {
 	margin-left: auto;
 }
 
-#intro-paragraph-info {
+.intro-paragraph-info {
 	text-indent: 2em;
 	text-align: left;
 	margin-top: 20px;
@@ -50,6 +50,8 @@ img {
 
 h5 {
 	color: maroon;
+	margin-left: 180px;
+	margin-right: 180px;
 }
 
 #clock {
@@ -57,6 +59,15 @@ h5 {
 }
 #yearmonth {
 	color: maroon;
+}
+
+.form-inline {
+	margin-left: 500px;
+	float: right;
+}
+
+.form-control {
+	margin: 5px;
 }
 
 path {

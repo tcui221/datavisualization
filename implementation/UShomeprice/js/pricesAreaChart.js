@@ -39,7 +39,6 @@ PricesVis.prototype.initVis = function(){
     vis.yAxis = d3.axisLeft()
         .scale(vis.y)
         .tickFormat(function(d) {
-            console.log(d);
             return formatMillions(d); });
 
     // Append a path for the area function, so that it is later behind the brush overlay
@@ -97,7 +96,6 @@ PricesVis.prototype.wrangleData = function(){
 
         vis.wrangledData.push(temp);
     });
-
 
     // Prepare empty array
     var averagePricePerYear = vis.wrangledData[0];

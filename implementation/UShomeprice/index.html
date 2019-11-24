@@ -17,7 +17,7 @@
                     A modest 1,130-square-foot cottage in Palo Alto, California listed
                     and sold for 2 million dollars in 2017
                 </p>
-                <p id="intro-paragraph-info">
+                <p class="intro-paragraph-info">
                         We’re seeing one of the longest periods of economic growth in US history.
                     When the housing market crashed in 2008, it led to one of the worst economic
                     periods since the Great Depression, often called the Great Recession. The economy has
@@ -32,14 +32,31 @@
         <div class="row" id="zoomable-map">
             <div class="col">
                 <div id="wrapper" align="center">
-                    <h5>House prices in Hawaii remain the highest, while prices in California are on the rise</h5><br>
-                    <button id="play">Play Me</button> <br>
-                    <p id="yearmonth">Year:
-                        <span id="clock">year</span>
+                    <h5>House prices in Hawaii remain the highest, while prices in California are on the rise.
+                        Click on a state to see more detail on how its prices have changed in recent years.
+                    </h5><br>
+                    <button id="play">Play Animation</button> <br>
+                    <p id="yearmonth"> Year:
+                        <span id="clock"> year </span>
                     </p>
                     <div id="US-choropleth"></div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <!-- Let's discuss whether it would be better to have this form, or select from the map    -->
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="user-selection">View data for </label>
+                    <select class="form-control" id="user-selection" onchange="">
+                        <option value="All">All</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arkansas">Arkansas</option>
+                    </select>
+                </div>
+            </form>
         </div>
         <div class="row">
             <div class="col-md-4">

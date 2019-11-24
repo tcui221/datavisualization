@@ -112,8 +112,8 @@ USchoropleth_State.prototype.drawMap = function() {
         .domain(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
 
     console.log(vis.USmapJson.features);
-    console.log(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
-    console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute+1])));
+    // console.log(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
+    // console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute+1])));
 
 
     vis.svg.select(".x-axis").call(vis.xAxis);
@@ -135,14 +135,22 @@ USchoropleth_State.prototype.drawMap = function() {
         .attr("id", function(d) { return "code_" + d.properties.GEO_ID; }, true)  // give each a unique id for access later
         .attr("d", vis.path)
         .on('click', function (d) {
-            if (!vis.zoomed) {
-                vis.zoomed = true;
-                vis.stateZoom(d.properties.GEO_ID);
-            } else {
-                vis.zoomed = false;
-                vis.usZoom();
-            }
+            // Update area chart to show prices for state clicked
+            choroplethClicked(d.properties.NAME);
         });
+
+        /* Below is code that controls zooming into individual states.
+        * For now, we will not use zoom */
+
+        // .on('click', function (d) {
+        //     if (!vis.zoomed) {
+        //         vis.zoomed = true;
+        //         vis.stateZoom(d.properties.GEO_ID);
+        //     } else {
+        //         vis.zoomed = false;
+        //         vis.usZoom();
+        //     }
+        // });
 
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
 
@@ -192,13 +200,11 @@ USchoropleth_State.prototype.getDataRange = function() {
 USchoropleth_State.prototype.sequenceMap = function() {
     var vis = this;
 
-    // console.log(this.data);
-
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
     d3.selectAll('.county').transition()  //select all the countries and prepare for a transition to new values
         .duration(200)  // give it a smooth time period for the transition
         .attr('fill', function(d) {
-            console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
+            // console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
             var value = d.properties[vis.attributeArray[vis.currentAttribute]];
             if (value) {
                 //If value exists…
@@ -237,11 +243,11 @@ USchoropleth_State.prototype.animateMap = function() {
                     d3.select('#clock').html(vis.attributeArray[vis.currentAttribute].substring(0,4));  // update the clock
                 }, 200);
 
-                d3.select(this).html('stop');  // change the button label to stop
+                d3.select(this).html('Stop');  // change the button label to stop
                 vis.playing = true;   // change the status of the animation
             } else {    // else if is currently playing
                 clearInterval(timer);   // stop the animation by clearing the interval
-                d3.select(this).html('play');   // change the button label to play
+                d3.select(this).html('Play');   // change the button label to play
                 vis.playing = false;   // change the status again
             }
         });

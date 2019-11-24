@@ -23,3 +23,13 @@ queue()
         pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 
     });
+
+
+function choroplethClicked(stateSelected) {
+
+
+    pricesAreaChart.x.domain(selectionDomain);
+
+    // Update focus chart (detailed information)
+    pricesAreaChart.wrangleData();
+}
