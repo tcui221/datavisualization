@@ -32,7 +32,15 @@ img {
 	margin-left: auto;
 }
 
-#text-info {
+#intro-paragraph-info {
+	text-indent: 2em;
+	text-align: left;
+	margin-top: 20px;
+	margin-right: 180px;
+	margin-left: 180px;
+}
+
+#area-chart-info {
 	text-indent: 2em;
 	text-align: left;
 	margin-top: 20px;
