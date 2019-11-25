@@ -106,3 +106,7 @@ path:hover {
 .area.area-prices {
 	fill: #a94600;
 }
+
+#homelessChart .bar{
+	fill: cornflowerblue;
+}

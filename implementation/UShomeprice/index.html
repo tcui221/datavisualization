@@ -91,19 +91,21 @@
         </div>
         <div class="row">
             <div class="col">
-                <label id="num-beds">Number of Bedrooms</label>
-                <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5+</option>
-                </select>
-                <div id="price-beds"><p>Visualization: Price and Number of Bedrooms</p></div>
-                <p>Text: Best Value</p>
+                <h2>Homelessness</h2>
+                <p>While we cannot draw a direct line from increasing housing costs to homelessness,
+                some relationship between the two should be considered. The chart to the right shows the percentage
+                of homeless people in each state in the selected year.</p>
+                <h2>Year:</h2>
+                <input type="radio" name="hlyear" value="2010" checked>2010<br>
+                <input type="radio" name="hlyear" value="2011">2011<br>
+                <input type="radio" name="hlyear" value="2012">2012<br>
+                <input type="radio" name="hlyear" value="2013">2013<br>
+                <input type="radio" name="hlyear" value="2014">2014<br>
+                <input type="radio" name="hlyear" value="2015">2015<br>
+                <input type="radio" name="hlyear" value="2016">2016<br>
             </div>
             <div class="col">
-                <div id="calculator"><p>Visualization: Mortgage Calculator</p></div>
+                <div id="homelessChart"></div>
             </div>
         </div>
         <div class="row">
@@ -132,6 +134,7 @@
     <!-- Visualization objects -->
     <script src="js/StateChoropleth.js"></script>
     <script src="js/pricesAreaChart.js"></script>
+    <script src="js/hlBars.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

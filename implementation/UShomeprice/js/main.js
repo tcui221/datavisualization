@@ -16,11 +16,14 @@ queue()
     .defer(d3.json, "data/State_USgeojson.json")
     // .defer(d3.csv, "data/State_MedianHomeValuePerSqft.csv")
     .defer(d3.csv, "data/State_Zhvi_AllHomes.csv")
-    .await(function(error, USmapJson, HomeValueCsv) {
+    .defer(d3.csv,'data/Homelessness_Ratios.csv')
+    .await(function(error, USmapJson, HomeValueCsv,homelessRatios) {
 
         USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 
         pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+
+        var hlBars=new HLBars('#homelessChart',homelessRatios);
 
     });
 
