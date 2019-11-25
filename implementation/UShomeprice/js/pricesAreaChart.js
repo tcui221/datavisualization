@@ -80,14 +80,16 @@ PricesVis.prototype.wrangleData = function(){
 
     vis.filteredData.forEach( function(value, index) {
 
-        console.log(value);
+        // console.log(value);
 
-        var tempDates = d3.keys(vis.data[index]);
-        var tempValues = d3.values(vis.data[index]);
+        var tempDates = d3.keys(value);
+        var tempValues = d3.values(value);
 
         var temp = [];
         for (var i = 0; i < tempDates.length; i ++) {
-            temp.push({"date": tempDates[i], "value": tempValues[i]});
+            if (tempDates[i] != "SizeRank" && tempDates[i] != "RegionName" && tempDates[i] !="RegionID") {
+                temp.push({"date": tempDates[i], "value": tempValues[i]});
+            }
         }
 
         // Filtering out non-date values
@@ -105,6 +107,7 @@ PricesVis.prototype.wrangleData = function(){
     });
 
     // console.log(vis.filteredData);
+    // console.log(vis.wrangledData);
 
     // Prepare empty array
     var averagePricePerYear = vis.wrangledData[0];
@@ -118,6 +121,7 @@ PricesVis.prototype.wrangleData = function(){
 
     vis.displayData = averagePricePerYear;
 
+    console.log(vis.displayData);
     vis.updateVis();
 };
 
@@ -142,16 +146,12 @@ PricesVis.prototype.updateVis = function(){
         .y0(vis.height)
         .y1(function(d) { return vis.y(d['value']); });
 
-    // vis.pricePath = vis.svg.selectAll(".area-prices")
-    //     .datum(vis.displayData);
-
-    vis.pricePath = vis.pricePath.enter()
-        .append("path")
-        .attr("class", "area area-prices")
-        .merge(vis.pricePath);
-
-    vis.pricePath.transition()
-        .attr("d", vis.area);
+    vis.pricePath
+        .datum(vis.displayData)
+        .transition()
+        .ease(d3.easeLinear)
+        .attr("d", vis.area)
+        .attr("class", "area area-prices");
 
 
     vis.svg.select(".x-axis").call(vis.xAxis);
@@ -174,6 +174,8 @@ PricesVis.prototype.onSelectionChange = function(stateSelected){
         }
     });
 
+    console.log(vis.selectedState);
+    console.log(temp);
 
     vis.filteredData = temp;
 

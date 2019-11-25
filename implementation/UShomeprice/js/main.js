@@ -3,7 +3,7 @@
 var USchoro;
 var pricesAreaChart;
 var USscatter;
-
+var hlBars;
 
 // queue()
 //     // geoJSON data is obtained from https://eric.clst.org/tech/usgeojson/
@@ -57,7 +57,7 @@ queue()
         USscatter = new ScatterVis("US-scatter", jsonData);
         pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 
-        var hlBars=new HLBars('#homelessChart',homelessRatios);
+        hlBars=new HLBars('#homelessChart',homelessRatios);
 
     });
 
