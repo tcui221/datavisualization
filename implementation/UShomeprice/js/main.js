@@ -51,7 +51,19 @@ queue()
         console.log(jsonData);
 
         USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
+
         USscatter = new ScatterVis("US-scatter", jsonData);
-        // pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+        pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+
 
     });
+
+
+function choroplethClicked(stateSelected) {
+
+
+    pricesAreaChart.x.domain(selectionDomain);
+
+    // Update focus chart (detailed information)
+    pricesAreaChart.wrangleData();
+}

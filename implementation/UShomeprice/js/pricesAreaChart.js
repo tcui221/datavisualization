@@ -10,7 +10,7 @@ PricesVis = function(_parentElement, _data){
 PricesVis.prototype.initVis = function(){
     var vis = this;
 
-    vis.margin = { top: 20, right: 20, bottom: 200, left: 60 };
+    vis.margin = { top: 20, right: 60, bottom: 200, left: 60 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right,
         vis.height = 500 - vis.margin.top - vis.margin.bottom;
@@ -29,19 +29,21 @@ PricesVis.prototype.initVis = function(){
     vis.y = d3.scaleLinear()
         .range([vis.height, 0]);
 
-    var formatTime = d3.timeFormat("%Y, %m");
+    var formatTime = d3.timeFormat("%b, %Y");
+    var formatMillions = d3.format(".2s");
 
     vis.xAxis = d3.axisBottom()
         .scale(vis.x)
         .tickFormat(function(d) { return formatTime(d); });
 
     vis.yAxis = d3.axisLeft()
-        .scale(vis.y);
+        .scale(vis.y)
+        .tickFormat(function(d) {
+            return formatMillions(d); });
 
     // Append a path for the area function, so that it is later behind the brush overlay
     vis.pricePath = vis.svg.append("path")
         .attr("class", "area area-prices");
-
 
     // Append axes
     vis.svg.append("g")
@@ -57,8 +59,8 @@ PricesVis.prototype.initVis = function(){
         .attr("y", -8)
         .text("Average Prices");
     vis.svg.append("text")
-        .attr("x", vis.width - 100)
-        .attr("y", vis.height + 25)
+        .attr("x", vis.width - 400)
+        .attr("y", vis.height + 45)
         .text("Time");
 
     vis.wrangleData();
@@ -94,7 +96,6 @@ PricesVis.prototype.wrangleData = function(){
 
         vis.wrangledData.push(temp);
     });
-
 
     // Prepare empty array
     var averagePricePerYear = vis.wrangledData[0];

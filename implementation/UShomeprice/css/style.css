@@ -1,18 +1,57 @@
 /* custom css rules */
 
 body {
-	margin-top: 0px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
-	background-color: darkgrey;
+	margin-top: 0;
+	font-family: "Baskerville", Times, serif;
+	background-color: #ffffff;
 	text-align: center
+}
+
+#vis-header {
+	height: 150vh;
 }
 
 h1{
 	text-align: center;
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+img {
+	/*width: 600px;*/
+	/*height: 531px;*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image_captions {
+	font-size: 12px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.intro-paragraph-info {
+	text-indent: 2em;
+	text-align: left;
+	margin-top: 20px;
+	margin-right: 180px;
+	margin-left: 180px;
+}
+
+#area-chart-info {
+	text-indent: 2em;
+	text-align: left;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 50px;
 }
 
 h5 {
 	color: maroon;
+	margin-left: 180px;
+	margin-right: 180px;
 }
 
 #clock {
@@ -22,12 +61,25 @@ h5 {
 	color: maroon;
 }
 
+.form-inline {
+	margin-left: 500px;
+	float: right;
+}
+
+.form-control {
+	margin: 5px;
+}
+
 path {
 	stroke: #333;
 	stroke-width: 1;
 }
 path:hover {
 	stroke-width: 3;
+}
+
+#pricesAreaChart {
+	margin-top: 50px;
 }
 
 .axis line,
@@ -52,7 +104,7 @@ path:hover {
 }
 
 .area.area-prices {
-	fill: #94a97a;
+	fill: #a94600;
 }
 
 .dot { stroke: #000; }
