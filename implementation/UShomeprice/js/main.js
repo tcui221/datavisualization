@@ -1,6 +1,7 @@
 
 
 var USchoro;
+var pricesAreaChart;
 
 
 // queue()
@@ -17,6 +18,18 @@ queue()
     .defer(d3.csv, "data/State_Zhvi_AllHomes.csv")
     .await(function(error, USmapJson, HomeValueCsv) {
 
-        USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv)
+        USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
+
+        pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 
     });
+
+
+function choroplethClicked(stateSelected) {
+
+
+    pricesAreaChart.x.domain(selectionDomain);
+
+    // Update focus chart (detailed information)
+    pricesAreaChart.wrangleData();
+}

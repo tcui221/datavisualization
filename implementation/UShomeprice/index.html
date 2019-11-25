@@ -9,41 +9,74 @@
 <body>
 
     <!-- content -->
-    <h1>Housing Prices in the US</h1>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <p>Image</p>
-            </div>
-            <div class="col">
-                <p>Text: US Housing Trends</p>
-            </div>
-            <div class="col">
-                <p>Image</p>
-            </div>
+        <h1>Housing Prices in the US</h1>
+        <div class="row" class="vis-header">
+                <img src="img/zillow_expensive_house.jpeg" alt="Modest home priced at 2 million">
+                <p class="image_captions">
+                    A modest 1,130-square-foot cottage in Palo Alto, California listed
+                    and sold for 2 million dollars in 2017
+                </p>
+                <p class="intro-paragraph-info">
+                        We’re seeing one of the longest periods of economic growth in US history.
+                    When the housing market crashed in 2008, it led to one of the worst economic
+                    periods since the Great Depression, often called the Great Recession. The economy has
+                    not just recovered from this period, but grown steadily each year since the crash.
+                    Over a decade after the Great Recession, unemployment is the lowest it’s been in 50 years,
+                    wages are rising at a faster rate, and consumers continue to spend more, which fuels the economy.
+                    As the economy grew, home prices rose rapidly across the country.
+                    Since 2012, the number of eager home buyers increased faster than the number of homes
+                    for sale–demand rose faster than supply.
+                </p>
         </div>
-        <div class="row">
+        <div class="row" id="zoomable-map">
             <div class="col">
                 <div id="wrapper" align="center">
-                    <h5>House Price in Hawaii remains at the top, California is on the rise!</h5><br>
-                    <button id="play">Play Me!</button> <br>
-                    <p id="yearmonth">Year:
-                        <span id="clock">year</span>
+                    <h5>House prices in Hawaii remain the highest, while prices in California are on the rise.
+                        Click on a state to see more detail on how its prices have changed in recent years.
+                    </h5><br>
+                    <button id="play">Play Animation</button> <br>
+                    <p id="yearmonth"> Year:
+                        <span id="clock"> year </span>
                     </p>
                     <div id="US-choropleth"></div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <div id="zoom-map"><p>Visualization: Specific map</p></div>
+            <!-- Let's discuss whether it would be better to have this form, or select from the map    -->
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="user-selection">View data for </label>
+                    <select class="form-control" id="user-selection" onchange="">
+                        <option value="All">All</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arkansas">Arkansas</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p id="area-chart-info">
+                    Home prices increased as more buyers competed for fewer homes. Over the past
+                    few years, the Fed has steadily increased short-term interest rates, which can lead
+                    people to have a tighter budget for a home at a time when home prices are rising.
+                </p>
             </div>
             <div class="col">
-                <p>Text</p>
+                <div id="pricesAreaChart"></div>
             </div>
-            <div class="col">
-                <div id="region-anal"><p>Visualization: Analysis of Regions</p></div>
-            </div>
+        </div>
+        <div class="row" class="vis-header">
+            <img src="img/atlantahouse.jpg" alt="Mansion for 1 million in Atlanta">
+            <p class="image_captions">
+                A home buyer in Atlanta can purchase this seven-bedroom, 6 ½-bathroom,
+                4,203-square-foot home in Peachtree Park. The house comes with three fireplaces,
+                an in-law suite, and a sprawling backyard.
+            </p>
         </div>
         <div class="row">
             <div class="col">
@@ -86,9 +119,6 @@
         </div>
     </div>
 
-
-
-
     <script src="js/queue.min.js"></script>
     <script src="js/topojson.min.js"></script>
     <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
@@ -97,10 +127,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/d3.min.js"></script>
-<!--    county vis -->
+    <!--    county vis -->
     <script src="js/choropleth.js"></script>
-<!--    state vis -->
+    <!-- Visualization objects -->
     <script src="js/StateChoropleth.js"></script>
+    <script src="js/pricesAreaChart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
