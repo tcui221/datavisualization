@@ -107,8 +107,9 @@ path:hover {
 }
 
 #homelessChart .bar{
-	fill: cornflowerblue;
+	fill: #d94600;
 }
+
 
 .dot { stroke: #000; }
 
