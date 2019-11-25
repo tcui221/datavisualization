@@ -27,7 +27,7 @@ USchoropleth_State = function(_parentElement, _map, _home){
 /*
  * Initialize visualization (static content, e.g. SVG area or axes)
  */
-
+//
 USchoropleth_State.prototype.initVis = function() {
     var vis = this;
 
