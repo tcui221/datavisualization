@@ -85,7 +85,8 @@ ScatterVis.prototype.initVis = function(){
         .attr('class', 'd3-tip')
         .direction('s')
         .html(function(d) {
-            return "<p><strong>" + d.region + "</strong></p><p><strong>Median Income: </strong>" + formatComma(d.income) +
+            return "<p><strong>" + d.region + "</strong></p><p><strong>Region of the US: </strong>"+ d.division+
+                "</strong></p><p><strong>Median Income: </strong>" + formatComma(d.income) +
                 "</p><p><strong>Median price: </strong>" + formatComma(d.price);
         });
 

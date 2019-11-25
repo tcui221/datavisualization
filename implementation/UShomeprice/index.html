@@ -10,9 +10,16 @@
 
     <!-- content -->
     <div class="container-fluid">
+
+<!--        <header class="display-container" id="home">-->
+<!--            <img class="image" src="img/banner%20stock.png" alt="title img" width="1600" height="1060">-->
+<!--            <div>-->
+<!--                <h1 class="display-left white bigtext"><b>Housing Prices in the US</b></h1>-->
+<!--            </div>-->
+<!--        </header>-->
         <h1>Housing Prices in the US</h1>
         <div class="row" class="vis-header">
-                <img src="img/zillow_expensive_house.jpeg" alt="Modest home priced at 2 million">
+                <img class='image' src="img/zillow_expensive_house.jpeg" alt="Modest home priced at 2 million">
                 <p class="image_captions">
                     A modest 1,130-square-foot cottage in Palo Alto, California listed
                     and sold for 2 million dollars in 2017
@@ -71,25 +78,43 @@
             </div>
         </div>
         <div class="row" class="vis-header">
-            <img src="img/atlantahouse.jpg" alt="Mansion for 1 million in Atlanta">
+            <img class = 'image' src="img/atlantahouse.jpg" alt="Mansion for 1 million in Atlanta">
             <p class="image_captions">
                 A home buyer in Atlanta can purchase this seven-bedroom, 6 ½-bathroom,
                 4,203-square-foot home in Peachtree Park. The house comes with three fireplaces,
                 an in-law suite, and a sprawling backyard.
             </p>
         </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5> History of median income versus median housing price by region </h5>
+                <div id="US-scatter"></div>
+                <p class="image_captions left-padd">
+                    Hover over year to speed or slow down animation. Hover over circles for details.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <blockquote><p class="quotation top-padd">
+                    Price-to-income ratios topped 10.0 in both the Santa Cruz and San Jose metro areas and neared 10 in Los Angeles. On the other hand, ratios were well below 3.0 in much of the Midwest and Northeast.
+                </p></blockquote>
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col">
                 <div id="compare-reg"><p>Visualization: Compare Regions</p></div>
             </div>
-            <div id="US-scatter"></div>
             <div class="col">
                 <p>Text: Best Choice</p>
             </div>
             <div class="col">
                 <div id="compare-buy"><p>Visualization: Compare Buying and Renting</p></div>
+
             </div>
         </div>
+
         <div class="row">
             <div class="col">
                 <label id="num-beds">Number of Bedrooms</label>

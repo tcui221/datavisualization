@@ -18,8 +18,7 @@ h1{
 }
 
 img {
-	/*width: 600px;*/
-	/*height: 531px;*/
+
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -180,3 +179,48 @@ path:hover {
 	top: 50%;
 	left: 100%;
 }
+
+.white{color:#fff}
+
+.bigtext{
+	font-size:60px
+}
+
+.display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+
+/* Quotation CSS Source: W3-CSS file https://www.w3schools.com/w3css/4/w3.css*/
+.quotation{
+	font-size: 20px;
+//margin: 0 auto;
+	quotes: "\201C""\201D""\2018""\2019";
+	padding: 10px 20px;
+	line-height: 1.4;
+}
+
+.quotation:before {
+	content: open-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: -10px;
+	position: relative;
+	top: 30px;
+	color: #ccc;
+	font-size: 3em;
+}
+.quotation::after {
+	content: close-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: 10px;
+	position: relative;
+	top: 35px;
+	color: #ccc;
+	font-size: 3em;
+}
+
+.top-padd{
+	padding-top: 150px;
+}
+
