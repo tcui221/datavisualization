@@ -111,7 +111,7 @@ USchoropleth_State.prototype.drawMap = function() {
     vis.x
         .domain(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
 
-    console.log(vis.USmapJson.features);
+    // console.log(vis.USmapJson.features);
     // console.log(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
     // console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute+1])));
 

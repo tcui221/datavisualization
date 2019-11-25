@@ -25,11 +25,6 @@ queue()
     });
 
 
-function choroplethClicked(stateSelected) {
-
-
-    pricesAreaChart.x.domain(selectionDomain);
-
-    // Update focus chart (detailed information)
-    pricesAreaChart.wrangleData();
+function choroplethClicked(stateClicked) {
+    pricesAreaChart.onSelectionChange(stateClicked);
 }
