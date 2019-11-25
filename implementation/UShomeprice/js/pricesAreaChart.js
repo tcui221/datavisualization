@@ -44,8 +44,11 @@ PricesVis.prototype.initVis = function(){
 
 
     // // Append a path for the area function, so that it is later behind the brush overlay
-    vis.pricePath = vis.svg.selectAll(".area-prices")
-        .datum(vis.displayData);
+    // vis.pricePath = vis.svg.selectAll(".area-prices")
+    //     .datum(vis.displayData);
+
+    vis.pricePath = vis.svg.append("path")
+        .attr("class", "area area-prices");
 
     // Append axes
     vis.svg.append("g")
@@ -139,7 +142,6 @@ PricesVis.prototype.updateVis = function(){
         .y0(vis.height)
         .y1(function(d) { return vis.y(d['value']); });
 
-    // // // Append a path for the area function, so that it is later behind the brush overlay
     // vis.pricePath = vis.svg.selectAll(".area-prices")
     //     .datum(vis.displayData);
 
@@ -151,7 +153,6 @@ PricesVis.prototype.updateVis = function(){
     vis.pricePath.transition()
         .attr("d", vis.area);
 
-    // vis.pricePath.exit().remove();
 
     vis.svg.select(".x-axis").call(vis.xAxis);
     vis.svg.select(".y-axis").call(vis.yAxis);

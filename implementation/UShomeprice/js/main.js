@@ -2,6 +2,7 @@
 
 var USchoro;
 var pricesAreaChart;
+var USscatter;
 
 
 // queue()
