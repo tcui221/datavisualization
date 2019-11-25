@@ -4,6 +4,7 @@ PricesVis = function(_parentElement, _data){
     this.data = _data;
     this.filteredData = this.data;
 
+    this.selectedState = "";
     this.initVis();
 };
 
@@ -41,7 +42,11 @@ PricesVis.prototype.initVis = function(){
         .tickFormat(function(d) {
             return formatMillions(d); });
 
-    // Append a path for the area function, so that it is later behind the brush overlay
+
+    // // Append a path for the area function, so that it is later behind the brush overlay
+    // vis.pricePath = vis.svg.selectAll(".area-prices")
+    //     .datum(vis.displayData);
+
     vis.pricePath = vis.svg.append("path")
         .attr("class", "area area-prices");
 
@@ -73,13 +78,14 @@ PricesVis.prototype.wrangleData = function(){
     var parseTime = d3.timeParse("%Y-%m");
     vis.wrangledData = [];
 
-    vis.data.forEach( function(value, index) {
+    vis.filteredData.forEach( function(value, index) {
+
+        console.log(value);
 
         var tempDates = d3.keys(vis.data[index]);
         var tempValues = d3.values(vis.data[index]);
 
         var temp = [];
-
         for (var i = 0; i < tempDates.length; i ++) {
             temp.push({"date": tempDates[i], "value": tempValues[i]});
         }
@@ -95,7 +101,10 @@ PricesVis.prototype.wrangleData = function(){
         });
 
         vis.wrangledData.push(temp);
+
     });
+
+    // console.log(vis.filteredData);
 
     // Prepare empty array
     var averagePricePerYear = vis.wrangledData[0];
@@ -109,8 +118,6 @@ PricesVis.prototype.wrangleData = function(){
 
     vis.displayData = averagePricePerYear;
 
-    console.log(vis.displayData);
-
     vis.updateVis();
 };
 
@@ -118,7 +125,8 @@ PricesVis.prototype.wrangleData = function(){
 PricesVis.prototype.updateVis = function(){
     var vis = this;
 
-    // Update domains
+    // Update domains.
+    // When state is clicked, same date range
     vis.x.domain(d3.extent(vis.displayData, function(d) {
         return d['date'];
     }));
@@ -134,23 +142,40 @@ PricesVis.prototype.updateVis = function(){
         .y0(vis.height)
         .y1(function(d) { return vis.y(d['value']); });
 
-    vis.pricePath
-        .datum(vis.displayData)
-        .transition()
+    // vis.pricePath = vis.svg.selectAll(".area-prices")
+    //     .datum(vis.displayData);
+
+    vis.pricePath = vis.pricePath.enter()
+        .append("path")
+        .attr("class", "area area-prices")
+        .merge(vis.pricePath);
+
+    vis.pricePath.transition()
         .attr("d", vis.area);
+
 
     vis.svg.select(".x-axis").call(vis.xAxis);
     vis.svg.select(".y-axis").call(vis.yAxis);
 };
 
 
-PricesVis.prototype.onSelectionChange = function(selectionStart, selectionEnd){
+PricesVis.prototype.onSelectionChange = function(stateSelected){
     var vis = this;
 
-    // Filter original unfiltered data depending on selected time period (brush)
-    // vis.filteredData = vis.data.filter(function(d){
-    //     return d.time >= selectionStart && d.time <= selectionEnd;
-    // });
+    vis.selectedState = stateSelected;
+
+    // Reset data
+    vis.filteredData = vis.data;
+
+    var temp = [];
+    vis.data.forEach(function (item, index) {
+        if (stateSelected == item.RegionName) {
+            temp.push(item);
+        }
+    });
+
+
+    vis.filteredData = temp;
 
     vis.wrangleData();
 };
