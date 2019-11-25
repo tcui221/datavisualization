@@ -106,6 +106,10 @@ path:hover {
 	fill: #a94600;
 }
 
+#homelessChart .bar{
+	fill: cornflowerblue;
+}
+
 .dot { stroke: #000; }
 
 .axis path, .axis line {
@@ -223,4 +227,5 @@ path:hover {
 .top-padd{
 	padding-top: 150px;
 }
+
 

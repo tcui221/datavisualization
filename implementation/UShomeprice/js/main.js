@@ -19,7 +19,8 @@ queue()
     .defer(d3.csv, "data/State_Zhvi_AllHomes.csv")
     .defer(d3.csv, "data/cleaned_State_Zhvi_AllHomes copy.csv")
     .defer(d3.csv, "data/State_medianincome copy.csv")
-    .await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue, medianIncome) {
+    .defer(d3.csv,'data/Homelessness_Ratios.csv')
+    .await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue, medianIncome,homelessRatios) {
 
         var jsonData = [];
         var years = ['1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007','2008', '2009', '2010', '2011', '2012', '2013', '2014','2015', '2016','2017', '2018'];
@@ -56,6 +57,7 @@ queue()
         USscatter = new ScatterVis("US-scatter", jsonData);
         pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 
+        var hlBars=new HLBars('#homelessChart',homelessRatios);
 
     });
 
