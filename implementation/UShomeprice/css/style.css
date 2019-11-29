@@ -22,6 +22,8 @@ img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
+
 }
 
 .image_captions {
@@ -73,8 +75,17 @@ path {
 	stroke: #333;
 	stroke-width: 1;
 }
-path:hover {
+.state:hover {
 	stroke-width: 3;
+}
+
+.state-label {
+	text-anchor: middle;
+	font-size: 9px;
+}
+
+.legendOrdinal {
+	/*text-anchor: middle;*/
 }
 
 #pricesAreaChart {
@@ -82,7 +93,7 @@ path:hover {
 }
 
 .axis line,
-.axis path {
+.axis .state {
 	fill: none;
 	stroke: #555;
 	shape-rendering: crispEdges;
@@ -107,8 +118,9 @@ path:hover {
 }
 
 #homelessChart .bar{
-	fill: cornflowerblue;
+	fill: #d94600;
 }
+
 
 .dot { stroke: #000; }
 

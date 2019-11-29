@@ -40,7 +40,7 @@
             <div class="col">
                 <div id="wrapper" align="center">
                     <h5>House prices in Hawaii remain the highest, while prices in California are on the rise.
-                        Click on a state to see more detail on how its prices have changed in recent years.
+<!--                        Click on a state to see more detail on how its prices have changed in recent years.-->
                     </h5><br>
                     <button id="play">Play Animation</button> <br>
                     <p id="yearmonth"> Year:
@@ -52,17 +52,17 @@
         </div>
         <div class="row">
             <!-- Let's discuss whether it would be better to have this form, or select from the map    -->
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="user-selection">View data for </label>
-                    <select class="form-control" id="user-selection" onchange="">
-                        <option value="All">All</option>
-                        <option value="Arizona">Arizona</option>
-                        <option value="Alabama">Alabama</option>
-                        <option value="Alaska">Alaska</option>
-                        <option value="Arkansas">Arkansas</option>
-                    </select>
-                </div>
+<!--            <form class="form-inline">-->
+<!--                <div class="form-group">-->
+<!--                    <label for="user-selection">View data for </label>-->
+<!--                    <select class="form-control" id="user-selection" onchange="">-->
+<!--                        <option value="All">All</option>-->
+<!--                        <option value="Arizona">Arizona</option>-->
+<!--                        <option value="Alabama">Alabama</option>-->
+<!--                        <option value="Alaska">Alaska</option>-->
+<!--                        <option value="Arkansas">Arkansas</option>-->
+<!--                    </select>-->
+<!--                </div>-->
             </form>
         </div>
         <div class="row">
@@ -102,18 +102,7 @@
         </div>
 
 
-        <div class="row">
-            <div class="col">
-                <div id="compare-reg"><p>Visualization: Compare Regions</p></div>
-            </div>
-            <div class="col">
-                <p>Text: Best Choice</p>
-            </div>
-            <div class="col">
-                <div id="compare-buy"><p>Visualization: Compare Buying and Renting</p></div>
 
-            </div>
-        </div>
 
         <div class="row">
             <div class="col">
@@ -132,17 +121,6 @@
             </div>
             <div class="col">
                 <div id="homelessChart"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>Image: Houses</p>
-            </div>
-            <div class="col">
-                <p>Links to Houses</p>
-            </div>
-            <div class="col">
-                <p>Text: Conclusion</p>
             </div>
         </div>
     </div>
@@ -166,5 +144,6 @@
     <script src="js/pricesAreaChart.js"></script>
     <script src="js/hlBars.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 </body>
 </html>

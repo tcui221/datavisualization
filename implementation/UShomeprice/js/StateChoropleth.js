@@ -16,8 +16,8 @@ USchoropleth_State = function(_parentElement, _map, _home){
     this.zoomed = false;
 
     // DEBUG RAW DATA
-    // console.log(this.USmapJson);
-    // console.log(this.homeValue);
+    console.log(this.USmapJson);
+    console.log(this.homeValue);
 
     this.initVis();
     this.animateMap();
@@ -48,7 +48,7 @@ USchoropleth_State.prototype.initVis = function() {
     vis.projection = d3.geoAlbersUsa()
         .translate([vis.width / 2, vis.height / 2])
         .precision(0)
-        .scale(vis.height * 2);
+        .scale(vis.height*1.7);
     // .scale(1000)
     // .scale(vis.height * 2).translate([vis.width / 2, vis.height / 2]);
 
@@ -70,6 +70,14 @@ USchoropleth_State.prototype.initVis = function() {
         .attr("class", "x-axis axis")
         .attr("transform", "translate(20, -10) ");
 
+
+    vis.svg.append("g")
+        .attr("class", "statechoropleth")
+        .attr("transform", "translate(-100, 0) ");
+
+    vis.svg.append("g")
+        .attr("class", "timeline");
+
     vis.parseTime = d3.timeParse("%Y-%m");
 
     vis.wrangleData();
@@ -87,12 +95,18 @@ USchoropleth_State.prototype.wrangleData = function() {
                 for (var k in vis.homeValue[j]) {   // for each column in the a row within the CSV
 
                     // we do not want to add this attributes to the properties
-                    if(k != 'RegionID' && k != 'RegionName' && k != 'SizeRank') {
+                    if(k != 'RegionID' && k != 'RegionName' && k != 'SizeRank' && k != 'State') {
                         if(vis.attributeArray.indexOf(k) == -1) {
                             vis.attributeArray.push(k);  // add new column headings to our array for later
                         }
                         vis.USmapJson.features[i].properties[k] = Number(vis.homeValue[j][k])  // add each CSV column key/value to geometry object
                     }
+
+                    // now separately add state column to the geometry object for labeling
+                    if (k== 'State') {
+                        vis.USmapJson.features[i].properties[k] = vis.homeValue[j][k];
+                    }
+
                 }
                 break;  // stop looking through the CSV since we made our match
             }
@@ -111,14 +125,15 @@ USchoropleth_State.prototype.drawMap = function() {
     vis.x
         .domain(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
 
-    // console.log(vis.USmapJson.features);
+    console.log(vis.USmapJson.features);
     // console.log(d3.extent(vis.attributeArray, function(d){return vis.parseTime(d);}))
     // console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute+1])));
 
 
     vis.svg.select(".x-axis").call(vis.xAxis);
 
-    vis.timeline = vis.svg.append("image")
+    vis.timeline = vis.svg.select(".timeline")
+        .append("image")
         .data(vis.USmapJson.features)
         .attr("xlink:href", "img/icon-house.png")
         .attr("class", "icon")
@@ -128,10 +143,11 @@ USchoropleth_State.prototype.drawMap = function() {
         .attr("x", vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
 
 
-    vis.countyPaths = vis.svg.selectAll(".county")
+    vis.statePaths = vis.svg.select(".statechoropleth")
+        .selectAll(".state")
         .data(vis.USmapJson.features)
         .enter().append("path")
-        .attr("class", "county")
+        .attr("class", "state")
         .attr("id", function(d) { return "code_" + d.properties.GEO_ID; }, true)  // give each a unique id for access later
         .attr("d", vis.path)
         .on('click', function (d) {
@@ -154,7 +170,7 @@ USchoropleth_State.prototype.drawMap = function() {
 
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
 
-    d3.selectAll('.county')  // select all the countries
+    d3.selectAll('.state')  // select all the countries
         .attr('fill', function(d) {
             var value = d.properties[vis.attributeArray[vis.currentAttribute]];
             if (value) {
@@ -166,6 +182,39 @@ USchoropleth_State.prototype.drawMap = function() {
             }
         });
 
+    vis.svg.select(".statechoropleth")
+        .selectAll("text")
+        .data(vis.USmapJson.features)
+        .enter()
+        .append("text")
+        .attr("class", "state-label")
+        .attr("transform", function(d) { return "translate(" + vis.path.centroid(d) + ")"; })
+        .text(function(d) { return d.properties.State;} );
+
+    vis.svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate("+0.8*vis.width+",200)");
+
+    var legendOrdinal = d3.legendColor()
+        .shapePadding(0)
+        .title("The colors represent the RELATIVE housing price at each point of time")
+        .titleWidth(200)
+        .orient('horizontal')
+        .labels(["$", " ", " ", " ", " ", " ", " ", " ", "$$$$"])
+        .scale(vis.color);
+
+    vis.svg.select(".legendOrdinal")
+        .style("font-size","12px")
+        .style("fill", "maroon")
+        .attr("transform","translate("+vis.width*0.7+",350)")
+        .call(legendOrdinal);
+
+    vis.svg.append("text")
+        .attr("transform","translate("+vis.width/2+",480)")
+        .text("Click on a state to reveal the trends of that state's housing prices in the following area chart.")
+        .style("fill", "maroon")
+        .style("text-anchor","middle")
+        .style("font-size","14px");
 
 };
 
@@ -183,7 +232,7 @@ USchoropleth_State.prototype.getDataRange = function() {
     var vis = this;
 
     var min = Infinity, max = -Infinity;
-    d3.selectAll('.county')
+    d3.selectAll('.state')
         .each(function(d,i) {
             var currentValue = d.properties[vis.attributeArray[vis.currentAttribute]];
             if(currentValue <= min && currentValue != -99 && currentValue != 'undefined') {
@@ -201,7 +250,7 @@ USchoropleth_State.prototype.sequenceMap = function() {
     var vis = this;
 
     var dataRange = vis.getDataRange(); // get the min/max values from the current year's range of data values
-    d3.selectAll('.county').transition()  //select all the countries and prepare for a transition to new values
+    d3.selectAll('.state').transition()  //select all the countries and prepare for a transition to new values
         .duration(200)  // give it a smooth time period for the transition
         .attr('fill', function(d) {
             // console.log(vis.x(vis.parseTime(vis.attributeArray[vis.currentAttribute])));
@@ -264,7 +313,7 @@ USchoropleth_State.prototype.usZoom = function() {
 
     vis.projection.scale(vis.height * 2).translate([vis.width / 2, vis.height / 2]);
 
-    vis.countyPaths.transition(t)
+    vis.statePaths.transition(t)
         .attr('d', vis.path);
 };
 
@@ -284,7 +333,7 @@ USchoropleth_State.prototype.stateZoom = function(id) {
         state
     );
 
-    vis.countyPaths.transition(t)
+    vis.statePaths.transition(t)
         .attr('d', vis.path);
 };
 
