@@ -240,4 +240,38 @@ path {
 	padding-top: 150px;
 }
 
+/*
+	Force Diagram
+ */
+
+/*	style definitions	*/
+button {
+	position: absolute;
+}
+
+#blue {
+	top: 1em;
+	left: 1em;
+}
+
+#orange {
+	top: 1em;
+	left: 8em;
+}
+
+#green {
+	top: 1em;
+	left: 16em;
+}
+
+.node {
+	stroke: white;
+	stroke-width: 2px;
+}
+
+.link {
+	stroke: gray;
+	stroke-width: 4px;
+}
+
 
