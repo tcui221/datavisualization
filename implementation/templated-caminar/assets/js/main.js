@@ -107,7 +107,7 @@ queue()
 		USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 		USscatter = new ScatterVis("US-scatter", jsonData);
-		forceHouseCategories = new ForceDiagram('#forceDiagram', twoBedroom);
+		forceHouseCategories = new ForceDiagram('forceDiagram', twoBedroom);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 
