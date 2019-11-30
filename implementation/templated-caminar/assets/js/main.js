@@ -58,6 +58,7 @@ var hlBars;
 //     .await(function(error, USmapJson, HomeValueCsv) {
 //        USchoro = new USchoropleth("US-choropleth", USmapJson, HomeValueCsv)
 //     });
+
 $("#US-choropleth").click(function() {
 	$('html,body').animate({
 			scrollTop: $("#pricesAreaChart").offset().top},
