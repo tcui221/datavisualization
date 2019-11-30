@@ -58,7 +58,6 @@ var hlBars;
 //     .await(function(error, USmapJson, HomeValueCsv) {
 //        USchoro = new USchoropleth("US-choropleth", USmapJson, HomeValueCsv)
 //     });
-
 $("#US-choropleth").click(function() {
 	$('html,body').animate({
 			scrollTop: $("#pricesAreaChart").offset().top},
@@ -108,7 +107,7 @@ queue()
 		USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 		USscatter = new ScatterVis("US-scatter", jsonData);
-		forceHouseCategories = new ForceDiagram('#forceDiagram', twoBedroom);
+		forceHouseCategories = new ForceDiagram('forceDiagram', twoBedroom);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 
