@@ -80,6 +80,17 @@ ForceDiagram.prototype.wrangleData = function(id){
 ForceDiagram.prototype.drawDiagram = function(){
     var vis = this;
 
+    formatComma = d3.format(",.0f");
+    // Add tooltip over circles
+    vis.tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .attr('id', 'forceToolTip')
+        .direction('s')
+        .html(function(d) {
+            return "<p><strong>" + d['City'] +
+                "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
+        });
+
     vis.circles = vis.svg.selectAll("circle")
         .data(vis.displayData);
 
@@ -90,8 +101,11 @@ ForceDiagram.prototype.drawDiagram = function(){
         // .style("fill", function(d, i){ return color(d.ID); })
         // .style("stroke", function(d, i){ return color(d.ID); })
         // .style("stroke-width", 10)
+        .call(vis.tip)
         .style("pointer-events", "all")
-        .style('fill', 'red');
+        .style('fill', 'red')
+        .on('mouseover', vis.tip.show)
+        .on('mouseout', vis.tip.hide);
         // .call(d3.drag()
         //     .on("start", dragstarted)
         //     .on("drag", dragged)
