@@ -29,7 +29,7 @@ ForceDiagram.prototype.initVis = function() {
 
     vis.simulation = d3.forceSimulation()
         .force("collide",d3.forceCollide( function(d){
-            return vis.radius + 2 }).iterations(10)
+            return vis.radius + 8 }).iterations(10)
         )
         .force("charge", d3.forceManyBody().strength(-10))
         .force("y", d3.forceY().y(vis.h / 2))
