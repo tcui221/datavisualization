@@ -16,8 +16,8 @@ USchoropleth_State = function(_parentElement, _map, _home){
     this.zoomed = false;
 
     // DEBUG RAW DATA
-    console.log(this.USmapJson);
-    console.log(this.homeValue);
+    // console.log(this.USmapJson);
+    // console.log(this.homeValue);
 
     this.initVis();
     this.animateMap();

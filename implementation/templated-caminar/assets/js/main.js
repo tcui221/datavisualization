@@ -72,7 +72,9 @@ queue()
 	.defer(d3.csv, "data/State_medianincome copy.csv")
 	.defer(d3.csv,'data/Homelessness_Ratios.csv')
 	.defer(d3.csv,'data/2bedroom_top400_zips.csv')
-	.await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue, medianIncome,homelessRatios, twoBedroom) {
+	.defer(d3.csv,'data/3bedroom_topbottom200.csv')
+	.await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue,
+					medianIncome,homelessRatios, twoBedroom, threeBedroom) {
 
 		var jsonData = [];
 		var years = ['1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007','2008', '2009', '2010', '2011', '2012', '2013', '2014','2015', '2016','2017', '2018'];
@@ -102,12 +104,13 @@ queue()
 			jsonData.push(obj)
 		});
 
-		console.log(jsonData);
+		// console.log(jsonData);
 
 		USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 		USscatter = new ScatterVis("US-scatter", jsonData);
-		forceHouseCategories = new ForceDiagram('forceDiagram', twoBedroom);
+
+		forceHouseCategories = new ForceDiagram('forceDiagram', twoBedroom, threeBedroom);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 

@@ -1,30 +1,36 @@
-ForceDiagram = function(_parentElement, _data ){
+
+
+ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData ){
     this.parentElement = _parentElement;
-    this.data = _data;
-    console.log(this.data);
+    this.data = _twoBedroomData;
+    this.displayData = _threeBedroomData;
+    console.log("Force diagram data");
     this.initVis();
 };
 
 ForceDiagram.prototype.initVis = function(){
     var vis = this;
-    
-    vis.w = 960;
-    vis.h = 500;
 
-    vis.radius = 25;
-    vis.color = d3.scaleOrdinal(d3.schemeCategory20);
-    vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
-    vis.forceStrength = 0.05;
+    vis.margin = { top: 20, right: 20, bottom: 20, left: 60 };
+    vis.w = 960 - vis.margin.left - vis.margin.right;
+    vis.h = vis.w * 1/2;
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
-        .attr("width", vis.w)
-        .attr("height", vis.h);
+        .attr("width", vis.w + vis.margin.left + vis.margin.right)
+        .attr("height", vis.h + vis.margin.top + vis.margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+    vis.radius = 8;
+    vis.color = d3.scaleOrdinal(d3.schemeCategory20);
+    vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
+    vis.forceStrength = 0.5;
 
     vis.simulation = d3.forceSimulation()
         .force("collide",d3.forceCollide( function(d){
-            return 25 + 8 }).iterations(16)
+            return vis.radius + 2 }).iterations(10)
         )
-        .force("charge", d3.forceManyBody())
+        .force("charge", d3.forceManyBody().strength(-10))
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
 
@@ -36,7 +42,7 @@ ForceDiagram.prototype.initVis = function(){
         .data(vis.data);
 
     vis.circlesEnter = vis.circles.enter().append("circle")
-        .attr("r", function(d, i){ return 10; })
+        .attr("r", function(d, i){ return vis.radius; })
         .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
         .attr("cy", function(d, i){ return 250; })
         // .style("fill", function(d, i){ return color(d.ID); })
@@ -107,6 +113,7 @@ ForceDiagram.prototype.initVis = function(){
             .merge(titles)
             .attr('x', function (d) { return scale(d); })
             .attr('y', 40)
+            .style("fill", "white")
             .attr('text-anchor', 'middle')
             .text(function (d) { return byVar + ' ' + d; });
 
@@ -135,6 +142,25 @@ ForceDiagram.prototype.initVis = function(){
             });
     }
 
-    setupButtons()
+    setupButtons();
 
-}
+    vis.wrangleData();
+
+};
+
+ForceDiagram.prototype.wrangleData = function(){
+    var vis = this;
+
+    var temp = [];
+    var counter = 0;
+    vis.displayData = vis.data.forEach(function (element) {
+
+        if (counter < 100) {
+            temp.push(element);
+        }
+        counter++;
+    });
+
+    console.log(temp);
+
+};

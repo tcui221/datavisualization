@@ -15,8 +15,8 @@ USchoropleth = function(_parentElement, _map, _home){
     this.playing = false;
 
     // DEBUG RAW DATA
-    console.log(this.USmapJson);
-    console.log(this.homeValue);
+    // console.log(this.USmapJson);
+    // console.log(this.homeValue);
 
     this.initVis();
     this.animateMap();
@@ -80,7 +80,7 @@ USchoropleth.prototype.wrangleData = function() {
         }
     }
 
-    console.log(vis.USmapJson);
+    // console.log(vis.USmapJson);
     d3.select('#clock').html(vis.attributeArray[vis.currentAttribute]);  // populate the clock initially with the current year
     vis.drawMap();  // render the map now with the newly populated data object
 }
