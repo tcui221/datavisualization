@@ -35,6 +35,8 @@ ForceDiagram.prototype.initVis = function() {
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
 
+    vis.radiusScale = d3.scaleLinear()
+        .range([8, 20]);
 
     vis.wrangleData(this.toggleID);
 
@@ -74,6 +76,8 @@ ForceDiagram.prototype.wrangleData = function(id){
 
     vis.displayData = temp;
 
+    vis.radiusScale.domain(d3.extent(vis.displayData, function(d){return d['2019-10'];}));
+
     vis.drawDiagram();
 };
 
@@ -95,7 +99,7 @@ ForceDiagram.prototype.drawDiagram = function(){
         .data(vis.displayData);
 
     vis.circlesEnter = vis.circles.enter().append("circle")
-        .attr("r", function(d, i){ return vis.radius; })
+        .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
         .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
         .attr("cy", function(d, i){ return 250; })
         // .style("fill", function(d, i){ return color(d.ID); })
