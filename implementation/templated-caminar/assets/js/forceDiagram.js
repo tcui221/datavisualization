@@ -1,14 +1,15 @@
 
 
-ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData ){
+ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData, _threeBedroomData ){
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
-    this.displayData = _threeBedroomData;
+    this.displayData = _twoBedroomData;
     console.log("Force diagram data");
+    this.toggleID = _toggleID;
     this.initVis();
 };
 
-ForceDiagram.prototype.initVis = function(){
+ForceDiagram.prototype.initVis = function() {
     var vis = this;
 
     vis.margin = { top: 20, right: 20, bottom: 20, left: 60 };
@@ -34,12 +35,53 @@ ForceDiagram.prototype.initVis = function(){
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
 
+
+    vis.wrangleData(this.toggleID);
+
+};
+
+ForceDiagram.prototype.wrangleData = function(id){
+    var vis = this;
+
     vis.data.forEach(function (element) {
-        element['2019-10'] = + element['2019-10'];
+        element['2019-10'] = +element['2019-10'];
     });
 
+    // Sort by highest or lowest prices
+    if (id == "Highest") {
+        // console.log("Highest");
+        // Sort descending by price
+        vis.data.sort( function(a, b){
+            return b['2019-10'] - a['2019-10'];
+        });
+    } else {
+
+        // console.log("Lowest");
+        vis.data.sort( function(a, b){
+            return a['2019-10'] - b['2019-10'];
+        });
+    }
+
+    // Only grab the top 100
+    var temp = [];
+    var counter = 0;
+    vis.data.forEach(function (element) {
+        if (counter < 100) {
+            temp.push(element);
+        }
+        counter++;
+    });
+
+    vis.displayData = temp;
+
+    vis.drawDiagram();
+};
+
+ForceDiagram.prototype.drawDiagram = function(){
+    var vis = this;
+
     vis.circles = vis.svg.selectAll("circle")
-        .data(vis.data);
+        .data(vis.displayData);
 
     vis.circlesEnter = vis.circles.enter().append("circle")
         .attr("r", function(d, i){ return vis.radius; })
@@ -49,7 +91,7 @@ ForceDiagram.prototype.initVis = function(){
         // .style("stroke", function(d, i){ return color(d.ID); })
         // .style("stroke-width", 10)
         .style("pointer-events", "all")
-        .style('fill', 'red')
+        .style('fill', 'red');
         // .call(d3.drag()
         //     .on("start", dragstarted)
         //     .on("drag", dragged)
@@ -58,15 +100,13 @@ ForceDiagram.prototype.initVis = function(){
     vis.circles = vis.circles.merge(vis.circlesEnter);
 
     function ticked() {
-        //console.log("tick")
-        //console.log(data.map(function(d){ return d.x; }));
         vis.circles
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
     }
 
     vis.simulation
-        .nodes(vis.data)
+        .nodes(vis.displayData)
         .on("tick", ticked);
 
     function groupBubbles() {
@@ -81,7 +121,7 @@ ForceDiagram.prototype.initVis = function(){
 
     function splitBubbles(byVar) {
 
-        vis.centerScale.domain(vis.data.map(function(d){ return d[byVar]; }));
+        vis.centerScale.domain(vis.displayData.map(function(d){ return d[byVar]; }));
 
         if(byVar == "all"){
             hideTitles()
@@ -115,7 +155,7 @@ ForceDiagram.prototype.initVis = function(){
             .attr('y', 40)
             .style("fill", "white")
             .attr('text-anchor', 'middle')
-            .text(function (d) { return byVar + ' ' + d; });
+            .text(function (d) { return d; });
 
         titles.exit().remove()
     }
@@ -135,32 +175,27 @@ ForceDiagram.prototype.initVis = function(){
                 // Get the id of the button
                 var buttonId = button.attr('id');
 
-                console.log(buttonId)
+                // console.log(buttonId)
                 // Toggle the bubble chart based on
                 // the currently clicked button.
                 splitBubbles(buttonId);
+            });
+
+        d3.selectAll('.highlowtoggle')
+            .on('click', function () {
+
+                d3.selectAll('.highlowtoggle').classed('active', false);
+
+                var button = d3.select(this);
+
+                button.classed('active', true);
+                var buttonId = button.attr('id');
+
+                vis.wrangleData(buttonId);
             });
     }
 
     setupButtons();
 
-    vis.wrangleData();
-
 };
 
-ForceDiagram.prototype.wrangleData = function(){
-    var vis = this;
-
-    var temp = [];
-    var counter = 0;
-    vis.displayData = vis.data.forEach(function (element) {
-
-        if (counter < 100) {
-            temp.push(element);
-        }
-        counter++;
-    });
-
-    console.log(temp);
-
-};

@@ -110,7 +110,7 @@ queue()
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
 		USscatter = new ScatterVis("US-scatter", jsonData);
 
-		forceHouseCategories = new ForceDiagram('forceDiagram', twoBedroom, threeBedroom);
+		forceHouseCategories = new ForceDiagram('forceDiagram', 'Highest', twoBedroom, threeBedroom);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 
