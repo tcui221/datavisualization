@@ -28,7 +28,7 @@ ForceDiagram.prototype.initVis = function() {
     vis.forceStrength = 0.5;
 
     vis.simulation = d3.forceSimulation()
-        .force("collide",d3.forceCollide( function(d){
+        .force("collide", d3.forceCollide( function(d){
             return vis.radius + 8 }).iterations(10)
         )
         .force("charge", d3.forceManyBody().strength(-10))
@@ -37,6 +37,11 @@ ForceDiagram.prototype.initVis = function() {
 
     vis.radiusScale = d3.scaleLinear()
         .range([8, 20]);
+
+    // color scale for the regions: range: 9-class reds from colorbrewer
+    vis.color = d3.scaleOrdinal()
+        .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
+        .domain(["West", "Northeast", "South"]) ;
 
     vis.wrangleData(this.toggleID);
 
@@ -100,20 +105,20 @@ ForceDiagram.prototype.drawDiagram = function(){
 
     vis.circlesEnter = vis.circles.enter().append("circle")
         .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
-        .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-        .attr("cy", function(d, i){ return 250; })
-        // .style("fill", function(d, i){ return color(d.ID); })
-        // .style("stroke", function(d, i){ return color(d.ID); })
-        // .style("stroke-width", 10)
+        .attr("cx", function(d, i){
+            return 175 + 25 * i + 2 * i ** 2;
+        })
+        .attr("cy", function(d, i){
+            return 250;
+        })
+        .style("fill", function(d, i){
+            console.log(d['Region']);
+            return vis.color(d['Region']);
+        })
         .call(vis.tip)
         .style("pointer-events", "all")
-        .style('fill', 'red')
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
-        // .call(d3.drag()
-        //     .on("start", dragstarted)
-        //     .on("drag", dragged)
-        //     .on("end", dragended));
 
     vis.circles = vis.circles.merge(vis.circlesEnter);
 

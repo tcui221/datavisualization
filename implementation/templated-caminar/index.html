@@ -56,30 +56,40 @@
 							<h2>Let's play a little game!</h2>
 							<p>Take a guess! Which of these houses do you think is the most expensive one?</p>
 						</header>
-						<div class="content">
-							<div class="gallery">
-								<div>
-									<div class="image fit flush">
-										<a href="images/zillow_expensive_house.jpeg"><img src="images/zillow_expensive_house.jpeg" alt="" /></a>
-									</div>
-								</div>
-								<div>
-									<div class="image fit flush">
-										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>
-									</div>
-								</div>
-								<div>
-									<div class="image fit flush">
-										<a href="images/pic04.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>
-									</div>
-								</div>
-								<div>
-									<div class="image fit flush">
-										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>
-									</div>
-								</div>
+						<div id='container'>
+							<div id='title'>
+								<h1>Learning Js Properly: Project #1 - Dynamic Quiz</h1>
 							</div>
+							<br/>
+							<div id='quiz'></div>
+							<div class='quizbutton' id='next'><a href='#'>Next</a></div>
+							<div class='quizbutton' id='prev'><a href='#'>Prev</a></div>
+							<div class='quizbutton' id='start'> <a href='#'>Start Over</a></div>
 						</div>
+						<!--						<div class="content">-->
+<!--							<div class="gallery">-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="images/zillow_expensive_house.jpeg"><img src="images/zillow_expensive_house.jpeg" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="images/pic04.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									<div class="image fit flush">-->
+<!--										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
 					</section>
 
 				<!-- Three -->
@@ -200,6 +210,8 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/d3.min.js"></script>
 		<script src="assets/js/d3-tip.js"></script>
+
+		<script src='quiz.js'></script>
 
 
 		<!-- Visualization objects -->
