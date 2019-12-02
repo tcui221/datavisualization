@@ -4,7 +4,6 @@ ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData, _threeBedroo
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
     this.displayData = _twoBedroomData;
-    console.log("Force diagram data");
     this.toggleID = _toggleID;
     this.initVis();
 };
@@ -56,14 +55,12 @@ ForceDiagram.prototype.wrangleData = function(id){
 
     // Sort by highest or lowest prices
     if (id == "Highest") {
-        // console.log("Highest");
         // Sort descending by price
         vis.data.sort( function(a, b){
             return b['2019-10'] - a['2019-10'];
         });
     } else {
 
-        // console.log("Lowest");
         vis.data.sort( function(a, b){
             return a['2019-10'] - b['2019-10'];
         });
