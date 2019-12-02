@@ -26,16 +26,17 @@ ForceDiagram.prototype.initVis = function() {
     vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
     vis.forceStrength = 0.5;
 
+    vis.radiusScale = d3.scaleLinear()
+        .range([8, 20]);
+
     vis.simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide( function(d){
-            return vis.radius + 8 }).iterations(10)
+            return vis.radiusScale(d['2019-10']) + .5 }).iterations(30)
         )
-        .force("charge", d3.forceManyBody().strength(-10))
+        .force("charge", d3.forceManyBody().strength(10))
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
 
-    vis.radiusScale = d3.scaleLinear()
-        .range([8, 20]);
 
     // color scale for the regions: range: 9-class reds from colorbrewer
     vis.color = d3.scaleOrdinal()
