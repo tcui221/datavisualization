@@ -28,6 +28,11 @@ ForceDiagram.prototype.initVis = function() {
     vis.radiusScale = d3.scaleLinear()
         .range([8, 20]);
 
+    // color scale for the regions: range: 9-class reds from colorbrewer
+    vis.color = d3.scaleOrdinal()
+        .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
+        .domain(["West", "Northeast", "South"]) ;
+
     vis.simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide( function(d){
             return vis.radiusScale(d['2019-10']) + .5 }).iterations(30)
@@ -35,12 +40,6 @@ ForceDiagram.prototype.initVis = function() {
         .force("charge", d3.forceManyBody().strength(10))
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
-
-
-    // color scale for the regions: range: 9-class reds from colorbrewer
-    vis.color = d3.scaleOrdinal()
-        .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
-        .domain(["West", "Northeast", "South"]) ;
 
     // Add tooltip over circles
     vis.tip = d3.tip()
@@ -91,9 +90,10 @@ ForceDiagram.prototype.wrangleData = function(id){
 
     vis.radiusScale.domain(d3.extent(vis.displayData, function(d){return d['2019-10'];}));
 
-
     vis.drawDiagram();
-    vis.splitBubbles("all");
+
+    // Split by currently active button "all" "Region" or "State"
+    vis.splitBubbles(vis.splitSelection);
 };
 
 ForceDiagram.prototype.drawDiagram = function(){
@@ -133,6 +133,7 @@ ForceDiagram.prototype.drawDiagram = function(){
         .remove();
 
     function ticked() {
+        // console.log()
         vis.circles
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
