@@ -19,8 +19,11 @@ ForceDiagram.prototype.initVis = function() {
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
         .attr("width", vis.w + vis.margin.left + vis.margin.right)
         .attr("height", vis.h + vis.margin.top + vis.margin.bottom)
-        .append("g")
+
+    vis.g = vis.svg.append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+    vis.node = vis.g.append("g").selectAll(".node");
 
     vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
     vis.forceStrength = 0.5;
@@ -33,7 +36,13 @@ ForceDiagram.prototype.initVis = function() {
         .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
         .domain(["West", "Northeast", "South"]) ;
 
-    vis.simulation = d3.forceSimulation()
+    // Add tooltip over circles
+    vis.tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .attr('id', 'forceToolTip')
+        .direction('s');
+
+    vis.simulation = d3.forceSimulation(vis.displayData)
         .force("collide", d3.forceCollide( function(d){
             return vis.radiusScale(d['2019-10']) + .5 }).iterations(30)
         )
@@ -41,15 +50,9 @@ ForceDiagram.prototype.initVis = function() {
         .force("y", d3.forceY().y(vis.h / 2))
         .force("x", d3.forceX().x(vis.w / 2));
 
-    // Add tooltip over circles
-    vis.tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .attr('id', 'forceToolTip')
-        .direction('s');
-
     vis.setUpButtons();
 
-    vis.wrangleData(this.sortSelection);
+    vis.wrangleData(vis.sortSelection);
 
 };
 
@@ -94,6 +97,7 @@ ForceDiagram.prototype.wrangleData = function(id){
 
     // Split by currently active button "all" "Region" or "State"
     vis.splitBubbles(vis.splitSelection);
+
 };
 
 ForceDiagram.prototype.drawDiagram = function(){
@@ -101,16 +105,32 @@ ForceDiagram.prototype.drawDiagram = function(){
 
     formatComma = d3.format(",.0f");
 
+    var t = d3.transition()
+        .duration(750);
+
     vis.tip
         .html(function(d) {
         return "<p><strong>" + d['City'] +
             "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
         });
 
-    vis.circles = vis.svg.selectAll("circle")
-        .data(vis.displayData);
+    // Apply the general update pattern to the nodes.
+    vis.node = vis.node.data(vis.displayData);
 
-    vis.circles.enter().append("circle")
+    vis.node.exit()
+        .style("fill", "#b26745")
+        .transition(t)
+        .attr("r", 1e-6)
+        .remove();
+
+    vis.node
+        .transition(t)
+        .style("fill", function(d, i){
+            return vis.color(d['Region']);
+        })
+        .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); });
+
+    vis.node = vis.node.enter().append("circle")
         .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
         .attr("cx", function(d, i){
             return 175 + 25 * i + 2 * i ** 2;
@@ -121,20 +141,40 @@ ForceDiagram.prototype.drawDiagram = function(){
         .style("fill", function(d, i){
             return vis.color(d['Region']);
         })
-        .merge(vis.circles)
+        .merge(vis.node)
         .call(vis.tip)
         .style("pointer-events", "all")
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
 
-    vis.circles.exit()
-        .transition(d3.transition())
-        .attr("r", 1e-6)
-        .remove();
+    // vis.circles = vis.svg.selectAll("circle")
+    //     .data(vis.displayData);
+    //
+    // vis.circles.enter().append("circle")
+    //     .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
+    //     .attr("cx", function(d, i){
+    //         return 175 + 25 * i + 2 * i ** 2;
+    //     })
+    //     .attr("cy", function(d, i){
+    //         return 250;
+    //     })
+    //     .style("fill", function(d, i){
+    //         return vis.color(d['Region']);
+    //     })
+    //     .merge(vis.circles)
+    //     .call(vis.tip)
+    //     .style("pointer-events", "all")
+    //     .on('mouseover', vis.tip.show)
+    //     .on('mouseout', vis.tip.hide);
+    //
+    // vis.circles.exit()
+    //     .transition(t)
+    //     .attr("r", 1e-6)
+    //     .remove();
 
     function ticked() {
-        // console.log()
-        vis.circles
+        // vis.circles
+        vis.node
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
     }
