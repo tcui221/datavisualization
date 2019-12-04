@@ -1,15 +1,17 @@
 
 
-ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData,
-                        _threeBedroomData, _fourBedroomData, _fiveBedroomData ){
+ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData,
+                        _fourBedroomData, _fiveBedroomData ){
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
     this.displayData = _twoBedroomData;
+    this.twoBedroomData = _twoBedroomData;
     this.threeBedroomData = _threeBedroomData;
     this.fourBedroomData = _fourBedroomData;
     this.fiveBedroomData = _fiveBedroomData;
-    this.sortSelection = _toggleID;
     this.splitSelection = "all";
+    this.sortSelection = "Highest";
+    this.dataCategorySelection = "2bed";
     this.initVis();
 };
 
@@ -57,22 +59,32 @@ ForceDiagram.prototype.initVis = function() {
 
     vis.setUpButtons();
 
-    vis.wrangleData(vis.sortSelection);
+    vis.wrangleData(vis.sortSelection, vis.dataCategorySelection);
 
 };
 
-ForceDiagram.prototype.wrangleData = function(id){
+ForceDiagram.prototype.wrangleData = function(highLowToggle, dataCategorySelection){
     var vis = this;
 
     // console.log("How we're splitting: " + vis.splitSelection);
     // console.log("Highest or lowest: " + id);
+
+    if (dataCategorySelection == "2bed") {
+        vis.data = vis.twoBedroomData;
+    } else if (dataCategorySelection == "3bed") {
+        vis.data = vis.threeBedroomData;
+    } else if (dataCategorySelection == "4bed") {
+        vis.data = vis.fourBedroomData;
+    } else {
+        vis.data = vis.fiveBedroomData;
+    }
 
     vis.data.forEach(function (element) {
         element['2019-10'] = +element['2019-10'];
     });
 
     // Sort by highest or lowest prices
-    if (id == "Highest") {
+    if (highLowToggle == "Highest") {
         // Sort descending by price
         vis.data.sort( function(a, b){
             return b['2019-10'] - a['2019-10'];
@@ -193,9 +205,25 @@ ForceDiagram.prototype.setUpButtons = function(){
             button.classed('active', true);
             var buttonId = button.attr('id');
 
-            this.sortSelection = buttonId;
+            vis.sortSelection = buttonId;
 
-            vis.wrangleData(buttonId);
+            // wrangleData(highlowtoggle, dataCategorySelection)
+            vis.wrangleData(buttonId, vis.dataCategorySelection);
+        });
+
+    d3.selectAll('.datacatagory')
+        .on('click', function () {
+
+            d3.selectAll('.datacatagory').classed('active', false);
+
+            var button = d3.select(this);
+
+            button.classed('active', true);
+            var buttonId = button.attr('id');
+
+            vis.dataCategorySelection = buttonId;
+
+            vis.wrangleData(vis.sortSelection, buttonId);
         });
 
 };
