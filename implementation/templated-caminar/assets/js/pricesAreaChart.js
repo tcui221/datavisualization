@@ -66,11 +66,18 @@ PricesVis.prototype.initVis = function(){
         // adding style here to suit the dark background of the template css
         .style("fill","white");
     vis.svg.append("text")
-        .attr("x", vis.width - 400)
+        .attr("x", vis.width-50)
         .attr("y", vis.height + 45)
         .text("Time")
         // adding style here to suit the dark background of the template css
         .style("fill","white");
+
+    //title
+    vis.svg.append("text")
+        .attr("class", "price-chart-title")
+        .text("United States")
+        .attr("y", -20)
+        .attr("x", vis.width/2 - 20);
 
     vis.wrangleData();
 };
@@ -182,6 +189,9 @@ PricesVis.prototype.onSelectionChange = function(stateSelected){
     console.log(temp);
 
     vis.filteredData = temp;
+
+    vis.svg.select(".price-chart-title")
+        .text(vis.selectedState);
 
     vis.wrangleData();
 };

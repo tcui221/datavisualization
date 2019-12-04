@@ -12,7 +12,7 @@ ScatterVis.prototype.initVis = function(){
     var vis = this;
 
 
-    vis.margin = { top: 20, right: 20, bottom: 20, left: 60 };
+    vis.margin = { top: 10, right: 20, bottom: 20, left: 100 };
     vis.width = 700 - vis.margin.left - vis.margin.right;
     vis.height = vis.width * 1/2;
 
@@ -32,7 +32,7 @@ ScatterVis.prototype.initVis = function(){
         .range([vis.height, 0]);
 
     // vis.radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, width * 0.05]);
-    vis.colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+    vis.colorScale = d3.scaleOrdinal(colorbrewer.YlOrBr[4]);
 
     // var formatX = d3.format(".1s");
 // The x & y axes.
@@ -85,9 +85,8 @@ ScatterVis.prototype.initVis = function(){
         .attr('class', 'd3-tip')
         .direction('s')
         .html(function(d) {
-            return "<p><strong>" + d.region + "</strong></p><p><strong>Region of the US: </strong>"+ d.division+
-                "</strong></p><p><strong>Median Income: </strong>" + formatComma(d.income) +
-                "</p><p><strong>Median price: </strong>" + formatComma(d.price);
+            return "<p style='font-weight: bold'>" + d.region + "</p>Region of the US: "+ d.division+
+                "<br>Median Income: " + formatComma(d.income) + "<br>Median price: " + formatComma(d.price);
         });
 
     function x(d) { return d.income; }

@@ -96,6 +96,12 @@ path {
 	margin-top: 50px;
 }
 
+.price-chart-title {
+	text-anchor: middle;
+	fill: white;
+	font-size: 20px;
+}
+
 .axis line,
 .axis .state {
 	fill: none;
@@ -146,7 +152,7 @@ path {
 .d3-tip {
 	font-family: "Helvetica Neue";
 	line-height: 1;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	padding: 12px;
 	background: rgba(0, 0, 0, 0.8);
 	color: #fff;
@@ -272,3 +278,17 @@ path {
 	pointer-events: none;
 }
 
+/* button for choropleth*/
+#play {
+	background-color: #eabea4;
+}
+
+#play:hover {
+	background-color: white;
+}
+
+/*scatter chart tooltip*/
+
+#scatter-label {
+	color: white;
+}

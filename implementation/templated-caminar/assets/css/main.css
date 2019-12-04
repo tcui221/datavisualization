@@ -1723,7 +1723,7 @@
 	}
 
 	blockquote {
-		border-left: solid 4px;
+		/*border-left: solid 4px;*/
 		font-style: italic;
 		margin: 0 0 2rem 0;
 		padding: 0.5rem 0 0.5rem 2rem;
@@ -1791,7 +1791,7 @@
 	}
 
 	blockquote {
-		border-left-color: rgba(144, 144, 144, 0.25);
+		/*border-left-color: rgba(144, 144, 144, 0.25);*/
 	}
 
 	code {
@@ -3120,7 +3120,7 @@
 				}
 
 			.wrapper.style2 header p {
-				color: rgba(255, 255, 255, 0.25);
+				color: rgba(255, 255, 255, 0.2);
 			}
 
 		@media screen and (max-width: 1280px) {
