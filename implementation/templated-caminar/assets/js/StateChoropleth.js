@@ -31,7 +31,7 @@ USchoropleth_State = function(_parentElement, _map, _home){
 USchoropleth_State.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = {top: 40, right: 60, bottom: 60, left: 100};
+    vis.margin = {top: 40, right: 60, bottom: 20, left: 100};
     vis.padding = 20;
 
     vis.width = 900 - vis.margin.left - vis.margin.right,
