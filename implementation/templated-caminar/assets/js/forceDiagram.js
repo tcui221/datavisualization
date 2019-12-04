@@ -12,8 +12,9 @@ ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData, _threeBedroo
 ForceDiagram.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = { top: 20, right: 20, bottom: 20, left: 60 };
-    vis.w = 960 - vis.margin.left - vis.margin.right;
+    vis.margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    vis.w = 1200 - vis.margin.left - vis.margin.right;
+    // vis.w = 960 - vis.margin.left - vis.margin.right;
     vis.h = vis.w * 1/2;
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -21,11 +22,12 @@ ForceDiagram.prototype.initVis = function() {
         .attr("height", vis.h + vis.margin.top + vis.margin.bottom)
 
     vis.g = vis.svg.append("g")
-        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+        .attr("transform", "translate(" + 10 + "," + vis.margin.top + ")");
 
     vis.node = vis.g.append("g").selectAll(".node");
 
     vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
+    console.log(vis.w);
     vis.forceStrength = 0.5;
 
     vis.radiusScale = d3.scaleLinear()
@@ -59,8 +61,8 @@ ForceDiagram.prototype.initVis = function() {
 ForceDiagram.prototype.wrangleData = function(id){
     var vis = this;
 
-    console.log("How we're splitting: " + vis.splitSelection);
-    console.log("Highest or lowest: " + id);
+    // console.log("How we're splitting: " + vis.splitSelection);
+    // console.log("Highest or lowest: " + id);
 
     vis.data.forEach(function (element) {
         element['2019-10'] = +element['2019-10'];
@@ -110,7 +112,8 @@ ForceDiagram.prototype.drawDiagram = function(){
 
     vis.tip
         .html(function(d) {
-        return "<p><strong>" + d['City'] +
+        return "<p><strong>" + d['City'] + ", " + d['State'] +
+            "<br></p><p><strong> Zip Code : </strong>" + d['RegionName'] +
             "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
         });
 
