@@ -84,7 +84,7 @@ ForceDiagram.prototype.wrangleData = function(id){
     var temp = [];
     var counter = 0;
     vis.data.forEach(function (element) {
-        if (counter < 100) {
+        if (counter < 50) {
             temp.push(element);
         }
         counter++;
