@@ -34,6 +34,20 @@ ScatterVis.prototype.initVis = function(){
     // vis.radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, width * 0.05]);
     vis.colorScale = d3.scaleOrdinal(colorbrewer.YlOrBr[4]);
 
+    vis.legendOrdinal = d3.legendColor()
+        .shapePadding(0)
+        .title("Color Legend")
+        .titleWidth(200)
+        .orient('horizontal')
+        // .labels(["$", " ", " ", " ", " ", " ", " ", " ", "$$$$"])
+        .scale(vis.colorScale);
+
+    vis.svg.append("g").select(".legendOrdinal")
+        .style("font-size","12px")
+        .style("fill", "maroon")
+        // .attr("transform","translate("+vis.width*0.7+",350)")
+        .call(vis.legendOrdinal);
+
     // var formatX = d3.format(".1s");
 // The x & y axes.
     vis.xAxis = d3.axisBottom()
@@ -129,6 +143,8 @@ ScatterVis.prototype.initVis = function(){
         .ease(d3.easeLinear)
         .tween("year", tweenYear)
         .on("end", enableInteraction);
+
+
 
     // Positions the dots based on data.
     function position(dot) {
