@@ -33,10 +33,9 @@ ForceDiagram.prototype.initVis = function() {
     vis.radiusScale = d3.scaleLinear()
         .range([8, 20]);
 
-    // color scale for the regions: range: 9-class reds from colorbrewer
     vis.color = d3.scaleOrdinal()
-        .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
-        .domain(["West", "Northeast", "South"]) ;
+        .range(["rgba(204, 82, 2, 1)", "rgb(236, 112, 20)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
+        .domain(["West", "Northeast", "South", "Midwest", ]) ;
 
     // Add tooltip over circles
     vis.tip = d3.tip()
@@ -117,7 +116,6 @@ ForceDiagram.prototype.drawDiagram = function(){
             "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
         });
 
-    // Apply the general update pattern to the nodes.
     vis.node = vis.node.data(vis.displayData);
 
     vis.node.exit()
