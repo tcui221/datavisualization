@@ -1,0 +1,400 @@
+RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
+97518,94027,Atherton,CA,,San Francisco-Oakland-Hayward,San Mateo County,8097,4139000
+72418,33109,Fisher Island,FL,,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,11096,3950700
+96149,90402,Santa Monica,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5946,3644800
+97901,94970,Stinson Beach,CA,,San Francisco-Oakland-Hayward,Marin County,11459,3544100
+97691,94301,Palo Alto,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4689,3444800
+97560,94105,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,4454,3280600
+97513,94022,Los Altos,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4799,3261900
+97577,94123,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,1702,3220900
+97519,94028,Portola Valley,CA,,San Francisco-Oakland-Hayward,San Mateo County,7943,3109800
+96086,90210,Beverly Hills,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3979,2991300
+96116,90265,Malibu,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,4553,2899300
+97515,94024,Los Altos,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4442,2820100
+96980,92662,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,8519,2759300
+97587,94133,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,2278,2665800
+58630,2116,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,2770,2650800
+96120,90272,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3803,2643300
+96979,92661,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,7950,2608500
+96050,90069,West Hollywood,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1603,2605000
+96957,92625,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,5187,2575200
+97695,94305,Stanford,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,6580,2571800
+97130,93108,Montecito,CA,,Santa Maria-Santa Barbara,Santa Barbara County,6313,2571100
+96088,90212,Beverly Hills,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5356,2569600
+97696,94306,Palo Alto,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2805,2558800
+96030,90049,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,819,2441500
+99524,98039,Medina,WA,,Seattle-Tacoma-Bellevue,King County,9392,2351100
+96087,90211,Beverly Hills,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,6903,2336700
+97936,95030,Los Gatos,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,5964,2304300
+97966,95070,Saratoga,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2688,2271900
+97501,94010,Burlingame,CA,,San Francisco-Oakland-Hayward,San Mateo County,1124,2264400
+96969,92651,Laguna Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,2509,2245200
+97568,94114,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,1064,2206700
+96975,92657,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,6545,2203600
+96005,90024,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,688,2199800
+97477,93921,Carmel-by-the-Sea,CA,,Salinas,Monterey County,7591,2168200
+97895,94957,Ross,CA,,San Francisco-Oakland-Hayward,Marin County,10225,2151800
+97516,94025,Menlo Park,CA,,San Francisco-Oakland-Hayward,San Mateo County,1250,2148500
+97527,94040,Mountain View,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1480,2145100
+96621,92067,Rancho Santa Fe,CA,,San Diego-Carlsbad,San Diego County,6519,2142000
+97572,94118,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,944,2132800
+97865,94920,Tiburon,CA,,San Francisco-Oakland-Hayward,Marin County,5641,2124300
+58625,2111,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,6322,2122600
+96048,90067,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,8772,2097100
+96117,90266,Manhattan Beach,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1710,2083300
+97569,94115,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,650,2082800
+97564,94109,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,9,2068000
+96127,90291,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1550,2002300
+62321,11976,Water Mill,NY,,New York-Newark-Jersey City,Suffolk County,8825,1992200
+72442,33139,Miami Beach,FL,,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,64,1982700
+96150,90403,Santa Monica,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1768,1965100
+96029,90048,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2075,1925100
+58632,2118,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,2145,1917900
+97528,94041,Mountain View,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,5159,1915000
+97926,95014,Cupertino,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,400,1911200
+72452,33149,Key Biscayne,FL,,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,5207,1897600
+97536,94062,Redwood City,CA,,San Francisco-Oakland-Hayward,San Mateo County,3453,1888700
+96058,90077,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,7006,1865600
+97702,94402,San Mateo,CA,,San Francisco-Oakland-Hayward,San Mateo County,3367,1858600
+96152,90405,Santa Monica,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1643,1856200
+58622,2108,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,8460,1852300
+72914,33921,Boca Grande,FL,,Cape Coral-Fort Myers,Lee County,9814,1851900
+97571,94117,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,767,1839000
+96296,91108,San Marino,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,6547,1808100
+72636,33480,Palm Beach,FL,,Miami-Fort Lauderdale-West Palm Beach,Palm Beach County,3894,1805200
+96660,92118,Coronado,CA,,San Diego-Carlsbad,San Diego County,4092,1804700
+96027,90046,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,27,1775900
+97542,94070,San Carlos,CA,,San Francisco-Oakland-Hayward,San Mateo County,2427,1772500
+71578,31561,Sea Island,GA,,Brunswick,Glynn County,11447,1742700
+97549,94087,Sunnyvale,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,453,1741300
+97581,94127,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,4742,1732900
+97585,94131,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,2110,1732200
+96586,92014,Del Mar,CA,,San Diego-Carlsbad,San Diego County,5209,1731600
+96017,90036,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,444,1704900
+97562,94107,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,1107,1679500
+96602,92037,San Diego,CA,,San Diego-Carlsbad,San Diego County,784,1663900
+97565,94110,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,58,1656100
+97879,94939,Larkspur,CA,,San Francisco-Oakland-Hayward,Marin County,7190,1648200
+96981,92663,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,3122,1641200
+96016,90035,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1953,1639400
+97521,94030,Millbrae,CA,,San Francisco-Oakland-Hayward,San Mateo County,4021,1631800
+60545,7030,Hoboken,NJ,,New York-Newark-Jersey City,Hudson County,41,1631400
+97498,94002,Belmont,CA,,San Francisco-Oakland-Hayward,San Mateo County,2983,1630100
+96128,90292,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1599,1616100
+97558,94103,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,1058,1610900
+99492,98004,Bellevue,WA,,Seattle-Tacoma-Bellevue,King County,816,1606100
+96978,92660,Newport Beach,CA,,Los Angeles-Long Beach-Anaheim,Orange County,1349,1604000
+97693,94303,Palo Alto,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1750,1602500
+97839,94705,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,5406,1585800
+97997,95129,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1799,1585100
+97860,94904,Kentfield,CA,,San Francisco-Oakland-Hayward,Marin County,6008,1583100
+96008,90027,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,242,1578600
+97535,94061,Redwood City,CA,,San Francisco-Oakland-Hayward,San Mateo County,2027,1571800
+97548,94086,Sunnyvale,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,491,1566900
+97575,94121,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,807,1562200
+97819,94618,Oakland,CA,,San Francisco-Oakland-Hayward,Alameda County,4806,1555300
+96049,90068,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2141,1554300
+96045,90064,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2511,1551400
+97539,94065,Redwood City,CA,,San Francisco-Oakland-Hayward,San Mateo County,6166,1545200
+96109,90254,Hermosa Beach,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3548,1543300
+58629,2115,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,3204,1538700
+97899,94965,Sausalito,CA,,San Francisco-Oakland-Hayward,Marin County,5664,1529400
+97479,93923,Carmel-by-the-Sea,CA,,Salinas,Monterey County,5670,1528300
+97530,94043,Mountain View,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2089,1517000
+97938,95032,Los Gatos,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,3137,1511700
+96072,90094,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5727,1500400
+97812,94610,Oakland,CA,,San Francisco-Oakland-Hayward,Alameda County,1242,1490300
+97703,94403,San Mateo,CA,,San Francisco-Oakland-Hayward,San Mateo County,966,1483400
+97576,94122,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,293,1483100
+97570,94116,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,1573,1480000
+97715,94507,Alamo,CA,,San Francisco-Oakland-Hayward,Contra Costa County,5683,1479100
+97704,94404,Foster City,CA,,San Francisco-Oakland-Hayward,San Mateo County,1531,1476600
+97493,93953,Del Monte Forest,CA,,Salinas,Monterey County,7720,1476200
+96121,90274,Palos Verdes Estates,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3080,1473300
+96097,90232,Culver City,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,4919,1470800
+97881,94941,Mill Valley,CA,,San Francisco-Oakland-Hayward,Marin County,2313,1459800
+98855,96714,Kilauea,HI,,Kapaa,Kauai County,10208,1444900
+96047,90066,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,117,1444100
+97586,94132,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,3124,1428800
+58628,2114,Boston,MA,,Boston-Cambridge-Newton,Suffolk County,4457,1424100
+96271,91011,La Canada Flintridge,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5141,1409100
+96129,90293,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5210,1405900
+93818,81615,Snowmass Village,CO,,Glenwood Springs,Pitkin County,9659,1378800
+96449,91604,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1733,1378600
+97769,94563,Orinda,CA,,San Francisco-Oakland-Hayward,Contra Costa County,4861,1376600
+97841,94707,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,6003,1365700
+96628,92075,Solana Beach,CA,,San Diego-Carlsbad,San Diego County,5457,1361800
+97843,94709,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,5760,1358400
+96015,90034,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,62,1344000
+95985,90004,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,182,1336500
+97869,94925,Corte Madera,CA,,San Francisco-Oakland-Hayward,Marin County,6877,1336400
+99525,98040,Mercer Island,WA,,Seattle-Tacoma-Bellevue,King County,3348,1335900
+97756,94549,Lafayette,CA,,San Francisco-Oakland-Hayward,Contra Costa County,2969,1331300
+58652,2138,Cambridge,MA,,Boston-Cambridge-Newton,Middlesex County,1565,1330700
+97131,93109,Santa Barbara,CA,,Santa Maria-Santa Barbara,Santa Barbara County,6504,1327300
+97780,94574,Saint Helena,CA,,Napa,Napa County,6571,1324800
+93798,81435,Mountain Village,CO,,,San Miguel County,6950,1320200
+66155,20037,Washington,DC,,Washington-Arlington-Alexandria,District of Columbia,4571,1318700
+58804,2554,Nantucket,MA,,,Nantucket County,4716,1317800
+97952,95051,Santa Clara,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,250,1315000
+97842,94708,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,6351,1312900
+97998,95130,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,6274,1310400
+97837,94703,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,4097,1297600
+96293,91105,Pasadena,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5437,1293800
+97838,94704,Berkeley,CA,,San Francisco-Oakland-Hayward,Alameda County,3910,1289800
+97746,94539,Fremont,CA,,San Francisco-Oakland-Hayward,Alameda County,1108,1287200
+96009,90028,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,648,1284500
+72443,33140,Miami Beach,FL,,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,1990,1282200
+96006,90025,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,215,1281400
+96426,91436,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,5801,1280000
+96019,90038,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2365,1277100
+93279,80202,Denver,CO,,Denver-Aurora-Lakewood,Denver County,2268,1276300
+96126,90290,Topanga,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,7711,1272000
+97813,94611,Oakland,CA,,San Francisco-Oakland-Hayward,Alameda County,857,1270000
+96123,90277,Redondo Beach,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,853,1268800
+97126,93103,Santa Barbara,CA,,Santa Maria-Santa Barbara,Santa Barbara County,4986,1266500
+97993,95125,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,458,1263100
+97988,95120,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2452,1261300
+96037,90056,Ladera Heights,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,6734,1259800
+96412,91403,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2749,1258000
+97985,95117,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,3220,1252900
+58758,2446,Brookline,MA,,Boston-Cambridge-Newton,Norfolk County,1849,1248200
+96103,90245,El Segundo,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,4753,1243800
+96280,91030,South Pasadena,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3375,1238200
+97920,95008,Campbell,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,557,1236900
+58793,2535,Chilmark,MA,,Vineyard Haven,Dukes County,9793,1235500
+97547,94085,Sunnyvale,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4076,1234300
+66132,20008,Washington,DC,,Washington-Arlington-Alexandria,District of Columbia,1017,1232500
+98212,95452,Kenwood,CA,,Santa Rosa,Sonoma County,10470,1226700
+59248,3854,New Castle,NH,,Boston-Cambridge-Newton,Rockingham County,11372,1217800
+96639,92091,Rancho Santa Fe,CA,,San Diego-Carlsbad,San Diego County,10742,1210600
+62310,11963,Sag Harbor,NY,,New York-Newark-Jersey City,Suffolk County,5719,1202900
+93849,81657,Vail,CO,,Edwards,Eagle County,7163,1201700
+99572,98112,Seattle,WA,,Seattle-Tacoma-Bellevue,King County,3258,1201400
+98853,96712,Haleiwa,HI,,Urban Honolulu,Honolulu County,7523,1200500
+73055,34236,Sarasota,FL,,North Port-Sarasota-Bradenton,Sarasota County,4133,1199000
+72457,33154,Bal Harbour,FL,,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,4019,1198700
+97992,95124,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1090,1195700
+97951,95050,Santa Clara,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1588,1187600
+72916,33924,Captiva,FL,,Cape Coral-Fort Myers,Lee County,11337,1184100
+97537,94063,Redwood City,CA,,San Francisco-Oakland-Hayward,San Mateo County,2741,1182900
+58776,2468,Newton,MA,,Boston-Cambridge-Newton,Middlesex County,8665,1182300
+97127,93105,Santa Barbara,CA,,Santa Maria-Santa Barbara,Santa Barbara County,3194,1179400
+96095,90230,Culver City,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,2388,1178100
+97567,94112,San Francisco,CA,,San Francisco-Oakland-Hayward,San Francisco County,445,1177700
+97840,94706,Albany,CA,,San Francisco-Oakland-Hayward,Alameda County,4394,1177400
+97955,95054,Santa Clara,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4282,1175700
+97896,94960,San Anselmo,CA,,San Francisco-Oakland-Hayward,Marin County,5589,1173500
+96424,91423,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1563,1172500
+98002,95134,San Jose,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2026,1172500
+96122,90275,Rancho Palos Verdes,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1354,1168400
+98952,96821,Honolulu,HI,,Urban Honolulu,Honolulu County,5237,1165900
+96151,90404,Santa Monica,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,3319,1163300
+96026,90045,Los Angeles,CA,,Los Angeles-Long Beach-Anaheim,Los Angeles County,1098,1159100
+98203,95442,Glen Ellen,CA,,Santa Rosa,Sonoma County,9038,1155600
+97540,94066,San Bruno,CA,,San Francisco-Oakland-Hayward,San Mateo County,1213,1155100
+97701,94401,San Mateo,CA,,San Francisco-Oakland-Hayward,San Mateo County,2063,1150300
+67193,22209,Arlington,VA,,Washington-Arlington-Alexandria,Arlington County,4187,1145900
+96651,92109,San Diego,CA,,San Diego-Carlsbad,San Diego County,183,1144000
+99569,98109,Seattle,WA,,Seattle-Tacoma-Bellevue,King County,463,1143800
+97939,95033,Lexington Hills,CA,,San Jose-Sunnyvale-Santa Clara,Santa Clara County,7201,1140900
+96580,92007,Encinitas,CA,,San Diego-Carlsbad,San Diego County,6182,1138300
+77821,45804,Lima,OH,,Lima,Allen County,5378,26600
+68044,24216,Appalachia,VA,,Big Stone Gap,Wise County,9885,26800
+68718,25703,Huntington,WV,,Huntington-Ashland,Cabell County,8231,31800
+74646,38108,Memphis,TN,,Memphis,Shelby County,5040,34700
+85070,61603,Peoria,IL,,Peoria,Peoria County,5509,35100
+90578,74884,Wewoka,OK,,,Seminole County,8111,37400
+68868,26050,Newell,WV,,Weirton-Steubenville,Hancock County,11105,38700
+73976,36617,Mobile,AL,,Mobile,Mobile County,6106,39400
+84819,61101,Rockford,IL,,Rockford,Winnebago County,4538,39600
+65063,17401,York,PA,,York-Hanover,York County,5146,40700
+71622,31701,Albany,GA,,Albany,Dougherty County,4529,41700
+86363,64126,Kansas City,MO,,Kansas City,Jackson County,8039,41700
+90093,73570,Tipton,OK,,,Tillman County,11414,42700
+90185,73834,Buffalo,OK,,,Harper County,11216,43100
+86362,64125,Kansas City,MO,,Kansas City,Jackson County,10995,44900
+77210,44505,Youngstown,OH,,Youngstown-Warren-Boardman,Mahoning County,5050,45200
+87509,67214,Wichita,KS,,Wichita,Sedgwick County,5496,47000
+63502,14301,Niagara Falls,NY,,Buffalo-Cheektowaga-Niagara Falls,Niagara County,5932,47100
+90018,73438,Healdton,OK,,Ardmore,Carter County,9477,47500
+90091,73568,Temple,OK,,Lawton,Cotton County,11356,48100
+78288,46806,Fort Wayne,IN,,Fort Wayne,Allen County,4242,48400
+84478,60426,Harvey,IL,,Chicago-Naperville-Elgin,Cook County,4307,48400
+77120,44306,Akron,OH,,Akron,Summit County,4003,48700
+91351,76301,Wichita Falls,TX,,Wichita Falls,Wichita County,4942,48700
+89933,73108,Oklahoma City,OK,,Oklahoma City,Oklahoma County,6130,48900
+63727,14779,Town of Salamanca,NY,,Olean,Cattaraugus County,7589,49200
+84820,61102,Rockford,IL,,Rockford,Winnebago County,5443,50500
+85955,63137,Bellefontaine Neighbors,MO,,St. Louis,Saint Louis County,4736,50700
+78635,47512,Bicknell,IN,,Vincennes,Knox County,9250,51400
+90478,74631,Blackwell,OK,,Ponca City,Kay County,7553,51600
+70333,29146,Springfield,SC,,Orangeburg,Orangeburg County,10967,51600
+87428,67045,Eureka,KS,,,Greenwood County,9248,51800
+69522,27823,Enfield,NC,,Roanoke Rapids,Halifax County,7595,52200
+71698,31816,Manchester,GA,,Atlanta-Sandy Springs-Roswell,Meriwether County,8013,52300
+68591,25387,Charleston,WV,,Charleston,Kanawha County,8182,52300
+85954,63136,Jennings,MO,,St. Louis,Saint Louis County,765,53000
+90242,74030,Drumright,OK,,Tulsa,Creek County,9281,53000
+87325,66783,Yates Center,KS,,,Woodson County,10384,53100
+77646,45403,Dayton,OH,,Dayton,Montgomery County,5550,53200
+69903,28377,Red Springs,NC,,Lumberton,Robeson County,6583,53600
+87384,66956,Mankato,KS,,,Jewell County,11361,54000
+74663,38127,Memphis,TN,,Memphis,Shelby County,1429,54300
+71934,32324,Chattahoochee,FL,,Tallahassee,Gadsden County,8891,54300
+90356,74339,Commerce,OK,,Miami,Ottawa County,10262,54500
+69837,28301,Fayetteville,NC,,Fayetteville,Cumberland County,4874,54900
+87541,67335,Cherryvale,KS,,Coffeyville,Montgomery County,9458,54900
+84959,61420,Blandinsville,IL,,Macomb,McDonough County,11440,55000
+87393,66967,Smith Center,KS,,,Smith County,10493,55200
+87560,67361,Sedan,KS,,,Chautauqua County,10696,55300
+74993,38761,Moorhead,MS,,Indianola,Sunflower County,10765,55300
+64616,16502,Erie,PA,,Erie,Erie County,5198,55400
+87558,67357,Parsons,KS,,Parsons,Labette County,5943,55400
+78200,46613,South Bend,IN,,South Bend-Mishawaka,Saint Joseph County,6833,55700
+73970,36611,Chickasaw,AL,,Mobile,Mobile County,7896,55700
+69501,27801,Rocky Mount,NC,,Rocky Mount,Nash County,4656,55800
+77128,44314,Akron,OH,,Akron,Summit County,4616,56500
+90382,74401,Muskogee,OK,,Muskogee,Muskogee County,5127,56600
+69570,27874,Scotland Neck,NC,,Roanoke Rapids,Halifax County,8727,56600
+63941,15210,Pittsburgh,PA,,Pittsburgh,Allegheny County,3150,56900
+75000,38771,Ruleville,MS,,Indianola,Sunflower County,9891,57200
+87669,67576,St. John,KS,,,Stafford County,10801,57300
+81284,53204,Milwaukee,WI,,Milwaukee-Waukesha-West Allis,Milwaukee County,2676,57400
+64930,17104,Harrisburg,PA,,Harrisburg-Carlisle,Dauphin County,4904,57700
+89954,73129,Oklahoma City,OK,,Oklahoma City,Oklahoma County,5130,58200
+63699,14739,Town of Friendship,NY,,,Allegany County,9900,58200
+77310,44710,Canton,OH,,Canton-Massillon,Stark County,6871,58300
+66017,19604,Reading,PA,,Reading,Berks County,4330,58400
+65250,17921,Ashland,PA,,Pottsville,Schuylkill County,7749,58800
+87647,67547,Kinsley,KS,,,Edwards County,10726,58800
+78284,46802,Fort Wayne,IN,,Fort Wayne,Allen County,6468,58900
+86369,64132,Kansas City,MO,,Kansas City,Jackson County,5594,59200
+69911,28386,Rennert,NC,,Lumberton,Robeson County,8458,59400
+85952,63134,Berkeley,MO,,St. Louis,Saint Louis County,6110,59500
+90586,74937,Heavener,OK,,Fort Smith,LeFlore County,8381,59500
+90089,73566,Snyder,OK,,,Kiowa County,10979,59700
+81009,52554,Eldon,IA,,Ottumwa,Wapello County,11280,59700
+87543,67337,Coffeyville,KS,,Coffeyville,Montgomery County,6052,60000
+90558,74854,Maud,OK,,Shawnee,Pottawatomie County,10977,60000
+87366,66935,Belleville,KS,,,Republic County,9906,60600
+77028,44128,Cleveland,OH,,Cleveland-Elyria,Cuyahoga County,2344,60700
+64531,16301,Oil City,PA,,Oil City,Venango County,5062,60700
+69560,27864,Pinetops,NC,,Rocky Mount,Edgecombe County,8801,60800
+63677,14715,Town of Bolivar,NY,,,Allegany County,9949,60800
+90454,74554,Krebs,OK,,McAlester,Pittsburg County,10953,61300
+63927,15145,Turtle Creek,PA,,Pittsburgh,Allegheny County,7212,61400
+87449,67070,Kiowa,KS,,,Barber County,11389,61700
+71636,31719,Americus,GA,,Americus,Sumter County,7134,61900
+76968,44055,Lorain,OH,,Cleveland-Elyria,Lorain County,4800,62200
+78780,47842,Clinton,IN,,Terre Haute,Vermillion County,6669,62300
+90247,74035,Hominy,OK,,Tulsa,Osage County,9549,62300
+87457,67104,Medicine Lodge,KS,,,Barber County,10165,62400
+69005,26386,Lumberport,WV,,Clarksburg,Harrison County,10416,62700
+90407,74447,Okmulgee,OK,,Tulsa,Okmulgee County,5125,62900
+69908,28383,Rowland,NC,,Lumberton,Robeson County,7704,63000
+77037,44137,Maple Heights,OH,,Cleveland-Elyria,Cuyahoga County,3735,63100
+86361,64124,Kansas City,MO,,Kansas City,Jackson County,6505,63400
+70310,29112,North,SC,,Orangeburg,Orangeburg County,8585,63900
+90554,74849,Konawa,OK,,,Seminole County,9774,63900
+63833,15014,Brackenridge,PA,,Pittsburgh,Allegheny County,9398,64000
+69869,28340,Fairmont,NC,,Lumberton,Robeson County,6746,64100
+76771,43612,Toledo,OH,,Toledo,Lucas County,2537,64200
+85264,62018,Rosewood Heights,IL,,St. Louis,Madison County,9541,64200
+84523,60472,Robbins,IL,,Chicago-Naperville-Elgin,Cook County,8862,64300
+78141,46408,Gary,IN,,Chicago-Naperville-Elgin,Lake County,5623,64400
+78538,47336,Dunkirk,IN,,,Jay County,9393,64400
+87710,67661,Phillipsburg,KS,,,Phillips County,9456,64400
+74930,38643,Lambert,MS,,,Quitman County,10699,64400
+90219,74003,Bartlesville,OK,,Bartlesville,Washington County,5726,64500
+63821,14904,Town of Elmira,NY,,Elmira,Chemung County,5324,64700
+87439,67058,Harper,KS,,,Harper County,10586,64900
+87083,66075,Pleasanton,KS,,Kansas City,Linn County,10485,65000
+69890,28364,Maxton,NC,,Lumberton,Robeson County,6255,65200
+69537,27839,Halifax,NC,,Roanoke Rapids,Halifax County,9702,65200
+87756,67839,Dighton,KS,,,Lane County,11180,65500
+90468,74571,Talihina,OK,,Fort Smith,LeFlore County,9258,65600
+78037,46222,Indianapolis,IN,,Indianapolis-Carmel-Anderson,Marion County,2006,65800
+63818,14901,Town of Elmira,NY,,Elmira,Chemung County,5755,65800
+63717,14760,Town of Olean,NY,,Olean,Cattaraugus County,4476,65900
+68531,25260,Mason,WV,,Point Pleasant,Mason County,11002,65900
+85953,63135,Ferguson,MO,,St. Louis,Saint Louis County,4551,66200
+69729,28119,Morven,NC,,,Anson County,10446,66300
+78567,47373,Redkey,IN,,,Jay County,10608,66300
+87606,67473,Osborne,KS,,,Osborne County,10930,66300
+90461,74561,Quinton,OK,,McAlester,Pittsburg County,10750,66600
+87739,67749,Oberlin,KS,,,Decatur County,10215,66700
+78570,47380,Ridgeville,IN,,,Randolph County,10791,66700
+75041,38860,Okolona,MS,,,Chickasaw County,8053,66800
+70307,29107,Neeses,SC,,Orangeburg,Orangeburg County,9713,66800
+84821,61103,Rockford,IL,,Rockford,Winnebago County,3587,66900
+90474,74601,Ponca City,OK,,Ponca City,Kay County,4544,66900
+63674,14711,Town Of Belfast,NY,,,Allegany County,10912,66900
+85316,62084,Roxana,IL,,St. Louis,Madison County,11139,67100
+90266,74056,Pawhuska,OK,,Tulsa,Osage County,7986,67300
+63815,14895,Wellsville,NY,,,Allegany County,6711,67400
+77281,44672,Sebring,OH,,Youngstown-Warren-Boardman,Mahoning County,8555,67400
+87711,67663,Plainville,KS,,,Rooks County,10035,67400
+63667,14701,Jamestown,NY,,Jamestown-Dunkirk-Fredonia,Chautauqua County,1269,67600
+87304,66757,Neodesha,KS,,,Wilson County,9480,67600
+63741,14806,Town of Andover,NY,,,Allegany County,10535,67600
+63385,14048,Town of Dunkirk,NY,,Jamestown-Dunkirk-Fredonia,Chautauqua County,5401,67700
+87239,66608,Topeka,KS,,Topeka,Shawnee County,8009,67700
+87693,67642,Hill City,KS,,,Graham County,10795,67800
+70358,29203,Columbia,SC,,Columbia,Richland County,1323,67900
+89843,73005,Anadarko,OK,,,Caddo County,7169,68000
+63440,14138,Town Of Dayton,NY,,Olean,Cattaraugus County,10767,68000
+81289,53209,Milwaukee,WI,,Milwaukee-Waukesha-West Allis,Milwaukee County,578,68100
+90529,74801,Shawnee,OK,,Shawnee,Pottawatomie County,4214,68100
+77696,45505,Springfield,OH,,Springfield,Clark County,4281,68200
+85073,61606,Peoria,IL,,Peoria,Peoria County,8117,68200
+82396,55713,Buhl,MN,,Duluth,Saint Louis County,11412,68300
+67916,24013,Roanoke,VA,,Roanoke,Roanoke City,7434,68500
+84961,61422,Bushnell,IL,,Macomb,McDonough County,9457,68500
+89944,73119,Oklahoma City,OK,,Oklahoma City,Oklahoma County,3216,68600
+69265,27260,High Point,NC,,Greensboro-High Point,Guilford County,3753,68600
+85424,62326,Colchester,IL,,Macomb,McDonough County,10209,68600
+78668,47561,Oaktown,IN,,Vincennes,Knox County,11140,68600
+91462,76541,Killeen,TX,,Killeen-Temple,Bell County,4012,68700
+71547,31520,Brunswick,GA,,Brunswick,Glynn County,4284,68700
+78719,47666,Patoka,IN,,,Gibson County,11270,68800
+87412,67022,Caldwell,KS,,Wichita,Sumner County,11051,68900
+87704,67654,Norton,KS,,,Norton County,9141,69300
+87246,66616,Topeka,KS,,Topeka,Shawnee County,7930,69400
+77783,45732,Glouster,OH,,Athens,Athens County,8554,69400
+77697,45506,Springfield,OH,,Springfield,Clark County,5938,69500
+78197,46601,South Bend,IN,,South Bend-Mishawaka,Saint Joseph County,8012,69600
+63212,13652,Town Of Russell,NY,,Ogdensburg-Massena,Saint Lawrence County,10957,69600
+74659,38122,Memphis,TN,,Memphis,Shelby County,3409,69700
+89934,73109,Oklahoma City,OK,,Oklahoma City,Oklahoma County,4887,69700
+63011,13204,Syracuse,NY,,Syracuse,Onondaga County,4342,69800
+80632,51105,Sioux City,IA,,Sioux City,Woodbury County,6966,69800
+63747,14813,Amity,NY,,,Allegany County,10246,69900
+63227,13669,Ogdensburg,NY,,Ogdensburg-Massena,Saint Lawrence County,5263,70000
+90241,74029,Dewey,OK,,Bartlesville,Washington County,8418,70000
+87579,67437,Downs,KS,,,Osborne County,11378,70100
+63771,14843,Hornell,NY,,Corning,Steuben County,5820,70200
+79251,48529,Burton,MI,,Flint,Genesee County,6868,70200
+69709,28091,Lilesville,NC,,,Anson County,10492,70500
+63850,15034,Dravosburg,PA,,Pittsburgh,Allegheny County,10548,70500
+73966,36607,Mobile,AL,,Mobile,Mobile County,7563,70600
+65704,19023,Darby Township,PA,,Philadelphia-Camden-Wilmington,Delaware County,4584,70700
+68559,25315,Chesapeake,WV,,Charleston,Kanawha County,9518,70700
+63840,15022,Fallowfield Township,PA,,Pittsburgh,Washington County,6326,70800
+77124,44310,Akron,OH,,Akron,Summit County,3674,70900
+75067,38921,Charleston,MS,,,Tallahatchie County,8683,70900
+90492,74653,Tonkawa,OK,,Ponca City,Kay County,9356,70900
+77192,44471,Struthers,OH,,Youngstown-Warren-Boardman,Mahoning County,6445,71000
+90579,74901,Arkoma,OK,,Fort Smith,LeFlore County,10671,71000
+63681,14719,New Albion,NY,,Olean,Cattaraugus County,9616,71100
+71469,31204,Macon,GA,,Macon-Bibb County,Bibb County,2342,71200
+63697,14737,Town of Franklinville,NY,,Olean,Cattaraugus County,8985,71400
+91530,76664,Mart,TX,,Waco,McLennan County,9703,71400
+74649,38111,Memphis,TN,,Memphis,Shelby County,662,71500
+76965,44052,Lorain,OH,,Cleveland-Elyria,Lorain County,2597,71500
+75103,38967,Winona,MS,,,Montgomery County,7508,71700
+77652,45410,Dayton,OH,,Dayton,Montgomery County,5028,71800
+90131,73701,Enid,OK,,Enid,Garfield County,4033,71900
+78761,47804,Terre Haute,IN,,Terre Haute,Vigo County,6439,71900
+90399,74437,Henryetta,OK,,Tulsa,Okmulgee County,6796,71900
+69863,28333,Dudley,NC,,Goldsboro,Wayne County,6385,72200

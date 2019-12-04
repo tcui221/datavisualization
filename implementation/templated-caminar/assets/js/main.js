@@ -72,7 +72,7 @@ queue()
 	.defer(d3.csv, "data/State_medianincome copy.csv")
 	.defer(d3.csv,'data/Homelessness_Ratios.csv')
 	.defer(d3.csv,'data/2bedroom_zips_both.csv')
-	.defer(d3.csv,'data/3bedroom_topbottom200.csv')
+	.defer(d3.csv,'data/3bedroom_zips_both.csv')
 	.await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue,
 					medianIncome,homelessRatios, twoBedroom, threeBedroom) {
 
