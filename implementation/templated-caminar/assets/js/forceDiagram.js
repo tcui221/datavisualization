@@ -147,33 +147,8 @@ ForceDiagram.prototype.drawDiagram = function(){
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
 
-    // vis.circles = vis.svg.selectAll("circle")
-    //     .data(vis.displayData);
-    //
-    // vis.circles.enter().append("circle")
-    //     .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
-    //     .attr("cx", function(d, i){
-    //         return 175 + 25 * i + 2 * i ** 2;
-    //     })
-    //     .attr("cy", function(d, i){
-    //         return 250;
-    //     })
-    //     .style("fill", function(d, i){
-    //         return vis.color(d['Region']);
-    //     })
-    //     .merge(vis.circles)
-    //     .call(vis.tip)
-    //     .style("pointer-events", "all")
-    //     .on('mouseover', vis.tip.show)
-    //     .on('mouseout', vis.tip.hide);
-    //
-    // vis.circles.exit()
-    //     .transition(t)
-    //     .attr("r", 1e-6)
-    //     .remove();
 
     function ticked() {
-        // vis.circles
         vis.node
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
@@ -268,19 +243,3 @@ ForceDiagram.prototype.showTitles = function(byVar) {
     titles.exit().remove();
 
 };
-
-
-
-
-
-// function groupBubbles() {
-//     hideTitles();
-//
-//     // @v4 Reset the 'x' force to draw the bubbles to the center.
-//     vis.simulation.force('x', d3.forceX().strength(vis.forceStrength).x(vis.w / 2));
-//
-//     // @v4 We can reset the alpha value and restart the simulation
-//     vis.simulation.alpha(1).restart();
-// }
-
-
