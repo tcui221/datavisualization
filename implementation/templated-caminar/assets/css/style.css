@@ -256,11 +256,12 @@ path {
 	border-radius: 0px;
 }
 
-.highlowtoggle.active, .highlowtoggle.active:hover {
+.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
 }
+
 
 #forceToolTip {
 	line-height: 1;
