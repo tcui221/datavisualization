@@ -1,60 +1,90 @@
 
 
-ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData, _threeBedroomData ){
+ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData,
+                        _fourBedroomData, _fiveBedroomData ){
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
     this.displayData = _twoBedroomData;
-    this.toggleID = _toggleID;
+    this.twoBedroomData = _twoBedroomData;
+    this.threeBedroomData = _threeBedroomData;
+    this.fourBedroomData = _fourBedroomData;
+    this.fiveBedroomData = _fiveBedroomData;
+    this.splitSelection = "all";
+    this.sortSelection = "Highest";
+    this.dataCategorySelection = "2bed";
     this.initVis();
 };
 
 ForceDiagram.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = { top: 20, right: 20, bottom: 20, left: 60 };
-    vis.w = 960 - vis.margin.left - vis.margin.right;
+    vis.margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    vis.w = 1200 - vis.margin.left - vis.margin.right;
+    // vis.w = 960 - vis.margin.left - vis.margin.right;
     vis.h = vis.w * 1/2;
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
         .attr("width", vis.w + vis.margin.left + vis.margin.right)
         .attr("height", vis.h + vis.margin.top + vis.margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-    vis.radius = 8;
-    vis.color = d3.scaleOrdinal(d3.schemeCategory20);
+    vis.g = vis.svg.append("g")
+        .attr("transform", "translate(" + 10 + "," + vis.margin.top + ")");
+
+    vis.node = vis.g.append("g").selectAll(".node");
+
     vis.centerScale = d3.scalePoint().padding(1).range([0, vis.w]);
+    console.log(vis.w);
     vis.forceStrength = 0.5;
-
-    vis.simulation = d3.forceSimulation()
-        .force("collide", d3.forceCollide( function(d){
-            return vis.radius + 8 }).iterations(10)
-        )
-        .force("charge", d3.forceManyBody().strength(-10))
-        .force("y", d3.forceY().y(vis.h / 2))
-        .force("x", d3.forceX().x(vis.w / 2));
 
     vis.radiusScale = d3.scaleLinear()
         .range([8, 20]);
 
-    // color scale for the regions: range: 9-class reds from colorbrewer
     vis.color = d3.scaleOrdinal()
-        .range(["rgba(204, 82, 2, 1)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
-        .domain(["West", "Northeast", "South"]) ;
+        .range(["rgba(204, 82, 2, 1)", "rgb(236, 112, 20)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
+        .domain(["West", "Northeast", "South", "Midwest", ]) ;
 
-    vis.wrangleData(this.toggleID);
+    // Add tooltip over circles
+    vis.tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .attr('id', 'forceToolTip')
+        .direction('s');
+
+    vis.simulation = d3.forceSimulation(vis.displayData)
+        .force("collide", d3.forceCollide( function(d){
+            return vis.radiusScale(d['2019-10']) + .5 }).iterations(30)
+        )
+        .force("charge", d3.forceManyBody().strength(10))
+        .force("y", d3.forceY().y(vis.h / 2))
+        .force("x", d3.forceX().x(vis.w / 2));
+
+    vis.setUpButtons();
+
+    vis.wrangleData(vis.sortSelection, vis.dataCategorySelection);
 
 };
 
-ForceDiagram.prototype.wrangleData = function(id){
+ForceDiagram.prototype.wrangleData = function(highLowToggle, dataCategorySelection){
     var vis = this;
+
+    // console.log("How we're splitting: " + vis.splitSelection);
+    // console.log("Highest or lowest: " + id);
+
+    if (dataCategorySelection == "2bed") {
+        vis.data = vis.twoBedroomData;
+    } else if (dataCategorySelection == "3bed") {
+        vis.data = vis.threeBedroomData;
+    } else if (dataCategorySelection == "4bed") {
+        vis.data = vis.fourBedroomData;
+    } else {
+        vis.data = vis.fiveBedroomData;
+    }
 
     vis.data.forEach(function (element) {
         element['2019-10'] = +element['2019-10'];
     });
 
     // Sort by highest or lowest prices
-    if (id == "Highest") {
+    if (highLowToggle == "Highest") {
         // Sort descending by price
         vis.data.sort( function(a, b){
             return b['2019-10'] - a['2019-10'];
@@ -70,7 +100,7 @@ ForceDiagram.prototype.wrangleData = function(id){
     var temp = [];
     var counter = 0;
     vis.data.forEach(function (element) {
-        if (counter < 100) {
+        if (counter < 50) {
             temp.push(element);
         }
         counter++;
@@ -81,26 +111,43 @@ ForceDiagram.prototype.wrangleData = function(id){
     vis.radiusScale.domain(d3.extent(vis.displayData, function(d){return d['2019-10'];}));
 
     vis.drawDiagram();
+
+    // Split by currently active button "all" "Region" or "State"
+    vis.splitBubbles(vis.splitSelection);
+
 };
 
 ForceDiagram.prototype.drawDiagram = function(){
     var vis = this;
 
     formatComma = d3.format(",.0f");
-    // Add tooltip over circles
-    vis.tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .attr('id', 'forceToolTip')
-        .direction('s')
+
+    var t = d3.transition()
+        .duration(750);
+
+    vis.tip
         .html(function(d) {
-            return "<p><strong>" + d['City'] +
-                "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
+        return "<p><strong>" + d['City'] + ", " + d['State'] +
+            "<br></p><p><strong> Zip Code : </strong>" + d['RegionName'] +
+            "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
         });
 
-    vis.circles = vis.svg.selectAll("circle")
-        .data(vis.displayData);
+    vis.node = vis.node.data(vis.displayData);
 
-    vis.circlesEnter = vis.circles.enter().append("circle")
+    vis.node.exit()
+        .style("fill", "#b26745")
+        .transition(t)
+        .attr("r", 1e-6)
+        .remove();
+
+    vis.node
+        .transition(t)
+        .style("fill", function(d, i){
+            return vis.color(d['Region']);
+        })
+        .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); });
+
+    vis.node = vis.node.enter().append("circle")
         .attr("r", function(d, i){ return vis.radiusScale(d['2019-10']); })
         .attr("cx", function(d, i){
             return 175 + 25 * i + 2 * i ** 2;
@@ -109,18 +156,17 @@ ForceDiagram.prototype.drawDiagram = function(){
             return 250;
         })
         .style("fill", function(d, i){
-            console.log(d['Region']);
             return vis.color(d['Region']);
         })
+        .merge(vis.node)
         .call(vis.tip)
         .style("pointer-events", "all")
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
 
-    vis.circles = vis.circles.merge(vis.circlesEnter);
 
     function ticked() {
-        vis.circles
+        vis.node
             .attr("cx", function(d){ return d.x; })
             .attr("cy", function(d){ return d.y; });
     }
@@ -129,93 +175,104 @@ ForceDiagram.prototype.drawDiagram = function(){
         .nodes(vis.displayData)
         .on("tick", ticked);
 
-    function groupBubbles() {
-        hideTitles();
+};
 
-        // @v4 Reset the 'x' force to draw the bubbles to the center.
-        vis.simulation.force('x', d3.forceX().strength(vis.forceStrength).x(vis.w / 2));
+ForceDiagram.prototype.setUpButtons = function(){
+    var vis = this;
 
-        // @v4 We can reset the alpha value and restart the simulation
-        vis.simulation.alpha(1).restart();
-    }
+    d3.selectAll('.button')
+        .on('click', function () {
 
-    function splitBubbles(byVar) {
+            d3.selectAll('.button').classed('active', false);
+            var button = d3.select(this);
 
-        vis.centerScale.domain(vis.displayData.map(function(d){ return d[byVar]; }));
+            button.classed('active', true);
 
-        if(byVar == "all"){
-            hideTitles()
-        } else {
-            showTitles(byVar, vis.centerScale);
-        }
+            var buttonId = button.attr('id');
 
-        // @v4 Reset the 'x' force to draw the bubbles to their year centers
-        vis.simulation.force('x', d3.forceX().strength(vis.forceStrength).x(function(d){
-            return vis.centerScale(d[byVar]);
-        }));
+            vis.splitSelection = buttonId;
 
-        // @v4 We can reset the alpha value and restart the simulation
-        vis.simulation.alpha(2).restart();
-    }
+            vis.splitBubbles(buttonId);
+        });
 
-    function hideTitles() {
-        vis.svg.selectAll('.title').remove();
-    }
+    d3.selectAll('.highlowtoggle')
+        .on('click', function () {
 
-    function showTitles(byVar, scale) {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
-        var titles = vis.svg.selectAll('.title')
-            .data(scale.domain());
+            d3.selectAll('.highlowtoggle').classed('active', false);
 
-        titles.enter().append('text')
-            .attr('class', 'title')
-            .merge(titles)
-            .attr('x', function (d) { return scale(d); })
-            .attr('y', 40)
-            .style("fill", "white")
-            .attr('text-anchor', 'middle')
-            .text(function (d) { return d; });
+            var button = d3.select(this);
 
-        titles.exit().remove()
-    }
+            button.classed('active', true);
+            var buttonId = button.attr('id');
 
-    function setupButtons() {
-        d3.selectAll('.button')
-            .on('click', function () {
+            vis.sortSelection = buttonId;
 
-                // Remove active class from all buttons
-                d3.selectAll('.button').classed('active', false);
-                // Find the button just clicked
-                var button = d3.select(this);
+            // wrangleData(highlowtoggle, dataCategorySelection)
+            vis.wrangleData(buttonId, vis.dataCategorySelection);
+        });
 
-                // Set it as the active button
-                button.classed('active', true);
+    d3.selectAll('.datacatagory')
+        .on('click', function () {
 
-                // Get the id of the button
-                var buttonId = button.attr('id');
+            d3.selectAll('.datacatagory').classed('active', false);
 
-                // console.log(buttonId)
-                // Toggle the bubble chart based on
-                // the currently clicked button.
-                splitBubbles(buttonId);
-            });
+            var button = d3.select(this);
 
-        d3.selectAll('.highlowtoggle')
-            .on('click', function () {
+            button.classed('active', true);
+            var buttonId = button.attr('id');
 
-                d3.selectAll('.highlowtoggle').classed('active', false);
+            vis.dataCategorySelection = buttonId;
 
-                var button = d3.select(this);
-
-                button.classed('active', true);
-                var buttonId = button.attr('id');
-
-                vis.wrangleData(buttonId);
-            });
-    }
-
-    setupButtons();
+            vis.wrangleData(vis.sortSelection, buttonId);
+        });
 
 };
 
+ForceDiagram.prototype.splitBubbles = function(byVar){
+    var vis = this;
+
+    vis.centerScale.domain(vis.displayData.map(function(d){ return d[byVar]; }));
+
+    if(byVar == "all"){
+        vis.hideTitles()
+    } else {
+        vis.showTitles(byVar);
+    }
+
+    // @v4 Reset the 'x' force to draw the bubbles to their year centers
+    vis.simulation.force('x', d3.forceX().strength(vis.forceStrength).x(function(d){
+        return vis.centerScale(d[byVar]);
+    }));
+
+    // @v4 We can reset the alpha value and restart the simulation
+    vis.simulation.alpha(2).restart();
+
+};
+
+
+ForceDiagram.prototype.hideTitles = function(byVar) {
+    var vis = this;
+    vis.svg.selectAll('.title').remove();
+
+};
+
+ForceDiagram.prototype.showTitles = function(byVar) {
+    var vis = this;
+
+    // Another way to do this would be to create
+    // the year texts once and then just hide them.
+    var titles = vis.svg.selectAll('.title')
+        .data(vis.centerScale.domain());
+
+    titles.enter().append('text')
+        .attr('class', 'title')
+        .merge(titles)
+        .attr('x', function (d) { return vis.centerScale(d); })
+        .attr('y', 40)
+        .style("fill", "white")
+        .attr('text-anchor', 'middle')
+        .text(function (d) { return d; });
+
+    titles.exit().remove();
+
+};

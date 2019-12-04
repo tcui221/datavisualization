@@ -262,11 +262,12 @@ path {
 	border-radius: 0px;
 }
 
-.highlowtoggle.active, .highlowtoggle.active:hover {
+.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
 }
+
 
 #forceToolTip {
 	line-height: 1;
@@ -277,6 +278,7 @@ path {
 	border-radius: 4px;
 	pointer-events: none;
 }
+
 
 /* button for choropleth*/
 #play {
@@ -292,3 +294,35 @@ path {
 #scatter-label {
 	color: white;
 }
+
+
+/*
+	Drop down button in force diagram
+ */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+}
+
+.dropdown-content .datacatagory {
+	color: black;
+	text-transform: uppercase;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+

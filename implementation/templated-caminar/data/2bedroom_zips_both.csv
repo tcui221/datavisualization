@@ -211,3 +211,130 @@ RegionID,RegionName,City,Region,State,Metro,CountyName,SizeRank,2019-10
 97124,93101,Santa Barbara,West,CA,Santa Maria-Santa Barbara,Santa Barbara County,2195,807200
 95989,90008,Los Angeles,West,CA,Los Angeles-Long Beach-Anaheim,Los Angeles County,1485,800700
 99572,98112,Seattle,West,WA,Seattle-Tacoma-Bellevue,King County,2871,799400
+90049,73521,Altus,South,OK,Altus,Jackson County,3867,20500
+68044,24216,Appalachia,South,VA,Big Stone Gap,Wise County,8209,21700
+90356,74339,Commerce,South,OK,Miami,Ottawa County,8448,22400
+76764,43605,Toledo,Midwest,OH,Toledo,Lucas County,3231,22800
+90382,74401,Muskogee,South,OK,Muskogee,Muskogee County,4473,23200
+77821,45804,Lima,Midwest,OH,Lima,Allen County,4696,23400
+73971,36612,Prichard,South,AL,Mobile,Mobile County,7646,23900
+69903,28377,Red Springs,South,NC,Lumberton,Robeson County,5684,24200
+90478,74631,Blackwell,South,OK,Ponca City,Kay County,6459,25000
+90407,74447,Okmulgee,South,OK,Tulsa,Okmulgee County,4471,25600
+70260,29018,Bowman,South,SC,Orangeburg,Orangeburg County,7735,26000
+84820,61102,Rockford,Midwest,IL,Rockford,Winnebago County,4748,27300
+85070,61603,Peoria,Midwest,IL,Peoria,Peoria County,4804,27900
+70979,30241,Lagrange,South,GA,LaGrange,Troup County,3015,28400
+87428,67045,Eureka,Midwest,KS,,Greenwood County,7757,28500
+90586,74937,Heavener,South,OK,Fort Smith,LeFlore County,7118,29300
+90399,74437,Henryetta,South,OK,Tulsa,Okmulgee County,5845,29500
+70972,30230,Hogansville,South,GA,LaGrange,Troup County,6044,29500
+87349,66860,Madison,Midwest,KS,,Greenwood County,9028,29600
+87393,66967,Smith Center,Midwest,KS,,Smith County,8592,29700
+90529,74801,Shawnee,South,OK,Shawnee,Pottawatomie County,3696,29800
+69968,28458,Rose Hill,South,NC,,Duplin County,6750,29900
+90247,74035,Hominy,South,OK,Tulsa,Osage County,7973,30000
+90131,73701,Enid,South,OK,Enid,Garfield County,3540,30100
+87670,67578,Stafford,Midwest,KS,,Stafford County,8974,30300
+87384,66956,Mankato,Midwest,KS,,Jewell County,9046,30300
+90492,74653,Tonkawa,South,OK,Ponca City,Kay County,7835,30400
+90554,74849,Konawa,South,OK,,Seminole County,8131,30500
+90037,73463,Wilson,South,OK,Ardmore,Carter County,7902,30900
+87579,67437,Downs,Midwest,KS,,Osborne County,9051,31000
+90474,74601,Ponca City,South,OK,Ponca City,Kay County,3984,31300
+69761,28170,Wadesboro,South,NC,,Anson County,5411,31400
+90367,74354,Miami,South,OK,Miami,Ottawa County,4328,31800
+90285,74079,Stroud,South,OK,Oklahoma City,Lincoln County,7390,31900
+90450,74547,Hartshorne,South,OK,McAlester,Pittsburg County,7918,31900
+87595,67455,Lincoln,Midwest,KS,,Lincoln County,8771,31900
+87649,67550,Larned,Midwest,KS,,Pawnee County,7188,32300
+68717,25702,Huntington,South,WV,Huntington-Ashland,Cabell County,6217,32500
+90384,74403,Muskogee,South,OK,Muskogee,Muskogee County,2151,32800
+90568,74868,Seminole,South,OK,,Seminole County,5536,33100
+69587,27891,Whitakers,South,NC,Rocky Mount,Nash County,7233,33300
+71383,31030,Fort Valley,South,GA,Warner Robins,Peach County,4443,33400
+71636,31719,Americus,South,GA,Americus,Sumter County,6117,33900
+87775,67864,Meade,Midwest,KS,,Meade County,8800,34100
+87281,66720,Chanute,Midwest,KS,,Neosho County,5505,34200
+90468,74571,Talihina,South,OK,Fort Smith,LeFlore County,7762,34200
+87297,66748,Humboldt,Midwest,KS,,Allen County,8340,34200
+87669,67576,St. John,Midwest,KS,,Stafford County,8765,34500
+87606,67473,Osborne,Midwest,KS,,Osborne County,8832,34500
+90237,74023,Cushing,South,OK,Stillwater,Payne County,5565,34600
+69560,27864,Pinetops,South,NC,Rocky Mount,Edgecombe County,7428,34600
+87366,66935,Belleville,Midwest,KS,,Republic County,8216,34800
+89924,73098,Wynnewood,South,OK,,Garvin County,7539,34900
+88959,71220,Bastrop,South,LA,Bastrop,Morehouse Parish,3472,35300
+69909,28384,Saint Pauls,South,NC,Lumberton,Robeson County,5441,35400
+87298,66749,Iola,Midwest,KS,,Allen County,6342,35600
+84822,61104,Rockford,Midwest,IL,Rockford,Winnebago County,4304,35800
+69208,27105,Winston-Salem,South,NC,Winston-Salem,Forsyth County,1313,35900
+86363,64126,Kansas City,Midwest,MO,Kansas City,Jackson County,6842,35900
+80566,50864,Villisca,Midwest,IA,,Montgomery County,8738,35900
+68531,25260,Mason,South,WV,Point Pleasant,Mason County,8864,36000
+89911,73082,Rush Springs,South,OK,Oklahoma City,Grady County,8200,36100
+65063,17401,York,Northeast,PA,York-Hanover,York County,4489,36400
+90241,74029,Dewey,South,OK,Bartlesville,Washington County,7148,36400
+90599,74953,Poteau,South,OK,Fort Smith,LeFlore County,5395,36500
+87283,66725,Columbus,Midwest,KS,,Cherokee County,7011,36500
+89954,73129,Oklahoma City,South,OK,Oklahoma City,Oklahoma County,4476,36900
+90398,74436,Haskell,South,OK,Muskogee,Muskogee County,7335,37000
+68633,25514,Fort Gay,South,WV,Huntington-Ashland,Wayne County,7642,37000
+87693,67642,Hill City,Midwest,KS,,Graham County,8761,37100
+69265,27260,High Point,South,NC,Greensboro-High Point,Guilford County,3300,37200
+69389,27530,Goldsboro,South,NC,Goldsboro,Wayne County,1288,37300
+89906,73075,Pauls Valley,South,OK,,Garvin County,5829,37300
+73966,36607,Mobile,South,AL,Mobile,Mobile County,6469,37400
+90013,73433,Elmore City,South,OK,,Garvin County,8362,37400
+88029,68466,Wymore,Midwest,NE,Beatrice,Gage County,8773,37500
+70978,30240,Lagrange,South,GA,LaGrange,Troup County,2464,37800
+69985,28501,Kinston,South,NC,Kinston,Lenoir County,3883,38000
+69921,28398,Warsaw,South,NC,,Duplin County,6416,38000
+89889,73057,Maysville,South,OK,,Garvin County,8488,38100
+69582,27886,Tarboro,South,NC,Rocky Mount,Edgecombe County,3796,38600
+69549,27852,Macclesfield,South,NC,Rocky Mount,Edgecombe County,8227,38700
+76879,43906,Bellaire,Midwest,OH,Wheeling,Belmont County,6095,38800
+87710,67661,Phillipsburg,South,KS,,Phillips County,7907,38900
+91351,76301,Wichita Falls,South,TX,Wichita Falls,Wichita County,4321,39200
+89855,73018,Chickasha,South,OK,Oklahoma City,Grady County,4078,39500
+86536,64658,Marceline,Midwest,MO,,Chariton County,7951,39500
+90493,74701,Durant,South,OK,Durant,Bryan County,3257,39600
+86230,63869,New Madrid,Midwest,MO,,New Madrid County,7692,39700
+66017,19604,Reading,Northeast,PA,Reading,Berks County,3797,40000
+68468,25123,Leon,South,WV,Point Pleasant,Mason County,7920,40700
+90007,73401,Ardmore,South,OK,Ardmore,Carter County,1450,41000
+71934,32324,Chattahoochee,South,FL,Tallahassee,Gadsden County,7498,41000
+86546,64673,Princeton,Midwest,MO,,Mercer County,8423,41100
+75067,38921,Charleston,South,MS,,Tallahatchie County,7345,41500
+90488,74647,Newkirk,South,OK,Ponca City,Kay County,7823,41600
+90604,74959,Spiro,South,OK,Fort Smith,LeFlore County,6544,41700
+86361,64124,Kansas City,Midwest,MO,Kansas City,Jackson County,5620,41800
+69210,27107,Winston-Salem,South,NC,Winston-Salem,Forsyth County,710,41900
+91354,76306,Wichita Falls,South,TX,Wichita Falls,Wichita County,4786,41900
+85551,62540,Kincaid,Midwest,IL,Taylorville,Christian County,8926,42600
+85424,62326,Colchester,Midwest,IL,Macomb,McDonough County,8414,42800
+63727,14779,Town of Salamanca,Northeast,NY,Olean,Cattaraugus County,6493,42900
+68549,25302,Charleston,,WV,Charleston,Kanawha County,4267,43000
+91357,76309,Wichita Falls,,TX,Wichita Falls,Wichita County,4905,43000
+81009,52554,Eldon,,IA,Ottumwa,Wapello County,9016,43100
+85566,62557,Pana,,IL,Taylorville,Christian County,6403,43400
+76922,43968,Wellsville,,OH,Salem,Columbiana County,6500,43600
+76968,44055,Lorain,,OH,Cleveland-Elyria,Lorain County,4193,43700
+91362,76354,Burkburnett,,TX,Wichita Falls,Wichita County,5431,43800
+86508,64628,Brookfield,,MO,,Linn County,6855,43900
+87713,67665,Russell,,KS,,Russell County,6958,44000
+76190,42031,Clinton,,KY,,Hickman County,8005,44100
+90430,74501,McAlester,,OK,McAlester,Pittsburg County,2658,44200
+63941,15210,Pittsburgh,,PA,Pittsburgh,Allegheny County,2776,44200
+82985,56649,International Falls,,MN,,Koochiching County,5498,44200
+69891,28365,Mount Olive,,NC,Goldsboro,Wayne County,4744,44300
+87273,66701,Fort Scott,,KS,,Bourbon County,5400,44300
+69077,26582,Mannington,,WV,Fairmont,Marion County,7221,44300
+84961,61422,Bushnell,,IL,Macomb,McDonough County,7908,44500
+69976,28466,Wallace,,NC,,Duplin County,5828,44600
+77192,44471,Struthers,,OH,Youngstown-Warren-Boardman,Mahoning County,5566,44700
+69849,28314,Fayetteville,,NC,Fayetteville,Cumberland County,129,45000
+87239,66608,Topeka,,KS,Topeka,Shawnee County,6823,45000
+64442,16102,New Castle,,PA,New Castle,Lawrence County,7040,45000
+68756,25801,Beckley,,WV,Beckley,Raleigh County,1763,45400
+87656,67560,Ness City,,KS,,Ness County,8845,45500
