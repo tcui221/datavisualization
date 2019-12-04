@@ -1,11 +1,13 @@
 
 
-ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData, _threeBedroomData, _fourBedroomData ){
+ForceDiagram = function(_parentElement, _toggleID, _twoBedroomData,
+                        _threeBedroomData, _fourBedroomData, _fiveBedroomData ){
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
     this.displayData = _twoBedroomData;
     this.threeBedroomData = _threeBedroomData;
     this.fourBedroomData = _fourBedroomData;
+    this.fiveBedroomData = _fiveBedroomData;
     this.sortSelection = _toggleID;
     this.splitSelection = "all";
     this.initVis();
