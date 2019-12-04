@@ -132,7 +132,9 @@ path {
 }
 
 
-.dot { stroke: #000; }
+.dot {
+	stroke: #858585;
+}
 
 .axis path, .axis line {
 	fill: none;
@@ -262,7 +264,7 @@ path {
 	border-radius: 0px;
 }
 
-.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active {
+.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active, .datacatagory.active:hover {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
@@ -304,7 +306,6 @@ path {
 	position: relative;
 	display: inline-block;
 }
-
 
 .dropdown-content {
 	display: none;
