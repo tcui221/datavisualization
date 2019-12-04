@@ -134,7 +134,9 @@ path {
 }
 
 
-.dot { stroke: #000; }
+.dot {
+	stroke: #858585;
+}
 
 .axis path, .axis line {
 	fill: none;
@@ -264,7 +266,7 @@ path {
 	border-radius: 0px;
 }
 
-.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active {
+.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active, .datacatagory.active:hover {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
@@ -297,6 +299,10 @@ path {
 	color: white;
 }
 
+.forceDiagramContext {
+	margin-left: 50px;
+	margin-right: 50px;
+}
 
 /*
 	Drop down button in force diagram
@@ -306,7 +312,6 @@ path {
 	position: relative;
 	display: inline-block;
 }
-
 
 .dropdown-content {
 	display: none;
