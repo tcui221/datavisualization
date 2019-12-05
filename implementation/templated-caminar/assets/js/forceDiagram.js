@@ -40,8 +40,24 @@ ForceDiagram.prototype.initVis = function() {
         .range([8, 20]);
 
     vis.color = d3.scaleOrdinal()
-        .range(["rgba(204, 82, 2, 1)", "rgb(236, 112, 20)", "rgb(254, 153, 41)", "rgb(254, 227, 145)"])
-        .domain(["West", "Northeast", "South", "Midwest", ]) ;
+        .range(colorbrewer.YlOrBr[4])
+        .domain(["Midwest", "Northeast","West","South"]);
+
+    vis.svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate("+0.8*vis.w+","+vis.h*0.8+")");
+
+    var legendOrdinal = d3.legendColor()
+        .shapePadding(0)
+        .title("Color Legend")
+        .titleWidth(200)
+        .scale(vis.color);
+
+    vis.svg.select(".legendOrdinal")
+        .style("font-size","12px")
+        .style("fill", "white")
+        .call(legendOrdinal);
+
 
     // Add tooltip over circles
     vis.tip = d3.tip()
