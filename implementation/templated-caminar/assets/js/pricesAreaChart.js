@@ -11,10 +11,10 @@ PricesVis = function(_parentElement, _data){
 PricesVis.prototype.initVis = function(){
     var vis = this;
     // changing the top margin here to suit the template css
-    vis.margin = { top: 100, right: 60, bottom: 200, left: 60 };
+    vis.margin = { top: 100, right: 60, bottom: 100, left: 60 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right,
-        vis.height = 500 - vis.margin.top - vis.margin.bottom;
+        vis.height = 450 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
