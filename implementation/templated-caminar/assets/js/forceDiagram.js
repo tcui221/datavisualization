@@ -128,7 +128,7 @@ ForceDiagram.prototype.drawDiagram = function(){
     vis.tip
         .html(function(d) {
         return "<p><strong>" + d['City'] + ", " + d['State'] +
-            "<br></p><p><strong> Zip Code : </strong>" + d['RegionName'] +
+            "<br></p><p><strong> ZIP : </strong>" + d['RegionName'] +
             "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
         });
 
