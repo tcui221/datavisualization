@@ -134,32 +134,65 @@
 <!--							</div>-->
 <!--						</div>-->
 						<h4>Click on a state to reveal the trends of that state's housing prices in the following area chart.</h4><br>
+
 						<div class="spotlight alt">
 							<div class="image flush"><div id="pricesAreaChart"></div></div>
 							<div  class="inner">
-								<h3 align="center">The price trend for 1996-2019</h3>
+								<h3 align="center">Housing price trend for 1996-2019</h3>
 								<p id="area-chart-info">
 									Home prices increased as more buyers competed for fewer homes. Over the past
 									few years, the Fed has steadily increased short-term interest rates, which can lead
-									people to have a tighter budget for a home at a time when home prices are rising.
+									people to have a tighter budget for a home at a time when home prices are rising.<p>
+								<p id="area-chart-info">
+									Also look at the period of <em>Great Recession</em> in 2008. Interestingly, the states with relatively
+									higher housing prices suffered the recession more.
+									For instance, look at how deep the through is for <a onclick="choroplethClicked('California')">California</a>!
+									Now, compare it to <a onclick="choroplethClicked('Iowa')">Iowa</a>
+									where the price doesn't seem to decline much during the recession. <br></p>
+								<p id="area-chart-info"><em>Also, try clicking other states on the choropleth above to see how the price changes at each state!</em>
 								</p>
 							</div>
 						</div>
 						<br>
 						<br>
 
-						<h3>History of median income versus median housing price by region</h3>
-						<p>Hover over year to speed or slow down animation. Hover over circles for details.</p>
+						<h3>History of median income versus median housing price by region</h3><br>
 
+
+						<p class="scatterplotContext"> As it can be seen from this chart at the end of the animation, <strong>in 2018</strong>, the states with most expensive houses are <em>Hawaii</em> and <em>California</em>
+							<br>
+							While the other bubbles (states) seem to form a linear trend-line, showing a linear relationship between median income and median house price,
+							California seems to fall way above this trend-line. This might be because California has a high income gap.
+
+							An analysis of U.S. Census Bureau data by CBPC found a widening gap between the state’s haves and have-nots.
+							This problem is more prevalent in Silicon-Valley, thanks to the tech-boom.</p>
+
+						<h5>Hover over year to speed or slow down animation. Hover over circles for details.</h5>
 						<div class="spotlight">
+
 							<div class="image flush"><div id="US-scatter"></div></div>
 							<div class="inner">
+
 								<blockquote><p class="quotation top-padd">
 									Price-to-income ratios topped 10.0 in both the Santa Cruz and San Jose metro areas and neared 10 in Los Angeles. On the other hand, ratios were well below 3.0 in much of the Midwest and Northeast.
 								</p></blockquote>
 
 							</div>
+
 						</div>
+						<p class="scatterplotContext">
+
+							For nearly 20 years, Silicon Valley has led the nation in economic growth.
+							But most of its workers have been excluded from reaping the rewards. <br>
+							<em>9 in 10 workers</em> in the California region make less than they did in 1997 after adjusting for inflation,
+							according to <a href="http://www.everettprogram.org/main/wp-content/uploads/TIGHTROPE-2018-REPORT.pdf"> Everet Program report</a>.
+							The study shows a pattern of income inequality on tech’s home turf that’s even worse than the national average.
+							Authors of the report point to an increasing concentration of company profits
+							going toward the salaries of a select few — largely, high-skilled tech workers. <br>
+
+							<br>This has been a significant socioeconomic issues of growing popularity:<br>
+							<strong>incomes remaining relatively flat (relatively lower when adjusted by inflation) for people in the middle and at the bottom of the income range, while the cost of living is going up.</strong>
+						</p>
 
 <!--						<div class="row">-->
 <!--							<div class="col-md-8">-->
@@ -285,7 +318,7 @@
 		<script src="assets/js/topojson.min.js"></script>
 		<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
 
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/d3.min.js"></script>

@@ -50,9 +50,9 @@ img {
 #area-chart-info {
 	text-indent: 2em;
 	text-align: left;
-	margin-top: 20px;
-	margin-right: 10px;
-	margin-left: 50px;
+	/*margin-top: 20px;*/
+	/*margin-right: 10px;*/
+	/*margin-left: 50px;*/
 }
 
 h5 {
@@ -310,10 +310,6 @@ path {
 	color: white;
 }
 
-.forceDiagramContext {
-	margin-left: 50px;
-	margin-right: 50px;
-}
 
 /*
 	Drop down button in force diagram
@@ -344,3 +340,12 @@ path {
 	display: block;
 }
 
+.forceDiagramContext {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.scatterplotContext {
+	margin-left: 50px;
+	margin-right: 50px;
+}
