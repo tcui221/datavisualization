@@ -226,6 +226,8 @@ ForceDiagram.prototype.setUpButtons = function(){
 
             vis.sortSelection = buttonId;
 
+            document.querySelector('#sort-by-button').innerHTML = button.attr('value');
+
             // wrangleData(highlowtoggle, dataCategorySelection)
             vis.wrangleData(buttonId, vis.dataCategorySelection);
         });
@@ -241,6 +243,8 @@ ForceDiagram.prototype.setUpButtons = function(){
             var buttonId = button.attr('id');
 
             vis.dataCategorySelection = buttonId;
+
+            document.querySelector('#data-cat-button').innerHTML = button.attr('value');
 
             vis.wrangleData(vis.sortSelection, buttonId);
         });
