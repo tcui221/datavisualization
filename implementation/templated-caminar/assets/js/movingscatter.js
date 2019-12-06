@@ -32,17 +32,18 @@ ScatterVis.prototype.initVis = function(){
         .range([vis.height, 0]);
 
     // vis.radiusScale = d3.scale.sqrt().domain([0, 5e8]).range([0, width * 0.05]);
-    vis.colorScale = d3.scaleOrdinal(colorbrewer.YlOrBr[4]);
+
+    vis.colorScale = d3.scaleOrdinal(["#cc4c02", "#fe9929", "#fed98e", "#ffffd4"]);
 
     // var formatX = d3.format(".1s");
-// The x & y axes.
+    // The x & y axes.
     vis.xAxis = d3.axisBottom()
         .scale(vis.xScale);
     vis.yAxis = d3.axisLeft()
         .scale(vis.yScale);
     // var format = d3.format(".2s");
 
-// Add the x-axis.
+    // Add the x-axis.
     vis.svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + vis.height + ")")
@@ -61,7 +62,7 @@ ScatterVis.prototype.initVis = function(){
         .attr("y", vis.height - 6)
         .text("Median income ($)");
 
-// Add a y-axis label.
+    // Add a y-axis label.
     vis.svg.append("text")
         .attr("class", "y label")
         .attr("text-anchor", "end")
@@ -129,6 +130,8 @@ ScatterVis.prototype.initVis = function(){
         .ease(d3.easeLinear)
         .tween("year", tweenYear)
         .on("end", enableInteraction);
+
+
 
     // Positions the dots based on data.
     function position(dot) {
@@ -203,4 +206,25 @@ ScatterVis.prototype.initVis = function(){
         }
         return a[1];
     }
+
+    // add color legend
+    vis.colorLegend = d3.scaleOrdinal()
+        .range(["#cc4c02", "#fe9929", "#fed98e", "#ffffd4"]) //colorbrewer.YlOrBr[4]
+        .domain([ "South","West","Northeast", "Midwest"]);
+
+    vis.svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate("+0.85*vis.width+",20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shapePadding(0)
+        .title("Color Legend")
+        .titleWidth(200)
+        .scale(vis.colorLegend);
+
+    vis.svg.select(".legendOrdinal")
+        .style("font-size","12px")
+        .style("fill", "black")
+        .call(legendOrdinal);
+
 };
