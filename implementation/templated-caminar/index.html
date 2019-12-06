@@ -229,17 +229,19 @@
 							<button id="all" class="button active">All</button>
 							<button id="Region" class="button">By Region</button>
 							<button id="State" class="button">By State</button>
+							<p class="force-label">Sort By : </p>
 							<div class="dropdown">
-								<button class="dropbtn">Sort By</button>
+								<button class="dropbtn" id="sort-by-button" ></button>
 								<div class="dropdown-content">
-									<button id= "Highest" class="highlowtoggle active">By Most Expensive</button>
-									<button id= "Lowest" class="highlowtoggle">By Least Expensive </button>
+									<button id= "Highest" class="highlowtoggle active">Most Expensive</button>
+									<button id= "Lowest" class="highlowtoggle">Least Expensive </button>
 								</div>
 							</div>
+							<p class="force-label"> Number of Bedrooms : </p>
 							<div class="dropdown">
-								<button class="dropbtn">Number of Bedrooms</button>
+								<button class="dropbtn" id="data-cat-button"></button>
 								<div class="dropdown-content">
-									<button id= "2bed" class="datacatagory active">2-Bedroom Homes</button>
+									<button id= "2bed" class="datacatagory active">2-Bedroom Homes </button>
 									<button id= "3bed" class="datacatagory">3-Bedroom Homes </button>
 									<button id= "4bed" class="datacatagory">4-Bedroom Homes </button>
 									<button id= "5bed" class="datacatagory">5+ Bedroom Homes </button>
@@ -247,6 +249,10 @@
 							</div>
 						</div>
 
+						<div class="spotlight alt">
+							<p id="forceInfo">While uld be considered. The chart to the right shows the percentage
+								of homeless people in each state in the selected year.</p>
+						</div>
 						<div class="spotlight alt">
 							<div id = "forceDiagram"></div>
 						</div>

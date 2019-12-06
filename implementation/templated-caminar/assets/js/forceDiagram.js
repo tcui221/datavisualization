@@ -18,6 +18,9 @@ ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData,
 ForceDiagram.prototype.initVis = function() {
     var vis = this;
 
+    document.querySelector('#sort-by-button').innerHTML = 'Most Expensive';
+    document.querySelector('#data-cat-button').innerHTML = '2-Bedroom Homes ';
+
     vis.margin = { top: 20, right: 20, bottom: 20, left: 20 };
     vis.w = 1200 - vis.margin.left - vis.margin.right;
     // vis.w = 960 - vis.margin.left - vis.margin.right;
@@ -49,8 +52,8 @@ ForceDiagram.prototype.initVis = function() {
 
     var legendOrdinal = d3.legendColor()
         .shapePadding(0)
-        .title("Color Legend")
-        .titleWidth(200)
+        // .title("Color Legend")
+        // .titleWidth(200)
         .scale(vis.color);
 
     vis.svg.select(".legendOrdinal")

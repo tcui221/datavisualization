@@ -61,6 +61,10 @@ h5 {
 	margin-right: 180px;
 }
 
+h7 {
+	color: #7d7d7f;
+}
+
 #clock {
 	 fill: maroon;
 }
@@ -259,6 +263,13 @@ path {
     Force Diagram
  */
 
+#forceInfo {
+	align-content: flex-start;
+}
+
+.force-label {
+	display: inline-block;
+}
 
 .button.active, .button.active:hover {
 	background: #eabea4;
