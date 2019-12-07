@@ -6,6 +6,7 @@ var pricesAreaChart;
 var USscatter;
 var hlBars;
 var forceHouseCategories;
+var moveReasons;
 
 
 $("#US-choropleth").click(function() {

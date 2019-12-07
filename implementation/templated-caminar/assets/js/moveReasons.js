@@ -10,7 +10,7 @@ MoveReasons.prototype.initVis=function(){
     var vis=this;
     vis.margin={left:215,right:40,top:20,bottom:10};
     vis.width=$(vis.parentElement).width()-vis.margin.left-vis.margin.right;
-    vis.height=600-vis.margin.top-vis.margin.bottom;
+    vis.height=400-vis.margin.top-vis.margin.bottom;
     vis.svg=d3.select(vis.parentElement)
         .append('svg')
         .attr('width',vis.width+vis.margin.left+vis.margin.right)
@@ -126,7 +126,8 @@ MoveReasons.prototype.updateVis=function(){
         .attr("x",0)
         .attr("y", function(d) { return vis.y(d.reason); })
         .attr("width", function(d) { return vis.x(d.value); })
-        .attr("height", vis.y.bandwidth());
+        .attr("height", 50);
+        // .attr("height", vis.y.bandwidth());
 
     vis.y_group=vis.svg.selectAll('.y-axis')
         .data(vis.displayData);
