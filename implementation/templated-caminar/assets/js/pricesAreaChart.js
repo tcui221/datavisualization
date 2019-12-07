@@ -11,10 +11,10 @@ PricesVis = function(_parentElement, _data){
 PricesVis.prototype.initVis = function(){
     var vis = this;
     // changing the top margin here to suit the template css
-    vis.margin = { top: 100, right: 60, bottom: 200, left: 60 };
+    vis.margin = { top: 70, right: 60, bottom: 130, left: 60 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right,
-        vis.height = 500 - vis.margin.top - vis.margin.bottom;
+        vis.height = 450 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -61,8 +61,8 @@ PricesVis.prototype.initVis = function(){
     // Axis titles
     vis.svg.append("text")
         .attr("x", -50)
-        .attr("y", -8)
-        .text("Average Prices")
+        .attr("y", -12)
+        .text("Average Price")
         // adding style here to suit the dark background of the template css
         .style("fill","white");
     vis.svg.append("text")
@@ -76,8 +76,14 @@ PricesVis.prototype.initVis = function(){
     vis.svg.append("text")
         .attr("class", "price-chart-title")
         .text("United States")
-        .attr("y", -20)
+        .attr("y", -50)
         .attr("x", vis.width/2 - 20);
+
+    vis.svg.append("text")
+        .attr("class", "northdakota-caption")
+        .attr("x", vis.width)
+        .attr("y", vis.height+70);
+
 
     vis.wrangleData();
 };
@@ -192,6 +198,11 @@ PricesVis.prototype.onSelectionChange = function(stateSelected){
 
     vis.svg.select(".price-chart-title")
         .text(vis.selectedState);
+
+    if (vis.selectedState === 'North Dakota') {
+        vis.svg.select(".northdakota-caption")
+            .text("Note that data for housing prices in North Dakota before 2005 is not available. ")
+    }
 
     vis.wrangleData();
 };

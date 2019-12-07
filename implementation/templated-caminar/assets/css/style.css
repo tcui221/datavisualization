@@ -50,15 +50,19 @@ img {
 #area-chart-info {
 	text-indent: 2em;
 	text-align: left;
-	margin-top: 20px;
-	margin-right: 10px;
-	margin-left: 50px;
+	/*margin-top: 20px;*/
+	/*margin-right: 10px;*/
+	/*margin-left: 50px;*/
 }
 
 h5 {
 	color: maroon;
 	margin-left: 180px;
 	margin-right: 180px;
+}
+
+h7 {
+	color: #7d7d7f;
 }
 
 #clock {
@@ -104,6 +108,12 @@ path {
 	font-size: 20px;
 }
 
+.northdakota-caption {
+	text-anchor: end;
+	fill: white;
+	font-size: 10px;
+}
+
 .axis line,
 .axis .state {
 	fill: none;
@@ -129,10 +139,29 @@ path {
 	fill: #a94600;
 }
 
-#homelessChart .bar{
-	fill: #d94600;
+#reasons .bar{
+	fill: #a94600;
 }
 
+#reasons text{
+	fill: white;
+}
+
+#income_slider text{
+	fill: white
+}
+
+.on-black {
+	color:white;
+}
+
+.reasons-context {
+	text-align: left;
+}
+
+.reasons-title{
+	text-align:center;
+}
 
 .dot {
 	stroke: #858585;
@@ -259,6 +288,14 @@ path {
     Force Diagram
  */
 
+#forceInfo {
+	/*align-content: flex-start;*/
+	margin-bottom: 30px;
+}
+
+.force-label {
+	display: inline-block;
+}
 
 .button.active, .button.active:hover {
 	background: #eabea4;
@@ -299,10 +336,6 @@ path {
 	color: white;
 }
 
-.forceDiagramContext {
-	margin-left: 50px;
-	margin-right: 50px;
-}
 
 /*
 	Drop down button in force diagram
@@ -332,6 +365,7 @@ path {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
 
 figcaption{
 	color: #FFF;
@@ -405,4 +439,40 @@ div.tooltip {
 	padding-left: 90px;
 	padding-right: 90px;
 	padding-bottom: 40px;
+
+.forceDiagramContext {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.scatterplotContext {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+
+.bio-image {
+	border-radius: 50%;
+	width: 80px;
+	display: inline-block;
+	margin-left: 45px;
+	margin-right: 45px;
+	box-shadow: 10px 5px 5px #151515;
+}
+
+.bio-name {
+	display: inline-block;
+	color: #7d7d7f;
+	margin-right: 90px;
+}
+
+.sources {
+	float: left;
+	color: #7d7d7f;
+}
+
+.sources-list {
+	float: left;
+	text-align: left;
+
 }
