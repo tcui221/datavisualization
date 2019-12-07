@@ -1,10 +1,10 @@
 function chart() {
 
     const dataset = [
-        {start: 2220000, target: 'A'},
-        {start: 2440000, target: 'B'},
+        {start: 2020000, target: 'A'},
+        {start: 2340000, target: 'B'},
         {start: 2660000, target: 'C'},
-        {start: 2880000, target: 'D'},
+        {start: 2980000, target: 'D'},
     ]
 
 
@@ -69,11 +69,6 @@ function chart() {
                 .on("drag", dragged)
                 .on("end", dragended));
 
-        // group.append("circle")
-        //     .attr("cx", d => x(d.start))
-        //     .attr("cy", 55)
-        //     .attr("r", 30)
-        //     .attr("fill", "#D35400" );
 
         var image_list = ["images/arkansas_725k.jpg", "images/Atherton_3.6M.jpg", "images/palo_2.5M.jpg", "images/west_virginia_390k.jpg"];
         var rectcolor_list = ["darkred", "yellow", "darkblue", "white"];
@@ -87,16 +82,13 @@ function chart() {
             .style("stroke",function (d, i) {return rectcolor_list[i]})
             .style("stroke-width","4")
             .style("fill",null);
-            // .style("fill", function (d, i) {return rectcolor_list[i]});
-            // .text(function(d) { return d.target });
+
 
         group.append("image")
-            // .attr("id", function (d, i) {return id_list[i]})
             .attr("class", "drag_image")
             .attr("width", 80)
             .attr("height", 80)
             .attr("xlink:href", function(d, i){return image_list[i];})
-            // .attr("y", 55)
             .attr("x", d => x(d.start));
 
     }
@@ -104,7 +96,7 @@ function chart() {
     svg.append("text")
         .attr("class", "instructions")
         .text("<- drag me")
-        .attr("x", x(3200000))
+        .attr("x", x(3300000))
         .attr("y", 20)
         .style("fill", "white")
 
