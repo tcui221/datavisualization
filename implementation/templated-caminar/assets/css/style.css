@@ -371,7 +371,7 @@ figcaption{
 
 #xAxis text{
 	margin-top: 50px;
-	fill: #D35400;
+	fill: #7d7d7f;
 	font-size: 20px;
 }
 
@@ -476,4 +476,8 @@ div.tooltip {
 	float: left;
 	text-align: left;
 
+}
+
+.col.l6{
+	width:25%
 }

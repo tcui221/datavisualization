@@ -93,7 +93,7 @@ function chart() {
         .text("($)")
         .attr("x", x(4800000)+26)
         .attr("y", 106)
-        .style("fill", "#D35400")
+        .style("fill", "#7d7d7f")
         .style("font-weight", "bold")
 
     drawCircleGroups(dataset);
