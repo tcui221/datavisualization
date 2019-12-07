@@ -4,6 +4,8 @@ Webpage: https://wijayajessica.github.io/USHousingPrices/?fbclid=IwAR28Ku9WWqNlC
 
 Github: https://github.com/wijayajessica/cs171-finalproject
 
+Screencast video: 
+
 
 Vis Kids
 
@@ -50,4 +52,4 @@ Very basic style guide:
       -> Contains DOM hierarchy
 
 
-The README must contain URLs to your project websites and screencast videos. The README must also explain any non-obvious features of your interface.
+
