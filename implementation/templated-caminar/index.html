@@ -53,45 +53,59 @@
 				<!-- Two -->
 					<section class="wrapper style2">
 						<header>
-							<h2>What are your assumptions?</h2>
-							<p class="white">Take a look at thr four houses pictured below. Rank them in order of least to most
+							<h3 style="color:white">What are your assumptions?</h3>
+							<h7>Take a look at the four houses pictured below. Rank them in order of least to most
 							expensive using the price scale located below the pictures. How much do you think it costs to
-							own these homes?</p>
-							<p class="white">When you are ready, click the DISPLAY CORRECT ORDERING button to see how your guesses compare
-							with the actual prices of the homes. </p>
+							own these homes?</h7>
+							<h7>When you are ready, click the DISPLAY CORRECT ORDERING button to see how your guesses compare
+							with the actual prices of the homes. </h7>
 						</header>
-						<div class="container">
+						<br><br>
 						<div class="row" >
-							<div class="col l6" id="left_big_pad">
+							<div class="col l3">
 								<figure>
-									<img src="images/arkansas_725k.jpg" alt="Indiana" width="270"> <br>
-									<figcaption>A</figcaption>
-								</figure>
-								<br>
-								<figure>
-									<img src="images/palo_2.5M.jpg" alt="Flowers in Chania" width="270"> <br>
-									<figcaption>C</figcaption>
+
+									<img src="images/arkansas_725k.jpg" alt="Indiana" width="230" id ="game_image1"> <br>
+<!--									<figcaption>A</figcaption>-->
 								</figure>
 							</div>
-							<div class="col l6" id="left_small_pad" >
+							<div class="col l3" >
 								<figure>
-									<img src="images/Atherton_3.6M.jpg" alt="Flowers in Chania" width="270"> <br>
-									<figcaption>B</figcaption>
+
+<!-- 									<img src="images/palo_2.5M.jpg" alt="Flowers in Chania" width="270" id ="game_image2"> <br>
+									<figcaption>C</figcaption> -->
+
+									<img src="images/Atherton_3.6M.jpg" alt="Flowers in Chania" width="230" id ="game_image2"> <br>
+<!--									<figcaption>B</figcaption>-->
+
 								</figure>
-								<br>
+							</div>
+							<div class="col l3">
 								<figure>
-									<img src="images/west_virginia_390k.jpg" alt="Flowers in Chania" width="270"> <br>
-									<figcaption>D</figcaption>
+
+<!-- 									<img src="images/Atherton_3.6M.jpg" alt="Flowers in Chania" width="270" id ="game_image3"> <br>
+									<figcaption>B</figcaption> -->
+
+									<img src="images/palo_2.5M.jpg" alt="Flowers in Chania" width="230" id ="game_image3"> <br>
+<!--									<figcaption>C</figcaption>-->
+
+								</figure>
+							</div>
+							<div class="col l3" >
+								<figure>
+
+									<img src="images/west_virginia_390k.jpg" alt="Flowers in Chania" width="230" id ="game_image4"> <br>
+<!--									<figcaption>D</figcaption>-->
 								</figure>
 							</div>
 						</div>
-						</div>
+
 						<div>
 							<div id="timeline"> </div>
 						</div>
 
 						<div align="center">
-							<button id="check" >Display Correct Ordering</button>
+							<button id="check" onclick="this.disabled=true">Display Correct Ordering</button>
 						</div>
 
 						<!--						<div class="content">-->
@@ -305,6 +319,10 @@
 							and toggle between most and least expensive within a category by hovering over
 							<i> Sort By </i>.
 						</p>
+						<p class="forceDiagramContext">The least expensive homes tend to be in the Midwest and South,
+							with Kansas, Oklahoma, and Ohio topping the least-expensive list. The most expensive ZIP codes
+							belong to Silicon Valley in CA and areas of San Francisco, as well as parts of NYC and Boston.
+						</p>
 						<br>
 
 <!--						<div class="spotlight">-->
@@ -336,7 +354,7 @@
 									<button id= "Lowest" class="highlowtoggle" value="Least Expensive">Least Expensive </button>
 								</div>
 							</div>
-							<p class="force-label"> Number of Bedrooms : </p>
+							<p class="force-label"> Show me data for : </p>
 							<div class="dropdown">
 								<button class="dropbtn" id="data-cat-button"></button>
 								<div class="dropdown-content">
@@ -344,16 +362,12 @@
 									<button id= "3bed" class="datacatagory" value="3-Bedroom Homes">3-Bedroom Homes </button>
 									<button id= "4bed" class="datacatagory" value="4-Bedroom Homes">4-Bedroom Homes </button>
 									<button id= "5bed" class="datacatagory" value="5+ Bedroom Homes">5+ Bedroom Homes </button>
+									<button id= "sqrfoot" class="datacatagory" value="Per Square Foot">Per Square Foot </button>
 								</div>
 							</div>
 						</div>
 						<div class="spotlight alt">
 							<div id = "forceDiagram"></div>
-						</div>
-						<div class="spotlight alt">
-							<p id="forceInfo">The least expensive homes tend to be in the Midwest and South,
-								with Kansas, Oklahoma, and Ohio topping the least-expensive list.
-							</p>
 						</div>
 					</section>
 				</div>
