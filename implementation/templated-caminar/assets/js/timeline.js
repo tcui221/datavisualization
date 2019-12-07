@@ -1,10 +1,10 @@
 function chart() {
 
     const dataset = [
-        {start: 2220000, target: 'A'},
-        {start: 2440000, target: 'B'},
+        {start: 2020000, target: 'A'},
+        {start: 2340000, target: 'B'},
         {start: 2660000, target: 'C'},
-        {start: 2880000, target: 'D'},
+        {start: 2980000, target: 'D'},
     ]
 
 
@@ -67,33 +67,44 @@ function chart() {
             .call(d3.drag()
                 .on("start", dragstarted)
                 .on("drag", dragged)
-                .on("end", dragended))
+                .on("end", dragended));
 
-        group.append("circle")
-            .attr("cx", d => x(d.start))
-            .attr("cy", 55)
-            .attr("r", 30)
-            .attr("fill", "#D35400" );
 
-        group.append("text")
-            .attr("x", function(d) { return x(d.start) - 8; })
-            .attr("y", function(d) { return 60; })
-            .style("fill", "white")
-            .text(function(d) { return d.target })
+        var image_list = ["images/arkansas_725k.jpg", "images/Atherton_3.6M.jpg", "images/palo_2.5M.jpg", "images/west_virginia_390k.jpg"];
+        var rectcolor_list = ["darkred", "yellow", "darkblue", "white"];
+
+        group.append("rect")
+            .attr("class", "rectborder")
+            .attr("x", function(d) { return x(d.start)-2.5; })
+            .attr("y", 7.5)
+            .attr("width", 85)
+            .attr("height", 65)
+            .style("stroke",function (d, i) {return rectcolor_list[i]})
+            .style("stroke-width","4")
+            .style("fill",null);
+
+
+        group.append("image")
+            .attr("class", "drag_image")
+            .attr("width", 80)
+            .attr("height", 80)
+            .attr("xlink:href", function(d, i){return image_list[i];})
+            .attr("x", d => x(d.start));
+
     }
 
     svg.append("text")
         .attr("class", "instructions")
         .text("<- drag me")
-        .attr("x", x(3020000))
-        .attr("y", 60)
+        .attr("x", x(3300000))
+        .attr("y", 20)
         .style("fill", "white")
 
     svg.append("text")
         .text("($)")
         .attr("x", x(4800000)+26)
         .attr("y", 106)
-        .style("fill", "#D35400")
+        .style("fill", "#7d7d7f")
         .style("font-weight", "bold")
 
     drawCircleGroups(dataset);
@@ -104,12 +115,12 @@ function chart() {
     }
 
     function dragged(d) {
-        d3.select(this).selectAll('circle') // .selectAll("circle") not working....
-            .attr("cx", d.x = d3.event.x)
-            .attr("cy", d.y = 55);
-        d3.select(this).selectAll('text') // .selectAll("text") not working....
-            .attr("x", d.x = d3.event.x - 8)
-            .attr("y", d.y = 60);
+        d3.select(this).selectAll('.drag_image') // .selectAll("circle") not working....
+            .attr("x", d.x = d3.event.x);
+            // .attr("cy", d.y = 55);
+        d3.select(this).selectAll('.rectborder') // .selectAll("text") not working....
+            .attr("x", d.x = d3.event.x - 2.5)
+            .attr("y", d.y = 7.5);
     }
 
     function dragended(d) {
@@ -143,25 +154,48 @@ function chart() {
             //     .on("drag", dragged)
             //     .on("end", dragended))
 
-        group.append("circle")
-            // .transition()
-            // .delay(function(d,i){ return i * 2000 })
-            // .duration(2000)
-            // .ease(d3.easeLinear)
-            .attr("cx", d => x(d.start))
-            .attr("cy", 55)
-            .attr("r", 30)
-            .attr("fill", "#D35400" );
+        // group.append("circle")
+        //     // .transition()
+        //     // .delay(function(d,i){ return i * 2000 })
+        //     // .duration(2000)
+        //     // .ease(d3.easeLinear)
+        //     .attr("cx", d => x(d.start))
+        //     .attr("cy", 55)
+        //     .attr("r", 30)
+        //     .attr("fill", "#D35400" );
+        var rectcolor_list = ["darkred", "yellow", "darkblue", "white"];
 
-        group.append("text")
-            // .transition()
-            // .delay(function(d,i){ return i * 2000 })
-            // .duration(2000)
-            // .ease(d3.easeLinear)
-            .attr("x", function(d) { return x(d.start) - 10; })
-            .attr("y", function(d) { return 60; })
-            .style("fill", "white")
-            .text(function(d) { return d.target })
+        group.append("rect")
+            .attr("class", "rectborder")
+            .attr("x", function(d) { return x(d.start)-2.5; })
+            .attr("y", 7.5)
+            .attr("width", 85)
+            .attr("height", 65)
+            .style("stroke",function (d, i) {return rectcolor_list[i]})
+            .style("stroke-width","4")
+            .style("fill",null);
+
+        var image_list = ["images/arkansas_725k.jpg", "images/Atherton_3.6M.jpg", "images/palo_2.5M.jpg", "images/west_virginia_390k.jpg"];
+
+        group.append("image")
+            .attr("class", "drag_image")
+            .attr("width", 80)
+            .attr("height", 80)
+            .attr("xlink:href", function(d, i){
+                return image_list[i];
+            })
+            // .attr("y", 55)
+            .attr("x", d => x(d.start));
+
+        // group.append("text")
+        //     // .transition()
+        //     // .delay(function(d,i){ return i * 2000 })
+        //     // .duration(2000)
+        //     // .ease(d3.easeLinear)
+        //     .attr("x", function(d) { return x(d.start) - 10; })
+        //     .attr("y", function(d) { return 60; })
+        //     .style("fill", "white")
+        //     .text(function(d) { return d.target })
     }
 
     d3.select('#check')
@@ -173,11 +207,14 @@ function chart() {
                 {location: "Charles Town, West Virginia", area: "5,300 sqft", start: 390000, target: 'D'},
             ]
 
-            d3.selectAll(".instructions").text("")
-            d3.selectAll("circle")
-                .attr("fill", "grey")
+            d3.selectAll(".instructions").text("");
+            d3.selectAll(".drag_image")
+                .attr("opacity", "0.2");
+            d3.selectAll(".rectborder")
+                .style("stroke-opacity","0.2");
 
-            updatedrawCircleGroups(new_dataset)
+
+            updatedrawCircleGroups(new_dataset);
 
             var display_div = document.getElementById('explanation');
 
