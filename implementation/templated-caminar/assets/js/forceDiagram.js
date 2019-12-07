@@ -146,6 +146,7 @@ ForceDiagram.prototype.drawDiagram = function(){
     var t = d3.transition()
         .duration(750);
 
+
     vis.tip
         .html(function(d) {
         return "<p><strong>" + d['City'] + ", " + d['State'] +
