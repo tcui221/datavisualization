@@ -22,7 +22,7 @@ A few style things:
       main.css -> Styling built into template we used
     /js
       main.js -> Load data and instantiate visualizations
-      
+      timeline.js -> Interactive housing price ordering
       forceDiagram.js -> Code for bubble chart showing ZIP code prices
     /data
       -> Contains all data files
