@@ -13,7 +13,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 97515,94024,Los Altos,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,4442,2820100
 96980,92662,Newport Beach,CA,West,Los Angeles-Long Beach-Anaheim,Orange County,8519,2759300
 97587,94133,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,2278,2665800
-58630,2116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2770,2650800
+58630,02116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2770,2650800
 96120,90272,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,3803,2643300
 96979,92661,Newport Beach,CA,West,Los Angeles-Long Beach-Anaheim,Orange County,7950,2608500
 96050,90069,West Hollywood,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,1603,2605000
@@ -39,7 +39,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 96621,92067,Rancho Santa Fe,CA,West,San Diego-Carlsbad,San Diego County,6519,2142000
 97572,94118,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,944,2132800
 97865,94920,Tiburon,CA,West,San Francisco-Oakland-Hayward,Marin County,5641,2124300
-58625,2111,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,6322,2122600
+58625,02111,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,6322,2122600
 96048,90067,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,8772,2097100
 96117,90266,Manhattan Beach,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,1710,2083300
 97569,94115,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,650,2082800
@@ -49,7 +49,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 72442,33139,Miami Beach,FL,South,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,64,1982700
 96150,90403,Santa Monica,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,1768,1965100
 96029,90048,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,2075,1925100
-58632,2118,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2145,1917900
+58632,02118,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2145,1917900
 97528,94041,Mountain View,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,5159,1915000
 97926,95014,Cupertino,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,400,1911200
 72452,33149,Key Biscayne,FL,South,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,5207,1897600
@@ -57,7 +57,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 96058,90077,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,7006,1865600
 97702,94402,San Mateo,CA,West,San Francisco-Oakland-Hayward,San Mateo County,3367,1858600
 96152,90405,Santa Monica,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,1643,1856200
-58622,2108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,8460,1852300
+58622,02108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,8460,1852300
 72914,33921,Boca Grande,FL,South,Cape Coral-Fort Myers,Lee County,9814,1851900
 97571,94117,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,767,1839000
 96296,91108,San Marino,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,6547,1808100
@@ -97,7 +97,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 96045,90064,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,2511,1551400
 97539,94065,Redwood City,CA,West,San Francisco-Oakland-Hayward,San Mateo County,6166,1545200
 96109,90254,Hermosa Beach,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,3548,1543300
-58629,2115,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3204,1538700
+58629,02115,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3204,1538700
 97899,94965,Sausalito,CA,West,San Francisco-Oakland-Hayward,Marin County,5664,1529400
 97479,93923,Carmel-by-the-Sea,CA,West,Salinas,Monterey County,5670,1528300
 97530,94043,Mountain View,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2089,1517000

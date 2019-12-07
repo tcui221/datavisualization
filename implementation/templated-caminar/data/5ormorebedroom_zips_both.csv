@@ -9,7 +9,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,2019-10
 96116,90265,Malibu,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,5953600
 97691,94301,Palo Alto,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,5883300
 62321,11976,Water Mill,NY,Northeast,New York-Newark-Jersey City,Suffolk County,5673300
-58622,2108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,5505300
+58622,02108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,5505300
 96050,90069,West Hollywood,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,5407100
 93818,81615,Snowmass Village,CO,West,Glenwood Springs,Pitkin County,5373100
 96975,92657,Newport Beach,CA,West,Los Angeles-Long Beach-Anaheim,Orange County,5361900
@@ -28,7 +28,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,2019-10
 96969,92651,Laguna Beach,CA,West,Los Angeles-Long Beach-Anaheim,Orange County,4584800
 97501,94010,Burlingame,CA,West,San Francisco-Oakland-Hayward,San Mateo County,4549100
 62314,11968,Southampton,NY,Northeast,New York-Newark-Jersey City,Suffolk County,4541400
-58630,2116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,4399500
+58630,02116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,4399500
 97516,94025,Menlo Park,CA,West,San Francisco-Oakland-Hayward,San Mateo County,4359400
 97519,94028,Portola Valley,CA,West,San Francisco-Oakland-Hayward,San Mateo County,4262300
 96001,90020,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,4256600
@@ -52,7 +52,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,2019-10
 97696,94306,Palo Alto,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,3526700
 97536,94062,Redwood City,CA,West,San Francisco-Oakland-Hayward,San Mateo County,3499700
 72452,33149,Key Biscayne,FL,South,Miami-Fort Lauderdale-West Palm Beach,Miami-Dade County,3434600
-58652,2138,Cambridge,MA,Northeast,Boston-Cambridge-Newton,Middlesex County,3397700
+58652,02138,Cambridge,MA,Northeast,Boston-Cambridge-Newton,Middlesex County,3397700
 96639,92091,Rancho Santa Fe,CA,West,San Diego-Carlsbad,San Diego County,3391900
 97693,94303,Palo Alto,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,3374800
 96109,90254,Hermosa Beach,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,3367700
