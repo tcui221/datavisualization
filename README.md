@@ -1,6 +1,7 @@
 Screen Size: 2560 x 1600 (13' screen size)
 
 Webpage: https://wijayajessica.github.io/USHousingPrices/?fbclid=IwAR28Ku9WWqNlCkaU4PK_T3r_0w8N_dTG0GcgAdsH7KqA7TdJWqsUz17xs7Y
+
 Github: https://github.com/wijayajessica/cs171-finalproject
 
 
