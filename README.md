@@ -16,14 +16,14 @@ A few style things:
 /implementation
  /templated-caminar
    /assets
+   
     /css
       style.css -> Our group's styling
       main.css -> Styling built into template we used
     /js
       main.js -> Load data and instantiate visualizations
       
-      
-      
+      forceDiagram.js -> Code for bubble chart showing ZIP code prices
     /data
       -> Contains all data files
     /images
