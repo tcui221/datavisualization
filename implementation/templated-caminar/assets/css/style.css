@@ -479,3 +479,19 @@ div.tooltip {
 	text-align: left;
 
 }
+
+#game_image1 {
+	border:4px solid darkred;
+}
+
+#game_image2 {
+	border:4px solid yellow;
+}
+
+#game_image3 {
+	border:4px solid darkblue;
+}
+
+#game_image4 {
+	border:4px solid white;
+}
