@@ -297,16 +297,14 @@ path {
 	display: inline-block;
 }
 
-.button.active, .button.active:hover {
+.group-by-button.active, .group-by-button.active:hover,
+.highlowtoggle.active, .highlowtoggle.active:hover,
+.datacatagory.active, .datacatagory.active:hover {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
-}
-
-.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active, .datacatagory.active:hover {
-	background: #eabea4;
-	color: #fff;
-	border-radius: 0px;
+	min-width: 100px;
+	white-space: normal;
 }
 
 
@@ -373,7 +371,7 @@ figcaption{
 
 #xAxis text{
 	margin-top: 50px;
-	fill: #D35400;
+	fill: #7d7d7f;
 	font-size: 20px;
 }
 
@@ -456,7 +454,7 @@ div.tooltip {
 
 .bio-image {
 	border-radius: 50%;
-	width: 80px;
+	width: 120px;
 	display: inline-block;
 	margin-left: 45px;
 	margin-right: 45px;
@@ -466,7 +464,7 @@ div.tooltip {
 .bio-name {
 	display: inline-block;
 	color: #7d7d7f;
-	margin-right: 90px;
+	margin-right: 130px;
 }
 
 .sources {
@@ -494,4 +492,8 @@ div.tooltip {
 
 #game_image4 {
 	border:4px solid white;
+}
+
+.col.l3{
+	width:25%
 }
