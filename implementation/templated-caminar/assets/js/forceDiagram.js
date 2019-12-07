@@ -150,7 +150,7 @@ ForceDiagram.prototype.drawDiagram = function(){
         .html(function(d) {
         return "<p><strong>" + d['City'] + ", " + d['State'] +
             "<br></p><p><strong> ZIP : </strong>" + d['RegionName'] +
-            "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
+            "</p><p><strong> Avg Cost : </strong>" + "$" + formatComma(d['2019-10']);
         });
 
     vis.node = vis.node.data(vis.displayData);
