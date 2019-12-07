@@ -24,6 +24,8 @@ A few style things:
       main.js -> Load data and instantiate visualizations
       timeline.js -> Interactive housing price ordering
       forceDiagram.js -> Code for bubble chart showing ZIP code prices
+      moveReasons.js -> Bar chart of reasons for moving with slider to select income brackets
+      hlBars.js -> Bar chart of state homelessness ratios in different years (not used in website)
     /data
       -> Contains all data files
     /images
