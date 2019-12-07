@@ -61,6 +61,7 @@ queue()
 
 		USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+
 		USscatter = new ScatterVis("US-scatter", jsonData);
 
 		forceHouseCategories = new ForceDiagram('forceDiagram',
@@ -69,6 +70,8 @@ queue()
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 
 		moveReasons=new MoveReasons('#reasons','#income_slider',incomeMoves);
+		// initial rendering of the areachart is set to California
+		pricesAreaChart.onSelectionChange('California');
 
 	});
 

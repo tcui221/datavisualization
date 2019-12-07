@@ -20,6 +20,8 @@ ForceDiagram.prototype.initVis = function() {
 
     document.querySelector('#sort-by-button').innerHTML = 'Most Expensive';
     document.querySelector('#data-cat-button').innerHTML = '2-Bedroom Homes ';
+    document.querySelector('#group-by-button').innerHTML = 'All';
+
 
     vis.margin = { top: 20, right: 20, bottom: 20, left: 20 };
     vis.w = 1200 - vis.margin.left - vis.margin.right;
@@ -28,7 +30,7 @@ ForceDiagram.prototype.initVis = function() {
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
         .attr("width", vis.w + vis.margin.left + vis.margin.right)
-        .attr("height", vis.h + vis.margin.top + vis.margin.bottom)
+        .attr("height", vis.h + vis.margin.top + vis.margin.bottom);
 
     vis.g = vis.svg.append("g")
         .attr("transform", "translate(" + 10 + "," + vis.margin.top + ")");
@@ -148,7 +150,7 @@ ForceDiagram.prototype.drawDiagram = function(){
         .html(function(d) {
         return "<p><strong>" + d['City'] + ", " + d['State'] +
             "<br></p><p><strong> ZIP : </strong>" + d['RegionName'] +
-            "</p><p><strong> Cost : </strong>" + formatComma(d['2019-10']);
+            "</p><p><strong> Avg Cost : </strong>" + "$" + formatComma(d['2019-10']);
         });
 
     vis.node = vis.node.data(vis.displayData);
@@ -210,6 +212,8 @@ ForceDiagram.prototype.setUpButtons = function(){
             var buttonId = button.attr('id');
 
             vis.splitSelection = buttonId;
+
+            document.querySelector('#group-by-button').innerHTML = button.attr('value');
 
             vis.splitBubbles(buttonId);
         });

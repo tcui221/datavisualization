@@ -98,6 +98,7 @@
 						<div class="spotlight alt">
 								<div class="image flush">
 									<a href="images/SFhouse.jpg"><img src="images/SFhouse.jpg" style="padding-right: 50px" /></a>
+									<p align="center">Typical houses in San Francisco</p>
 								</div>
 
 							<div  class="inner">
@@ -260,9 +261,15 @@
 <!--						</div>-->
 
 						<div id="toolbar">
-							<button id="all" class="button active">All</button>
-							<button id="Region" class="button">By Region</button>
-							<button id="State" class="button">By State</button>
+							<p class="force-label">Group By : </p>
+							<div class="dropdown">
+								<button class="dropbtn" id="group-by-button" ></button>
+								<div class="dropdown-content">
+									<button id="all" class="button active" value="All">All</button>
+									<button id="Region" class="button" value="By Region">By Region</button>
+									<button id="State" class="button" value="By State">By State</button>
+								</div>
+							</div>
 							<p class="force-label">Sort By : </p>
 							<div class="dropdown">
 								<button class="dropbtn" id="sort-by-button" ></button>
@@ -282,31 +289,63 @@
 								</div>
 							</div>
 						</div>
-
-						<div class="spotlight alt">
-							<p id="forceInfo">While uld be considered. The chart to the right shows the percentage
-								of homeless people in each state in the selected year.</p>
-						</div>
 						<div class="spotlight alt">
 							<div id = "forceDiagram"></div>
 						</div>
+						<div class="spotlight alt">
+							<p id="forceInfo">The least expensive homes tend to be in the Midwest and South,
+								with Kansas, Oklahoma, and Ohio topping the least-expensive list.
+							</p>
+						</div>
 					</section>
-
 				</div>
 			</section>
 
-		<!-- Footer -->
-<!--			<footer id="footer">-->
-<!--				<div class="container">-->
-<!--					<ul class="icons">-->
-<!--						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
-<!--						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
-<!--						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
-<!--						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>-->
-<!--					</ul>-->
-<!--				</div>-->
-<!--				-->
-<!--			</footer>-->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+
+						<img src="images/jessica.png" class="bio-image" alt="Avatar">
+						<img src="images/joey.jpg" class="bio-image" alt="Avatar">
+						<img src="images/rita.jpg" class="bio-image" alt="Avatar">
+						<img src="images/katherine.jpg" class="bio-image" alt="Avatar">
+
+					</ul>
+
+					<ul class="icons">
+
+						<p class="bio-name">Jessica Wijaya </p>
+						<p class="bio-name">Joey Noszek    </p>
+						<p class="bio-name">Rita Cui       </p>
+						<p class="bio-name">Katherine Lazar</p>
+
+					</ul>
+					<h7 style="float:left;">Sources: </h7>
+					<br>
+					<ul class="sources">
+						<li class="sources-list">
+							<a href="http://bl.ocks.org/rgdonohue/9280446" target="_blank">Animated Choropleth example</a>
+						</li><br>
+						<li class="sources-list">
+							<a href="https://bl.ocks.org/HarryStevens/bc938c8d45008d99faed47039fbe5d49" target="_blank">Force diagram example</a>
+						</li><br>
+						<li class="sources-list">
+							<a href="https://www.vox.com/2018/10/13/17953004/wages-workers-silicon-valley-income-inequality" target="_blank">Inequality in Silicon Valley is getting worse: Wages are down for everyone but the top 10 percent</a>
+						</li><br>
+						<li class="sources-list">
+							<a href="https://calmatters.org/california-divide/2019/10/income-inequality-is-on-the-rise-in-california-in-some-counties-the-disparities-are-extreme/" target="_blank">Income inequality is on the rise in California. In some counties, the disparities are extreme</a>
+						</li><br>
+						<li class="sources-list">
+							<a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="_blank">5 Reasons California's Housing Costs Are So High</a>
+						</li><br>
+<!--						<li class="sources-list">-->
+<!--							<a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="_blank">5 Reasons California's Housing Costs Are So High</a>-->
+<!--						</li><br>-->
+
+					</ul>
+				</div>
+
+			</footer>
 
 		<!-- Scripts -->
 <!--		<script src="assets/js/jquery.min.js"></script>-->

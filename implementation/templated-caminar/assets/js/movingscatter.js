@@ -218,8 +218,8 @@ ScatterVis.prototype.initVis = function(){
 
     var legendOrdinal = d3.legendColor()
         .shapePadding(0)
-        .title("Color Legend")
-        .titleWidth(200)
+        // .title("Color Legend")
+        // .titleWidth(200)
         .scale(vis.colorLegend);
 
     vis.svg.select(".legendOrdinal")

@@ -5,11 +5,8 @@ Rita, Joey, Jessica, and Katherine
 Zillow housing data, visualized 
 
 
-Current color scheme: 
+A few style things: 
 
-- ___ background
+- grey background
 - Reds, oranges, yellows
 - Black borders where applicable (ie, choropleth)
-
-Fonts
-- I'm kinda into Baskerville. Change if desired

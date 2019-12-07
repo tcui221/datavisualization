@@ -108,6 +108,12 @@ path {
 	font-size: 20px;
 }
 
+.northdakota-caption {
+	text-anchor: end;
+	fill: white;
+	font-size: 10px;
+}
+
 .axis line,
 .axis .state {
 	fill: none;
@@ -264,7 +270,8 @@ path {
  */
 
 #forceInfo {
-	align-content: flex-start;
+	/*align-content: flex-start;*/
+	margin-bottom: 30px;
 }
 
 .force-label {
@@ -348,4 +355,30 @@ path {
 .scatterplotContext {
 	margin-left: 50px;
 	margin-right: 50px;
+}
+
+
+.bio-image {
+	border-radius: 50%;
+	width: 80px;
+	display: inline-block;
+	margin-left: 45px;
+	margin-right: 45px;
+	box-shadow: 10px 5px 5px #151515;
+}
+
+.bio-name {
+	display: inline-block;
+	color: #7d7d7f;
+	margin-right: 90px;
+}
+
+.sources {
+	float: left;
+	color: #7d7d7f;
+}
+
+.sources-list {
+	float: left;
+	text-align: left;
 }
