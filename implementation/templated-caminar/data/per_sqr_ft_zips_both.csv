@@ -49,7 +49,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 97527,94040,Mountain View,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,1805,1186
 96957,92625,Newport Beach,CA,West,Los Angeles-Long Beach-Anaheim,Orange County,6370,1183
 61619,10005,New York,NY,Northeast,New York-Newark-Jersey City,New York County,6793,1183
-58630,2116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3364,1173
+58630,02116,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3364,1173
 97528,94041,Mountain View,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,6335,1173
 97695,94305,Stanford,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,8169,1172
 97610,94158,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,7713,1169
@@ -57,7 +57,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 97563,94108,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,5958,1166
 96120,90272,Los Angeles,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,4642,1164
 97565,94110,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,89,1161
-58622,2108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,10719,1159
+58622,02108,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,10719,1159
 93816,81611,Aspen,CO,West,Glenwood Springs,Pitkin County,7568,1154
 97501,94010,Burlingame,CA,West,San Francisco-Oakland-Hayward,San Mateo County,1371,1152
 97564,94109,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,14,1149
@@ -81,7 +81,7 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 62026,11215,New York,NY,Northeast,New York-Newark-Jersey City,Kings County,121,1060
 96117,90266,Manhattan Beach,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,2088,1057
 97558,94103,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,1296,1049
-58629,2115,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3903,1040
+58629,02115,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,3903,1040
 97536,94062,Redwood City,CA,West,San Francisco-Oakland-Hayward,San Mateo County,4206,1034
 97936,95030,Los Gatos,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,7374,1024
 97966,95070,Saratoga,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,3274,1021
@@ -91,14 +91,14 @@ RegionID,RegionName,City,State,Region,Metro,CountyName,SizeRank,2019-10
 97542,94070,San Carlos,CA,West,San Francisco-Oakland-Hayward,San Mateo County,2960,1015
 97581,94127,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,5806,1007
 62048,11238,New York,NY,Northeast,New York-Newark-Jersey City,Kings County,115,1004
-58632,2118,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2620,1002
+58632,02118,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,2620,1002
 97702,94402,San Mateo,CA,West,San Francisco-Oakland-Hayward,San Mateo County,4106,1002
 97530,94043,Mountain View,CA,West,San Jose-Sunnyvale-Santa Clara,Santa Clara County,2553,995
 61640,10026,New York,NY,Northeast,New York-Newark-Jersey City,New York County,1813,991
 96087,90211,Beverly Hills,CA,West,Los Angeles-Long Beach-Anaheim,Los Angeles County,8607,990
 97570,94116,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,1917,989
-58628,2114,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,5451,984
-58625,2111,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,7833,982
+58628,02114,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,5451,984
+58625,02111,Boston,MA,Northeast,Boston-Cambridge-Newton,Suffolk County,7833,982
 97575,94121,San Francisco,CA,West,San Francisco-Oakland-Hayward,San Francisco County,985,981
 93019,79567,Winters,TX,South,,Runnels County,11825,19
 91422,76470,Ranger,TX,South,,Eastland County,12121,20
