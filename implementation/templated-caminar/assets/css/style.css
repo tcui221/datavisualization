@@ -139,10 +139,29 @@ path {
 	fill: #a94600;
 }
 
-#homelessChart .bar{
-	fill: #d94600;
+#reasons .bar{
+	fill: #a94600;
 }
 
+#reasons text{
+	fill: white;
+}
+
+#income_slider text{
+	fill: white
+}
+
+.on-black {
+	color:white;
+}
+
+.reasons-context {
+	text-align: left;
+}
+
+.reasons-title{
+	text-align:center;
+}
 
 .dot {
 	stroke: #858585;

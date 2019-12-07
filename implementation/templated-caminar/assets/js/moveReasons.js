@@ -8,7 +8,7 @@ MoveReasons=function(_parentElement,_sliderElement,_data){
 
 MoveReasons.prototype.initVis=function(){
     var vis=this;
-    vis.margin={left:215,right:40,top:10,bottom:10};
+    vis.margin={left:215,right:40,top:20,bottom:10};
     vis.width=$(vis.parentElement).width()-vis.margin.left-vis.margin.right;
     vis.height=600-vis.margin.top-vis.margin.bottom;
     vis.svg=d3.select(vis.parentElement)
@@ -32,10 +32,19 @@ MoveReasons.prototype.initVis=function(){
     });
     console.log(vis.data);
 
+    vis.bracketText=vis.svg
+        .append('text')
+        .text('')
+        .attr('x',-vis.margin.left+5)
+        .attr('y',-5)
+        .attr('text-anchor','left');
+
+    vis.tops={0:9999,10000:19999,20000:29999,30000:39999,40000:49999,50000:59999,60000:69999,70000:84499,85000:99999,100000:'100000+'};
+
     vis.slider=d3.sliderBottom()
         .min(0)
         .max(100000)
-        .width(300)
+        .width($(vis.parentElement).width()-100)
         .tickValues([0,10000,20000,30000,40000,50000,60000,70000,85000,100000])
         .marks([0,10000,20000,30000,40000,50000,60000,70000,85000,100000])
         .default([0,100000])
@@ -45,7 +54,7 @@ MoveReasons.prototype.initVis=function(){
 
     vis.gStep = d3.select(vis.sliderElement)
         .append('svg')
-        .attr('width', 500)
+        .attr('width', $(vis.parentElement).width())
         .attr('height', 100)
         .append('g')
         .attr('transform', 'translate(30,30)');
@@ -148,5 +157,10 @@ MoveReasons.prototype.updateVis=function(){
         })
         .text(function(d){
             return d.value;
-        })
+        });
+
+    vis.bracketText
+        .text('Household Income: $'+vis.start+' - $'+ vis.tops[vis.end])
+        .attr('fill','white');
+
 };
