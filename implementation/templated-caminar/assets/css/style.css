@@ -406,7 +406,7 @@ div.tooltip {
 	line-height: 1;
 	font-weight: bold;
 	padding: 12px;
-	background: #fff;
+	background: #2e3133;
 	color: #fff;
 	border-radius: 2px;
 }
@@ -436,11 +436,12 @@ div.tooltip {
 }
 
 #explanation_text {
-	padding-left: 90px;
-	padding-right: 90px;
-	padding-bottom: 40px;
 
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 40px;
 }
+
 
 .forceDiagramContext {
 	margin-left: 50px;
