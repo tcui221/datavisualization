@@ -2916,6 +2916,7 @@
 			transition: opacity 1.5s ease-in-out, visibility 1.5s;
 			content: '';
 			/*background-image: url(../../images/test-background.jpg);*/
+			background-image: url(../../images/test-background.jpg);
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;

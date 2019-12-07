@@ -60,12 +60,16 @@ queue()
 
 		USchoro = new USchoropleth_State("US-choropleth", USmapJson, HomeValueCsv);
 		pricesAreaChart = new PricesVis("pricesAreaChart", HomeValueCsv);
+
 		USscatter = new ScatterVis("US-scatter", jsonData);
 
 		forceHouseCategories = new ForceDiagram('forceDiagram',
 			twoBedroom, threeBedroom, fourBedroom, fiveBedroom);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
+
+		// initial rendering of the areachart is set to California
+		pricesAreaChart.onSelectionChange('California');
 
 	});
 
