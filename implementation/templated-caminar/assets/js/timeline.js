@@ -135,9 +135,9 @@ function chart() {
             .attr('class', 'd3-tip')
             .direction('s')
             .html(function(d) {
-                return "<strong>House price:</strong> <span style='color:#D35400'>$" + format(d.start) + "</span><br>" +
-                        "<strong>Location:</strong> <span style='color:black'>" + d.location + '</span><br>'
-                + "<strong>Area:</strong> <span style='color:black'>" + d.area + '</span><br>'
+                return "<strong> <sopan style='color:white'> House price:</strong> <span style='color:#D35400'>$" + format(d.start) + "</span><br>" +
+                    "<strong style='color:white'>Location:</strong> <span style='color:white'>" + d.location + '</span><br>'
+                    + "<strong style='color:white'>Area:</strong> <span style='color:white'>" + d.area + '</span><br>'
 
             });
 
