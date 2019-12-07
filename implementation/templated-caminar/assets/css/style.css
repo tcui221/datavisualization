@@ -297,16 +297,14 @@ path {
 	display: inline-block;
 }
 
-.button.active, .button.active:hover {
+.group-by-button.active, .group-by-button.active:hover,
+.highlowtoggle.active, .highlowtoggle.active:hover,
+.datacatagory.active, .datacatagory.active:hover {
 	background: #eabea4;
 	color: #fff;
 	border-radius: 0px;
-}
-
-.highlowtoggle.active, .highlowtoggle.active:hover, .datacatagory.active, .datacatagory.active:hover {
-	background: #eabea4;
-	color: #fff;
-	border-radius: 0px;
+	min-width: 100px;
+	white-space: normal;
 }
 
 
