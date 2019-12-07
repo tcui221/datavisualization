@@ -1,7 +1,7 @@
 
 
 ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData,
-                        _fourBedroomData, _fiveBedroomData ){
+                        _fourBedroomData, _fiveBedroomData, _per_sqr_ft ){
     this.parentElement = _parentElement;
     this.data = _twoBedroomData;
     this.displayData = _twoBedroomData;
@@ -9,6 +9,7 @@ ForceDiagram = function(_parentElement, _twoBedroomData, _threeBedroomData,
     this.threeBedroomData = _threeBedroomData;
     this.fourBedroomData = _fourBedroomData;
     this.fiveBedroomData = _fiveBedroomData;
+    this.perSqrFoot = _per_sqr_ft;
     this.splitSelection = "all";
     this.sortSelection = "Highest";
     this.dataCategorySelection = "2bed";
@@ -96,8 +97,10 @@ ForceDiagram.prototype.wrangleData = function(highLowToggle, dataCategorySelecti
         vis.data = vis.threeBedroomData;
     } else if (dataCategorySelection == "4bed") {
         vis.data = vis.fourBedroomData;
-    } else {
+    } else if (dataCategorySelection == "5bed") {
         vis.data = vis.fiveBedroomData;
+    } else {
+        vis.data = vis.perSqrFoot;
     }
 
     vis.data.forEach(function (element) {
