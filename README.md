@@ -25,6 +25,7 @@ Very basic style guide:
  /implementation
   /templated-caminar
    /assets
+   
     /css
       style.css -> Our group's styling
       main.css -> Styling built into template we used
