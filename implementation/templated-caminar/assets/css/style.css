@@ -265,7 +265,7 @@ path {
 
 #forceInfo {
 	/*align-content: flex-start;*/
-	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .force-label {
@@ -349,4 +349,17 @@ path {
 .scatterplotContext {
 	margin-left: 50px;
 	margin-right: 50px;
+}
+
+
+.bio-image {
+	border-radius: 50%;
+	width: 80px;
+	display: inline-block;
+	margin: 40px;
+	box-shadow: 10px 5px 5px #151515;
+}
+
+figure {
+	display: inline-block;
 }
