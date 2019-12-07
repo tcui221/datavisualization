@@ -4,7 +4,7 @@ Webpage: https://wijayajessica.github.io/USHousingPrices/?fbclid=IwAR28Ku9WWqNlC
 
 Github: https://github.com/wijayajessica/cs171-finalproject
 
-Screencast video: 
+Screencast video: https://drive.google.com/drive/folders/13GRkvwwVZ9bAnNCfN46ntn0VtHAA6Y3m?usp=sharing
 
 
 **Vis Kids**
