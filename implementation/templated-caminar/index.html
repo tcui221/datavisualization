@@ -259,9 +259,15 @@
 <!--						</div>-->
 
 						<div id="toolbar">
-							<button id="all" class="button active">All</button>
-							<button id="Region" class="button">By Region</button>
-							<button id="State" class="button">By State</button>
+							<p class="force-label">Group By : </p>
+							<div class="dropdown">
+								<button class="dropbtn" id="group-by-button" ></button>
+								<div class="dropdown-content">
+									<button id="all" class="button active" value="All">All</button>
+									<button id="Region" class="button" value="By Region">By Region</button>
+									<button id="State" class="button" value="By State">By State</button>
+								</div>
+							</div>
 							<p class="force-label">Sort By : </p>
 							<div class="dropdown">
 								<button class="dropbtn" id="sort-by-button" ></button>
@@ -281,7 +287,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="spotlight alt">
 							<br>
 							<br>
