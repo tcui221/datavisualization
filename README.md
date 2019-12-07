@@ -7,9 +7,9 @@ Github: https://github.com/wijayajessica/cs171-finalproject
 Screencast video: 
 
 
-Vis Kids
+**Vis Kids**
 
-Zillow Housing Data
+**Zillow Housing Data**
 
 Rita Cui (91170027, tcui@college.harvard.edu)
 Jessica Wijaya (11425259, jessicawijaya@g.harvard.edu)
