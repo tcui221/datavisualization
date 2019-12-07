@@ -24,7 +24,7 @@ ForceDiagram.prototype.initVis = function() {
 
 
     vis.margin = { top: 20, right: 20, bottom: 20, left: 20 };
-    vis.w = 1200 - vis.margin.left - vis.margin.right;
+    vis.w = 1100 - vis.margin.left - vis.margin.right;
     // vis.w = 960 - vis.margin.left - vis.margin.right;
     vis.h = vis.w * 1/2;
 
@@ -42,7 +42,7 @@ ForceDiagram.prototype.initVis = function() {
     vis.forceStrength = 0.5;
 
     vis.radiusScale = d3.scaleLinear()
-        .range([8, 20]);
+        .range([8, 18]);
 
     vis.color = d3.scaleOrdinal()
         .range(colorbrewer.YlOrBr[4])
