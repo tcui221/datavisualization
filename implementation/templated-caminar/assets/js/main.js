@@ -26,9 +26,11 @@ queue()
 	.defer(d3.csv,'data/3bedroom_zips_both.csv')
 	.defer(d3.csv,'data/4bedroom_zips_both.csv')
 	.defer(d3.csv,'data/5ormorebedroom_zips_both.csv')
+	.defer(d3.csv,'data/per_sqr_ft_zips_both.csv')
 	.defer(d3.csv,'data/income_moves.csv')
 	.await(function(error, USmapJson, HomeValueCsv, cleanedHomeValue,
-					medianIncome,homelessRatios, twoBedroom, threeBedroom, fourBedroom, fiveBedroom,incomeMoves) {
+					medianIncome,homelessRatios, twoBedroom, threeBedroom, fourBedroom, fiveBedroom,
+					per_sqr_foot, incomeMoves) {
 
 		var jsonData = [];
 		var years = ['1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007','2008', '2009', '2010', '2011', '2012', '2013', '2014','2015', '2016','2017', '2018'];
@@ -66,7 +68,7 @@ queue()
 		USscatter = new ScatterVis("US-scatter", jsonData);
 
 		forceHouseCategories = new ForceDiagram('forceDiagram',
-			twoBedroom, threeBedroom, fourBedroom, fiveBedroom);
+			twoBedroom, threeBedroom, fourBedroom, fiveBedroom, per_sqr_foot);
 
 		hlBars=new HLBars('#homelessChart',homelessRatios);
 

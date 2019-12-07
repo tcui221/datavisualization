@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>HOUSING PRICE</title>
+		<title>Housing Prices</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/style.css" />
@@ -33,19 +33,19 @@
 							<img src="images/housesale.jpg" alt="" />
 						</div>
 						<header class="special">
-							<h2>Rising Housing Price</h2>
-							<p>lalalal placeholder</p>
+							<h2>Rising Housing Prices</h2>
+							<p>An Exploration of Gentrification</p>
 						</header>
 						<div class="content">
 							<p>We’re seeing one of the longest periods of economic growth in US history.
 								When the housing market crashed in 2008, it led to one of the worst economic
-								periods since the Great Depression, often called the Great Recession. The economy has
-								not just recovered from this period, but grown steadily each year since the crash.
-								Over a decade after the Great Recession, unemployment is the lowest it’s been in 50 years,
+								periods since the Great Depression, often called the Great Recession. The economy did
+                                not quickly recover, but has rather grown steadily each year since the crash.
+								Over a decade after the Great Recession, unemployment is the lowest it has been in 50 years,
 								wages are rising at a faster rate, and consumers continue to spend more, which fuels the economy.
 								As the economy grew, home prices rose rapidly across the country.
 								Since 2012, the number of eager home buyers increased faster than the number of homes
-								for sale–demand rose faster than supply.
+								for sale – demand outpaced supply.
 							</p>
 						</div>
 					</section>
@@ -127,16 +127,16 @@
 								</div>
 
 							<div  class="inner">
-								<h3>Why is it so hard for millenials to find a home, especially in California?<br></h3>
+								<h3>Why is it so hard for millennials to find a home, especially in California?<br></h3>
 								<h7>At its most basic level, it’s a story of supply and demand.
 								What does it mean? Many more people want to live in California, but there aren’t enough homes to go around.
-								However, there are a lot of uniquely California factors!
+								However, there are a lot of uniquely Californian factors!
 								From the shape of its coastline to Proposition 13 to the tech boom in the bay area, they all have attached a painfully expensive price tag to the California dream.
 								<br>
 
 								The median price of a home is now <em>over half a million dollars.</em>
 								That number is about <em>$240,000</em> nationally.
-								More than <em>20 percent</em> of Californians pay more than half their income for housing. Isn't that crazy?
+								More than <em>20 percent</em> of Californians pay more than half their income for housing.
 								</h7>
 							</div>
 
@@ -166,9 +166,9 @@
 									few years, the Fed has steadily increased short-term interest rates, which can lead
 									people to have a tighter budget for a home at a time when home prices are rising.</h7>
 								<h7 id="area-chart-info">
-									Also look at the period of <em>Great Recession</em> in 2008. Interestingly, the states with relatively
+									Also look at the period of the <em>Great Recession</em> in 2008. Interestingly, the states with relatively
 									higher housing prices suffered the recession more.
-									For instance, look at how deep the through is for <a onclick="choroplethClicked('California')">California</a>!
+									For instance, look at how deep the trough is for <a onclick="choroplethClicked('California')">California</a>!
 									Now, compare it to <a onclick="choroplethClicked('Iowa')">Iowa</a>
 									where the price doesn't seem to decline much during the recession. <br></h7>
 								<h7 id="area-chart-info"><em>Also, try clicking other states on the choropleth above to see how the price changes at each state!</em>
@@ -181,13 +181,14 @@
 						<h3>History of median income versus median housing price by region</h3><br>
 
 
-						<p class="scatterplotContext"> As it can be seen from this chart at the end of the animation, <strong>in 2018</strong>, the states with most expensive houses are <em>Hawaii</em> and <em>California</em>
+						<p class="scatterplotContext"> As it can be seen from this chart at the end of the animation, <strong>in 2018</strong>, the states with the greatest housing prices are <em>Hawaii</em> and <em>California</em>
 							<br>
 							While the other bubbles (states) seem to form a linear trend-line, showing a linear relationship between median income and median house price,
 							California seems to fall way above this trend-line. This might be because California has a high income gap.
 
-							An analysis of U.S. Census Bureau data by CBPC found a widening gap between the state’s haves and have-nots.
-							This problem is more prevalent in Silicon-Valley, thanks to the tech-boom.</p>
+							An analysis of U.S. Census Bureau data by the California Budget and Policy
+                            Center (CBPC) found a widening gap between the state’s haves and have-nots.
+							This problem is more prevalent in Silicon Valley, thanks to the tech boom.</p>
 
 						<h5>Hover over year to speed or slow down animation. Hover over circles for details.</h5>
 						<div class="spotlight">
@@ -212,7 +213,7 @@
 							according to <a href="http://www.everettprogram.org/main/wp-content/uploads/TIGHTROPE-2018-REPORT.pdf"> Everet Program report</a>.
 							The study shows a pattern of income inequality on tech’s home turf that’s even worse than the national average.
 							Authors of the report point to an increasing concentration of company profits
-							going toward the salaries of a select few — largely, high-skilled tech workers. <br>
+							going toward the salaries of a select few — largely high-skilled tech workers. <br>
 
 							<br>This has been a significant socioeconomic issue of growing popularity:<br>
 							<strong>incomes remaining relatively flat (relatively lower when adjusted by inflation) for people in the middle and at the bottom of the income range, while the cost of living is going up.</strong>
@@ -289,8 +290,12 @@
 							The following visualization shows the top 50 most expensive US ZIP codes
 							in October 2019. The bubbles can be divided by state or geographical region.
 							You can change data category by hovering over <i> Number of Bedrooms </i>,
-							and toggle between most and least expensive within this categroy by hovering over
+							and toggle between most and least expensive within a category by hovering over
 							<i> Sort By </i>.
+						</p>
+						<p class="forceDiagramContext">The least expensive homes tend to be in the Midwest and South,
+							with Kansas, Oklahoma, and Ohio topping the least-expensive list. The most expensive ZIP codes
+							belong to Silicon Valley in CA and areas of San Francisco, as well as parts of NYC and Boston.
 						</p>
 						<br>
 
@@ -312,7 +317,7 @@
 									<button id= "Lowest" class="highlowtoggle" value="Least Expensive">Least Expensive </button>
 								</div>
 							</div>
-							<p class="force-label"> Number of Bedrooms : </p>
+							<p class="force-label"> Show me data for : </p>
 							<div class="dropdown">
 								<button class="dropbtn" id="data-cat-button"></button>
 								<div class="dropdown-content">
@@ -320,16 +325,12 @@
 									<button id= "3bed" class="datacatagory" value="3-Bedroom Homes">3-Bedroom Homes </button>
 									<button id= "4bed" class="datacatagory" value="4-Bedroom Homes">4-Bedroom Homes </button>
 									<button id= "5bed" class="datacatagory" value="5+ Bedroom Homes">5+ Bedroom Homes </button>
+									<button id= "sqrfoot" class="datacatagory" value="Per Square Foot">Per Square Foot </button>
 								</div>
 							</div>
 						</div>
 						<div class="spotlight alt">
 							<div id = "forceDiagram"></div>
-						</div>
-						<div class="spotlight alt">
-							<p id="forceInfo">The least expensive homes tend to be in the Midwest and South,
-								with Kansas, Oklahoma, and Ohio topping the least-expensive list.
-							</p>
 						</div>
 					</section>
 				</div>
