@@ -436,10 +436,13 @@ div.tooltip {
 }
 
 #explanation_text {
+
     padding-left: 90px;
     padding-right: 90px;
     padding-bottom: 40px;
 }
+
+
 .forceDiagramContext {
 	margin-left: 50px;
 	margin-right: 50px;
