@@ -108,30 +108,6 @@
 							<button id="check" onclick="this.disabled=true">Display Correct Ordering</button>
 						</div>
 
-						<!--						<div class="content">-->
-<!--							<div class="gallery">-->
-<!--								<div>-->
-<!--									<div class="image fit flush">-->
-<!--										<a href="images/zillow_expensive_house.jpeg"><img src="images/zillow_expensive_house.jpeg" alt="" /></a>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--								<div>-->
-<!--									<div class="image fit flush">-->
-<!--										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--								<div>-->
-<!--									<div class="image fit flush">-->
-<!--										<a href="images/pic04.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--								<div>-->
-<!--									<div class="image fit flush">-->
-<!--										<a href="images/atlantahouse.jpg"><img src="images/atlantahouse.jpg" alt="" /></a>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</div>-->
 					</section>
 
 					<section class="wrapper style1">
@@ -170,7 +146,7 @@
 						<br><br><h3>Changes in US Housing Price, by State</h3>
 						<p>See how the color for California is getting darker and darker, in comparison to other states!<br>
 							This means that houses in California were getting a lot more expensive than houses elsewhere.</p>
-<!--						<div class="spotlight">-->
+
 								<div id="wrapper" align="center">
 									<button id="play">Play Animation</button>
 									<p id="yearmonth"> Year:
@@ -178,29 +154,25 @@
 									</p>
 									<div id="US-choropleth"></div>
 								</div>
-<!--							<div class="inner">-->
-<!--
 
-<!--							</div>-->
-<!--						</div>-->
 						<h4>Click on a state to reveal the trends of that state's housing prices in the following area chart.</h4><br>
 
 						<div class="spotlight alt">
 							<div class="image flush"><div id="pricesAreaChart"></div></div>
 							<div  class="inner">
-								<h3 align="center">Housing price trend for 1996-2019</h3>
-								<p id="area-chart-info">
+								<h3>Housing price trend for 1996-2019</h3>
+								<h7 id="area-chart-info">
 									Home prices increased as more buyers competed for fewer homes. Over the past
 									few years, the Fed has steadily increased short-term interest rates, which can lead
-									people to have a tighter budget for a home at a time when home prices are rising.<p>
-								<p id="area-chart-info">
+									people to have a tighter budget for a home at a time when home prices are rising.</h7>
+								<h7 id="area-chart-info">
 									Also look at the period of the <em>Great Recession</em> in 2008. Interestingly, the states with relatively
 									higher housing prices suffered the recession more.
 									For instance, look at how deep the trough is for <a onclick="choroplethClicked('California')">California</a>!
 									Now, compare it to <a onclick="choroplethClicked('Iowa')">Iowa</a>
-									where the price doesn't seem to decline much during the recession. <br></p>
-								<p id="area-chart-info"><em>Also, try clicking other states on the choropleth above to see how the price changes at each state!</em>
-								</p>
+									where the price doesn't seem to decline much during the recession. <br></h7>
+								<h7 id="area-chart-info"><em>Also, try clicking other states on the choropleth above to see how the price changes at each state!</em>
+								</h7>
 							</div>
 						</div>
 						<br>
@@ -261,28 +233,30 @@
 <!--								</p></blockquote>-->
 <!--							</div>-->
 <!--						</div>-->
+						<div style="background-color: #1e1f23"><br><h3 class="reasons-title">Moves by Reason and Income</h3><br></div>
 						<div class="spotlight alt" id="reasons-section">
+
 							<br>
 							<div class="image flush"><div id="income_slider"></div><div id="reasons"></div>
 								<p class="on-black">Counts in thousands</p>
 							</div>
 							<div class="inner">
-								<h3 class="reasons-title">Moves by Reason and Income</h3><br>
-								<p class="reasons-context">
+
+								<h7 class="reasons-context">
 									As home prices increase, some people are forced to move, as they cannot afford
 									the cost of their dwelling anymore.
 									On the chart to the right, you can view the housing-related reasons why households
 									of different incomes in the United States moved
 									in 2018 and 2019.
-								</p>
-								<p class="reasons-context">
+								</h7>
+								<h7 class="reasons-context">
 									Through the chart, we can compare how many households moved
 									because they wanted to improve their housing situation and how many people
 									were economically encouraged or forced to downgrade. We can see that lower income
 									households are more likely than higher income households to move for
 									affordability reasons. However, low income brackets still see people move
 									to better housing and high income brackets still see downsizing.
-								</p>
+								</h7>
 							</div>
 <!--							<div class="image flush"><div id="homelessChart"></div></div>-->
 <!--							<div class="inner">-->
@@ -324,17 +298,6 @@
 							belong to Silicon Valley in CA and areas of San Francisco, as well as parts of NYC and Boston.
 						</p>
 						<br>
-
-<!--						<div class="spotlight">-->
-<!--							<br>-->
-<!--&lt;!&ndash;							<div class="image flush"><div id="forceDiagramIntro"></div></div>&ndash;&gt;-->
-<!--							<div class="inner">-->
-<!--								<h3>Homelessness</h3>-->
-<!--								<p>While we cannot draw a direct line from increasing housing costs to homelessness,-->
-<!--									some relationship between the two should be considered. The chart to the right shows the percentage-->
-<!--									of homeless people in each state in the selected year.</p>-->
-<!--							</div>-->
-<!--						</div>-->
 
 						<div id="toolbar">
 							<p class="force-label">Group By : </p>
@@ -437,7 +400,6 @@
 		<script src="assets/js/d3-tip.js"></script>
 		<script src="https://unpkg.com/d3-simple-slider"></script>
 
-		<script src='quiz.js'></script>
 
 
 		<!-- Visualization objects -->
