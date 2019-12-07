@@ -366,6 +366,80 @@ path {
 	display: block;
 }
 
+
+figcaption{
+	color: #FFF;
+}
+
+#xAxis text{
+	margin-top: 50px;
+	fill: #D35400;
+	font-size: 20px;
+}
+
+.col.l6{
+	width:49.99999%
+}
+
+#left_big_pad{
+	padding-left: 180px;
+}
+
+.white{
+	color: #FFF
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	width: 60px;
+	height: 28px;
+	padding: 2px;
+	font: 12px sans-serif;
+	background: lightsteelblue;
+	border: 0px;
+	border-radius: 8px;
+	pointer-events: none;
+}
+
+.d3-tip {
+	line-height: 1;
+	font-weight: bold;
+	padding: 12px;
+	background: #fff;
+	color: #fff;
+	border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1;
+	color: white;
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+
+#explanation_heading{
+	padding-top: 40px;
+}
+
+#explanation_text{
+	padding-left: 90px;
+	padding-right: 90px;
+	padding-bottom: 40px;
+
 .forceDiagramContext {
 	margin-left: 50px;
 	margin-right: 50px;
@@ -400,4 +474,5 @@ path {
 .sources-list {
 	float: left;
 	text-align: left;
+
 }

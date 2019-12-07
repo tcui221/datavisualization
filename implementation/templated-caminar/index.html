@@ -51,21 +51,49 @@
 					</section>
 
 				<!-- Two -->
-					<section id="two" class="wrapper style2">
+					<section class="wrapper style2">
 						<header>
-							<h2>Let's play a little game!</h2>
-							<p>Take a guess! Which of these houses do you think is the most expensive one?</p>
+							<h2>What are your assumptions?</h2>
+							<p class="white">Take a look at thr four houses pictured below. Rank them in order of least to most
+							expensive using the price scale located below the pictures. How much do you think it costs to
+							own these homes?</p>
+							<p class="white">When you are ready, click the DISPLAY CORRECT ORDERING button to see how your guesses compare
+							with the actual prices of the homes. </p>
 						</header>
-						<div id='container'>
-							<div id='title'>
-								<h1>Learning Js Properly: Project #1 - Dynamic Quiz</h1>
+						<div class="container">
+						<div class="row" >
+							<div class="col l6" id="left_big_pad">
+								<figure>
+									<img src="images/arkansas_725k.jpg" alt="Indiana" width="270"> <br>
+									<figcaption>A</figcaption>
+								</figure>
+								<br>
+								<figure>
+									<img src="images/palo_2.5M.jpg" alt="Flowers in Chania" width="270"> <br>
+									<figcaption>C</figcaption>
+								</figure>
 							</div>
-							<br/>
-							<div id='quiz'></div>
-							<div class='quizbutton' id='next'><a href='#'>Next</a></div>
-							<div class='quizbutton' id='prev'><a href='#'>Prev</a></div>
-							<div class='quizbutton' id='start'> <a href='#'>Start Over</a></div>
+							<div class="col l6" id="left_small_pad" >
+								<figure>
+									<img src="images/Atherton_3.6M.jpg" alt="Flowers in Chania" width="270"> <br>
+									<figcaption>B</figcaption>
+								</figure>
+								<br>
+								<figure>
+									<img src="images/west_virginia_390k.jpg" alt="Flowers in Chania" width="270"> <br>
+									<figcaption>D</figcaption>
+								</figure>
+							</div>
 						</div>
+						</div>
+						<div>
+							<div id="timeline"> </div>
+						</div>
+
+						<div align="center">
+							<button id="check" >Display Correct Ordering</button>
+						</div>
+
 						<!--						<div class="content">-->
 <!--							<div class="gallery">-->
 <!--								<div>-->
@@ -92,6 +120,13 @@
 <!--						</div>-->
 					</section>
 
+					<section class="wrapper style1">
+						<div>
+							<div id="correct"> </div>
+						</div>
+						<div id="explanation">
+						</div>
+					</section>
 				<!-- Three -->
 					<section id="three" class="wrapper">
 
@@ -392,6 +427,7 @@
 		<script src="assets/js/StateChoropleth.js"></script>
 		<script src="assets/js/movingscatter.js"></script>
 		<script src="assets/js/pricesAreaChart.js"></script>
+		<script src="assets/js/timeline.js"></script>
 		<script src="assets/js/hlBars.js"></script>
 		<script src="assets/js/forceDiagram.js"></script>
 		<script src="assets/js/moveReasons.js"></script>
