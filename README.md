@@ -21,9 +21,6 @@ A few style things:
       main.css -> Styling built into template we used
     /js
       main.js -> Load data and instantiate visualizations
-      
-      
-      
     /data
       -> Contains all data files
     /images
