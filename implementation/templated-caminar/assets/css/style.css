@@ -456,7 +456,7 @@ div.tooltip {
 
 .bio-image {
 	border-radius: 50%;
-	width: 80px;
+	width: 120px;
 	display: inline-block;
 	margin-left: 45px;
 	margin-right: 45px;
@@ -466,7 +466,7 @@ div.tooltip {
 .bio-name {
 	display: inline-block;
 	color: #7d7d7f;
-	margin-right: 90px;
+	margin-right: 130px;
 }
 
 .sources {
